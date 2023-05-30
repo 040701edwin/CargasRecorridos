@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="Vehiculos">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Vehiculo)">
+        <MappingFragment StoreEntitySet="Vehiculos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PlacaVehiculo" ColumnName="PlacaVehiculo" />
+          <ScalarProperty Name="DescripcionVehiculo" ColumnName="DescripcionVehiculo" />
+          <ScalarProperty Name="TipoDeVehiculoId" ColumnName="TipoDeVehiculoId" />
+          <ScalarProperty Name="MarcaDelVehiculoId" ColumnName="MarcaDelVehiculoId" />
+          <ScalarProperty Name="CantidadPasajeros" ColumnName="CantidadPasajeros" />
+          <ScalarProperty Name="Tonelage" ColumnName="Tonelage" />
+          <ScalarProperty Name="EstadoVehiculo" ColumnName="EstadoVehiculo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoDeVehiculos">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.TipoDeVehiculo)">
+        <MappingFragment StoreEntitySet="TipoDeVehiculos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CodigoTipoVehiculo" ColumnName="CodigoTipoVehiculo" />
+          <ScalarProperty Name="DescripcionTipoVehiculo" ColumnName="DescripcionTipoVehiculo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Viajes">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Viaje)">
+        <MappingFragment StoreEntitySet="Viajes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CodigoViaje" ColumnName="CodigoViaje" />
+          <ScalarProperty Name="CostoViaje" ColumnName="CostoViaje" />
+          <ScalarProperty Name="PagoChoferViaje" ColumnName="PagoChoferViaje" />
+          <ScalarProperty Name="DescripcionViaje" ColumnName="DescripcionViaje" />
+          <ScalarProperty Name="TipoDeViajeId" ColumnName="TipoDeViajeId" />
+          <ScalarProperty Name="ProveedorId" ColumnName="ProveedorId" />
+          <ScalarProperty Name="ChoferId" ColumnName="ChoferId" />
+          <ScalarProperty Name="PaisId" ColumnName="PaisId" />
+          <ScalarProperty Name="PaisId1" ColumnName="PaisId1" />
+          <ScalarProperty Name="CantidadPasajeros" ColumnName="CantidadPasajeros" />
+          <ScalarProperty Name="Tonelage" ColumnName="Tonelage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoDeViajes">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.TipoDeViaje)">
+        <MappingFragment StoreEntitySet="TipoDeViajes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CodigoTipoViaje" ColumnName="CodigoTipoViaje" />
+          <ScalarProperty Name="DescripcionTipoViaje" ColumnName="DescripcionTipoViaje" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proveedores">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Proveedor)">
+        <MappingFragment StoreEntitySet="Proveedores">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CodigoProveedor" ColumnName="CodigoProveedor" />
+          <ScalarProperty Name="NombreEmpresaProveedor" ColumnName="NombreEmpresaProveedor" />
+          <ScalarProperty Name="Nombre1Encargado" ColumnName="Nombre1Encargado" />
+          <ScalarProperty Name="Nombre2Encargado" ColumnName="Nombre2Encargado" />
+          <ScalarProperty Name="Apellido1Encargado" ColumnName="Apellido1Encargado" />
+          <ScalarProperty Name="Apellido2Encargado" ColumnName="Apellido2Encargado" />
+          <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+          <ScalarProperty Name="DireccionEmpresa" ColumnName="DireccionEmpresa" />
+          <ScalarProperty Name="CelularProveedor" ColumnName="CelularProveedor" />
+          <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Choferes">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Chofer)">
+        <MappingFragment StoreEntitySet="Choferes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CedulaChofer" ColumnName="CedulaChofer" />
+          <ScalarProperty Name="Nombre1Chofer" ColumnName="Nombre1Chofer" />
+          <ScalarProperty Name="Nombre2Chofer" ColumnName="Nombre2Chofer" />
+          <ScalarProperty Name="Apellido1Chofer" ColumnName="Apellido1Chofer" />
+          <ScalarProperty Name="Apellido2Chofer" ColumnName="Apellido2Chofer" />
+          <ScalarProperty Name="CelularChofer" ColumnName="CelularChofer" />
+          <ScalarProperty Name="INSSChofer" ColumnName="INSSChofer" />
+          <ScalarProperty Name="DireccionChofer" ColumnName="DireccionChofer" />
+          <ScalarProperty Name="PaisId" ColumnName="PaisId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehiculoViajes">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.VehiculoViaje)">
+        <MappingFragment StoreEntitySet="VehiculoViajes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="VehiculoId" ColumnName="VehiculoId" />
+          <ScalarProperty Name="ViajeId" ColumnName="ViajeId" />
+          <ScalarProperty Name="FechaHoraSalida" ColumnName="FechaHoraSalida" />
+          <ScalarProperty Name="FechaHoraLlegada" ColumnName="FechaHoraLlegada" />
+          <ScalarProperty Name="FechaHoraRetorno" ColumnName="FechaHoraRetorno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViajeChoferes">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.ViajeChofer)">
+        <MappingFragment StoreEntitySet="ViajeChoferes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ViajeId" ColumnName="ViajeId" />
+          <ScalarProperty Name="ChoferId" ColumnName="ChoferId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Paises">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Pais)">
+        <MappingFragment StoreEntitySet="Paises">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CodigoPais" ColumnName="CodigoPais" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Marcas">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.MarcaDelVehiculo)">
+        <MappingFragment StoreEntitySet="Marcas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

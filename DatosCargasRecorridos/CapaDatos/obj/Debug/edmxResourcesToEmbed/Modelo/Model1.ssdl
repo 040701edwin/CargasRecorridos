@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="Vehiculos" EntityType="Model1.Store.Vehiculos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoDeVehiculos" EntityType="Model1.Store.TipoDeVehiculos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Viajes" EntityType="Model1.Store.Viajes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoDeViajes" EntityType="Model1.Store.TipoDeViajes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Proveedores" EntityType="Model1.Store.Proveedores" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Choferes" EntityType="Model1.Store.Choferes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VehiculoViajes" EntityType="Model1.Store.VehiculoViajes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ViajeChoferes" EntityType="Model1.Store.ViajeChoferes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Paises" EntityType="Model1.Store.Paises" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Marcas" EntityType="Model1.Store.Marcas" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="TipoDeVehiculoVehiculo" Association="Model1.Store.TipoDeVehiculoVehiculo">
+      <End Role="TipoDeVehiculo" EntitySet="TipoDeVehiculos" />
+      <End Role="Vehiculo" EntitySet="Vehiculos" />
+    </AssociationSet>
+    <AssociationSet Name="TipoDeViajeViaje" Association="Model1.Store.TipoDeViajeViaje">
+      <End Role="TipoDeViaje" EntitySet="TipoDeViajes" />
+      <End Role="Viaje" EntitySet="Viajes" />
+    </AssociationSet>
+    <AssociationSet Name="ProveedorViaje" Association="Model1.Store.ProveedorViaje">
+      <End Role="Proveedor" EntitySet="Proveedores" />
+      <End Role="Viaje" EntitySet="Viajes" />
+    </AssociationSet>
+    <AssociationSet Name="ViajeViajeChofer" Association="Model1.Store.ViajeViajeChofer">
+      <End Role="Viaje" EntitySet="Viajes" />
+      <End Role="ViajeChofer" EntitySet="ViajeChoferes" />
+    </AssociationSet>
+    <AssociationSet Name="ChoferViajeChofer" Association="Model1.Store.ChoferViajeChofer">
+      <End Role="Chofer" EntitySet="Choferes" />
+      <End Role="ViajeChofer" EntitySet="ViajeChoferes" />
+    </AssociationSet>
+    <AssociationSet Name="VehiculoVehiculoViaje" Association="Model1.Store.VehiculoVehiculoViaje">
+      <End Role="Vehiculo" EntitySet="Vehiculos" />
+      <End Role="VehiculoViaje" EntitySet="VehiculoViajes" />
+    </AssociationSet>
+    <AssociationSet Name="ViajeVehiculoViaje" Association="Model1.Store.ViajeVehiculoViaje">
+      <End Role="Viaje" EntitySet="Viajes" />
+      <End Role="VehiculoViaje" EntitySet="VehiculoViajes" />
+    </AssociationSet>
+    <AssociationSet Name="PaisViaje" Association="Model1.Store.PaisViaje">
+      <End Role="Pais" EntitySet="Paises" />
+      <End Role="Viaje" EntitySet="Viajes" />
+    </AssociationSet>
+    <AssociationSet Name="PaisViaje1" Association="Model1.Store.PaisViaje1">
+      <End Role="Pais" EntitySet="Paises" />
+      <End Role="Viaje" EntitySet="Viajes" />
+    </AssociationSet>
+    <AssociationSet Name="PaisChofer" Association="Model1.Store.PaisChofer">
+      <End Role="Pais" EntitySet="Paises" />
+      <End Role="Chofer" EntitySet="Choferes" />
+    </AssociationSet>
+    <AssociationSet Name="MarcaDelVehiculoVehiculo" Association="Model1.Store.MarcaDelVehiculoVehiculo">
+      <End Role="MarcaDelVehiculo" EntitySet="Marcas" />
+      <End Role="Vehiculo" EntitySet="Vehiculos" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Vehiculos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlacaVehiculo" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="DescripcionVehiculo" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="TipoDeVehiculoId" Type="int" Nullable="false" />
+    <Property Name="MarcaDelVehiculoId" Type="int" Nullable="false" />
+    <Property Name="CantidadPasajeros" Type="int" Nullable="false" />
+    <Property Name="Tonelage" Type="decimal" Nullable="false" Precision="5" Scale="2" />
+    <Property Name="EstadoVehiculo" Type="varchar" Nullable="false" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="TipoDeVehiculos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CodigoTipoVehiculo" Type="char" Nullable="false" MaxLength="5" />
+    <Property Name="DescripcionTipoVehiculo" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Viajes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CodigoViaje" Type="char" Nullable="false" MaxLength="5" />
+    <Property Name="CostoViaje" Type="int" Nullable="false" />
+    <Property Name="PagoChoferViaje" Type="int" Nullable="false" />
+    <Property Name="DescripcionViaje" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="TipoDeViajeId" Type="int" Nullable="false" />
+    <Property Name="ProveedorId" Type="int" Nullable="false" />
+    <Property Name="ChoferId" Type="int" Nullable="false" />
+    <Property Name="PaisId" Type="int" Nullable="false" />
+    <Property Name="PaisId1" Type="int" Nullable="false" />
+    <Property Name="CantidadPasajeros" Type="int" Nullable="false" />
+    <Property Name="Tonelage" Type="decimal" Nullable="false" Precision="5" Scale="2" />
+  </EntityType>
+  <EntityType Name="TipoDeViajes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CodigoTipoViaje" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DescripcionTipoViaje" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Proveedores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CodigoProveedor" Type="char" Nullable="false" MaxLength="5" />
+    <Property Name="NombreEmpresaProveedor" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="Nombre1Encargado" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="Nombre2Encargado" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="Apellido1Encargado" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="Apellido2Encargado" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="Cargo" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="DireccionEmpresa" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CelularProveedor" Type="char" Nullable="false" MaxLength="12" />
+    <Property Name="Comentario" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Choferes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CedulaChofer" Type="char" Nullable="false" MaxLength="16" />
+    <Property Name="Nombre1Chofer" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="Nombre2Chofer" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="Apellido1Chofer" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="Apellido2Chofer" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="CelularChofer" Type="char" Nullable="false" MaxLength="12" />
+    <Property Name="INSSChofer" Type="char" Nullable="false" MaxLength="9" />
+    <Property Name="DireccionChofer" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="PaisId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VehiculoViajes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VehiculoId" Type="int" Nullable="false" />
+    <Property Name="ViajeId" Type="int" Nullable="false" />
+    <Property Name="FechaHoraSalida" Type="time" Nullable="false" />
+    <Property Name="FechaHoraLlegada" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FechaHoraRetorno" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ViajeChoferes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ViajeId" Type="int" Nullable="false" />
+    <Property Name="ChoferId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Paises">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CodigoPais" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Marcas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Marca" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="Modelo" Type="varchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <Association Name="TipoDeVehiculoVehiculo">
+    <End Role="TipoDeVehiculo" Type="Model1.Store.TipoDeVehiculos" Multiplicity="1" />
+    <End Role="Vehiculo" Type="Model1.Store.Vehiculos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoDeVehiculo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vehiculo">
+        <PropertyRef Name="TipoDeVehiculoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TipoDeViajeViaje">
+    <End Role="TipoDeViaje" Type="Model1.Store.TipoDeViajes" Multiplicity="1" />
+    <End Role="Viaje" Type="Model1.Store.Viajes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoDeViaje">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Viaje">
+        <PropertyRef Name="TipoDeViajeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProveedorViaje">
+    <End Role="Proveedor" Type="Model1.Store.Proveedores" Multiplicity="1" />
+    <End Role="Viaje" Type="Model1.Store.Viajes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedor">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Viaje">
+        <PropertyRef Name="ProveedorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ViajeViajeChofer">
+    <End Role="Viaje" Type="Model1.Store.Viajes" Multiplicity="1" />
+    <End Role="ViajeChofer" Type="Model1.Store.ViajeChoferes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Viaje">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ViajeChofer">
+        <PropertyRef Name="ViajeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ChoferViajeChofer">
+    <End Role="Chofer" Type="Model1.Store.Choferes" Multiplicity="1" />
+    <End Role="ViajeChofer" Type="Model1.Store.ViajeChoferes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chofer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ViajeChofer">
+        <PropertyRef Name="ChoferId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VehiculoVehiculoViaje">
+    <End Role="Vehiculo" Type="Model1.Store.Vehiculos" Multiplicity="1" />
+    <End Role="VehiculoViaje" Type="Model1.Store.VehiculoViajes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehiculo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VehiculoViaje">
+        <PropertyRef Name="VehiculoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ViajeVehiculoViaje">
+    <End Role="Viaje" Type="Model1.Store.Viajes" Multiplicity="1" />
+    <End Role="VehiculoViaje" Type="Model1.Store.VehiculoViajes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Viaje">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VehiculoViaje">
+        <PropertyRef Name="ViajeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PaisViaje">
+    <End Role="Pais" Type="Model1.Store.Paises" Multiplicity="1" />
+    <End Role="Viaje" Type="Model1.Store.Viajes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pais">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Viaje">
+        <PropertyRef Name="PaisId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PaisViaje1">
+    <End Role="Pais" Type="Model1.Store.Paises" Multiplicity="1" />
+    <End Role="Viaje" Type="Model1.Store.Viajes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pais">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Viaje">
+        <PropertyRef Name="PaisId1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PaisChofer">
+    <End Role="Pais" Type="Model1.Store.Paises" Multiplicity="1" />
+    <End Role="Chofer" Type="Model1.Store.Choferes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pais">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Chofer">
+        <PropertyRef Name="PaisId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MarcaDelVehiculoVehiculo">
+    <End Role="MarcaDelVehiculo" Type="Model1.Store.Marcas" Multiplicity="1" />
+    <End Role="Vehiculo" Type="Model1.Store.Vehiculos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MarcaDelVehiculo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vehiculo">
+        <PropertyRef Name="MarcaDelVehiculoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,65 @@
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.csproj.AssemblyReference.cache
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.Dashboard.resources
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.Properties.Resources.resources
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.csproj.GenerateResource.cache
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.csproj.CoreCompileInputs.cache
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos\Diseño\bin\Debug\Diseño.exe
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos\Diseño\bin\Debug\Diseño.pdb
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos\Diseño\bin\Debug\FontAwesome.Sharp.dll
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.csproj.CopyComplete
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.exe
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.pdb
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.Login.resources
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos\Diseño\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\Diseño\bin\Debug\Diseño.exe
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\Diseño\bin\Debug\Diseño.pdb
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\Diseño\bin\Debug\CapaDatos.dll
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\Diseño\bin\Debug\CapaLogica.dll
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\Diseño\bin\Debug\FontAwesome.Sharp.dll
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\Diseño\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\Diseño\bin\Debug\EntityFramework.dll
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\Diseño\bin\Debug\CapaDatos.pdb
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\Diseño\bin\Debug\CapaDatos.dll.config
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\Diseño\bin\Debug\CapaLogica.pdb
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\Diseño\bin\Debug\EntityFramework.xml
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\Diseño\obj\Debug\Diseño.csproj.AssemblyReference.cache
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\Diseño\obj\Debug\Diseño.Dashboard.resources
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\Diseño\obj\Debug\Diseño.Login.resources
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\Diseño\obj\Debug\Diseño.Properties.Resources.resources
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\Diseño\obj\Debug\Diseño.csproj.GenerateResource.cache
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\Diseño\obj\Debug\Diseño.csproj.CoreCompileInputs.cache
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\Diseño\obj\Debug\Diseño.csproj.CopyComplete
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\Diseño\obj\Debug\Diseño.exe
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\Diseño\obj\Debug\Diseño.pdb
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\Diseño\bin\Debug\Diseño.exe.config
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\Diseño\bin\Debug\EntityFramework.SqlServer.dll
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\Diseño\bin\Debug\CapaLogica.dll.config
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\Diseño\bin\Debug\EntityFramework.SqlServer.xml
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\Diseño\obj\Debug\Diseño.AgregarChofer.resources
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\Diseño\obj\Debug\Diseño.Choferes.resources
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\Diseño\bin\Debug\Diseño.exe.config
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\Diseño\bin\Debug\Diseño.exe
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\Diseño\bin\Debug\Diseño.pdb
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\Diseño\bin\Debug\CapaDatos.dll
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\Diseño\bin\Debug\CapaLogica.dll
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\Diseño\bin\Debug\EntityFramework.dll
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\Diseño\bin\Debug\EntityFramework.SqlServer.dll
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\Diseño\bin\Debug\FontAwesome.Sharp.dll
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\Diseño\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\Diseño\bin\Debug\CapaDatos.pdb
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\Diseño\bin\Debug\CapaDatos.dll.config
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\Diseño\bin\Debug\CapaLogica.pdb
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\Diseño\bin\Debug\CapaLogica.dll.config
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\Diseño\bin\Debug\EntityFramework.xml
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\Diseño\bin\Debug\EntityFramework.SqlServer.xml
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.csproj.AssemblyReference.cache
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.AgregarChofer.resources
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.Choferes.resources
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.Dashboard.resources
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.Login.resources
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.Properties.Resources.resources
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.csproj.GenerateResource.cache
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.csproj.CoreCompileInputs.cache
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.csproj.CopyComplete
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.exe
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.pdb

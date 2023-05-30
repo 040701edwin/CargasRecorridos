@@ -1,0 +1,12 @@
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos\CargasRecorridos\bin\Debug\CargasRecorridos.exe.config
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos\CargasRecorridos\bin\Debug\CargasRecorridos.exe
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos\CargasRecorridos\bin\Debug\CargasRecorridos.pdb
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos\CargasRecorridos\obj\Debug\CargasRecorridosDAO.csproj.AssemblyReference.cache
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos\CargasRecorridos\obj\Debug\CargasRecorridos.Form1.resources
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos\CargasRecorridos\obj\Debug\CargasRecorridos.Properties.Resources.resources
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos\CargasRecorridos\obj\Debug\CargasRecorridosDAO.csproj.GenerateResource.cache
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos\CargasRecorridos\obj\Debug\CargasRecorridosDAO.csproj.CoreCompileInputs.cache
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos\CargasRecorridos\obj\Debug\CargasRecorridos.exe
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos\CargasRecorridos\obj\Debug\CargasRecorridos.pdb
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos\CargasRecorridos\bin\Debug\FontAwesome.Sharp.dll
+E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos\CargasRecorridos\obj\Debug\CargasRecorridosDAO.csproj.CopyComplete

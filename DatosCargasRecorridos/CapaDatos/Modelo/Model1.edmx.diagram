@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="61736a9c712e480086c26763f8f2df80" Name="Diagram1" ZoomLevel="97" >
+        <EntityTypeShape EntityType="Model1.Vehiculo" Width="1.5" PointX="3.5" PointY="2.125" />
+        <EntityTypeShape EntityType="Model1.TipoDeVehiculo" Width="1.5" PointX="5.875" PointY="2.375" />
+        <AssociationConnector Association="Model1.TipoDeVehiculoVehiculo" />
+        <EntityTypeShape EntityType="Model1.Viaje" Width="1.5" PointX="7.375" PointY="4.875" />
+        <EntityTypeShape EntityType="Model1.TipoDeViaje" Width="1.5" PointX="5.25" PointY="7.25" />
+        <AssociationConnector Association="Model1.TipoDeViajeViaje" />
+        <EntityTypeShape EntityType="Model1.Proveedor" Width="1.5" PointX="9.875" PointY="4.875" />
+        <AssociationConnector Association="Model1.ProveedorViaje" />
+        <EntityTypeShape EntityType="Model1.Chofer" Width="1.5" PointX="11.75" PointY="1.625" />
+        <EntityTypeShape EntityType="Model1.VehiculoViaje" Width="1.5" PointX="3" PointY="6.5" />
+        <EntityTypeShape EntityType="Model1.ViajeChofer" Width="1.5" PointX="7.75" PointY="2.25" />
+        <AssociationConnector Association="Model1.ViajeViajeChofer" />
+        <AssociationConnector Association="Model1.ChoferViajeChofer" />
+        <AssociationConnector Association="Model1.VehiculoVehiculoViaje" />
+        <AssociationConnector Association="Model1.ViajeVehiculoViaje" />
+        <EntityTypeShape EntityType="Model1.Pais" Width="1.5" PointX="11.75" PointY="8.375" />
+        <AssociationConnector Association="Model1.PaisViaje" />
+        <AssociationConnector Association="Model1.PaisViaje1" />
+        <AssociationConnector Association="Model1.PaisChofer" />
+        <EntityTypeShape EntityType="Model1.MarcaDelVehiculo" Width="1.5" PointX="0.875" PointY="2.125" />
+        <AssociationConnector Association="Model1.MarcaDelVehiculoVehiculo" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
