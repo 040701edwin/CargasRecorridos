@@ -1,7 +1,7 @@
 ﻿
 namespace Diseño
 {
-    partial class Viaje
+    partial class frmViaje
     {
         /// <summary>
         /// Required designer variable.

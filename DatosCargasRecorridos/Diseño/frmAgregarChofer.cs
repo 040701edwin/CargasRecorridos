@@ -14,11 +14,11 @@ using CapaDatos.Modelo;
 
 namespace Diseño
 {
-    public partial class AgregarChofer : Form
+    public partial class frmAgregarChofer : Form
     {
         private ChoferDAO ochofDAO = new ChoferDAO();
         private bool NuevoRegistro = true;
-        public AgregarChofer()
+        public frmAgregarChofer()
         {
             InitializeComponent();
         }
@@ -58,12 +58,12 @@ namespace Diseño
                 if (ochofDAO.Agregar(ochof) == false)
                 {
                     MessageBox.Show("El nuevo registro no pudo ser grabado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    //return;
                 }
                 else
                 {
                     MessageBox.Show("El nuevo registro fue grabado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
+                    //return;
                 }
             }
         }

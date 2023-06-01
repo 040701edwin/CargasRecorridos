@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Diseño
 {
-    public partial class Vehiculo : Form
+    public partial class frmTipoDeViaje : Form
     {
-        public Vehiculo()
+        public frmTipoDeViaje()
         {
             InitializeComponent();
         }

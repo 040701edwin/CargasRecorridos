@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Diseño
 {
-    public partial class Proveedor : Form
+    public partial class frmProveedor : Form
     {
-        public Proveedor()
+        public frmProveedor()
         {
             InitializeComponent();
         }

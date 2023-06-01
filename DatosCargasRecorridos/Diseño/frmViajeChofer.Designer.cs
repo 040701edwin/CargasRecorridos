@@ -1,7 +1,7 @@
 ﻿
 namespace Diseño
 {
-    partial class Vehiculo
+    partial class frmViajeChofer
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@ namespace Diseño
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Vehiculo";
+            this.Text = "ViajeChofer";
         }
 
         #endregion

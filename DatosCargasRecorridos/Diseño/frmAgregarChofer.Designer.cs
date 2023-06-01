@@ -1,7 +1,7 @@
 ﻿
 namespace Diseño
 {
-    partial class AgregarChofer
+    partial class frmAgregarChofer
     {
         /// <summary>
         /// Required designer variable.

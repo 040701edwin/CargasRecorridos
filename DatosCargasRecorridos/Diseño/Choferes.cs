@@ -19,7 +19,7 @@ namespace Diseño
 
         private void iconBtnAgregar_Click(object sender, EventArgs e)
         {
-            AgregarChofer aChof = new AgregarChofer();
+            frmAgregarChofer aChof = new frmAgregarChofer();
             aChof.ShowDialog();
         }
     }
