@@ -16,5 +16,7 @@ namespace Diseño
         {
             InitializeComponent();
         }
+
+        
     }
 }

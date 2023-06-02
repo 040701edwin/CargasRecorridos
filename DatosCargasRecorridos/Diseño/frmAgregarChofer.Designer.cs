@@ -47,10 +47,10 @@ namespace Diseño
             this.txtCelular = new System.Windows.Forms.TextBox();
             this.txtINSS = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.iconBtnAgregar = new FontAwesome.Sharp.IconButton();
-            this.iconBtnCancelar = new FontAwesome.Sharp.IconButton();
-            this.iconBtnCerrar = new FontAwesome.Sharp.IconButton();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.iconBtnCerrar = new FontAwesome.Sharp.IconButton();
+            this.iconBtnCancelar = new FontAwesome.Sharp.IconButton();
+            this.iconBtnAgregar = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // label1
@@ -200,31 +200,13 @@ namespace Diseño
             this.txtDireccion.Size = new System.Drawing.Size(100, 20);
             this.txtDireccion.TabIndex = 17;
             // 
-            // iconBtnAgregar
+            // comboBox1
             // 
-            this.iconBtnAgregar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconBtnAgregar.IconColor = System.Drawing.Color.Black;
-            this.iconBtnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconBtnAgregar.Location = new System.Drawing.Point(42, 341);
-            this.iconBtnAgregar.Name = "iconBtnAgregar";
-            this.iconBtnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.iconBtnAgregar.TabIndex = 19;
-            this.iconBtnAgregar.Text = "Agregar";
-            this.iconBtnAgregar.UseVisualStyleBackColor = true;
-            this.iconBtnAgregar.Click += new System.EventHandler(this.iconBtnAgregar_Click);
-            // 
-            // iconBtnCancelar
-            // 
-            this.iconBtnCancelar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconBtnCancelar.IconColor = System.Drawing.Color.Black;
-            this.iconBtnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconBtnCancelar.Location = new System.Drawing.Point(123, 341);
-            this.iconBtnCancelar.Name = "iconBtnCancelar";
-            this.iconBtnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.iconBtnCancelar.TabIndex = 20;
-            this.iconBtnCancelar.Text = "Cancelar";
-            this.iconBtnCancelar.UseVisualStyleBackColor = true;
-            this.iconBtnCancelar.Click += new System.EventHandler(this.iconBtnCancelar_Click);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(117, 287);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(102, 21);
+            this.comboBox1.TabIndex = 22;
             // 
             // iconBtnCerrar
             // 
@@ -239,15 +221,33 @@ namespace Diseño
             this.iconBtnCerrar.UseVisualStyleBackColor = true;
             this.iconBtnCerrar.Click += new System.EventHandler(this.iconBtnCerrar_Click);
             // 
-            // comboBox1
+            // iconBtnCancelar
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(117, 287);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(102, 21);
-            this.comboBox1.TabIndex = 22;
+            this.iconBtnCancelar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconBtnCancelar.IconColor = System.Drawing.Color.Black;
+            this.iconBtnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconBtnCancelar.Location = new System.Drawing.Point(123, 341);
+            this.iconBtnCancelar.Name = "iconBtnCancelar";
+            this.iconBtnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.iconBtnCancelar.TabIndex = 20;
+            this.iconBtnCancelar.Text = "Cancelar";
+            this.iconBtnCancelar.UseVisualStyleBackColor = true;
+            this.iconBtnCancelar.Click += new System.EventHandler(this.iconBtnCancelar_Click);
             // 
-            // AgregarChofer
+            // iconBtnAgregar
+            // 
+            this.iconBtnAgregar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconBtnAgregar.IconColor = System.Drawing.Color.Black;
+            this.iconBtnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconBtnAgregar.Location = new System.Drawing.Point(42, 341);
+            this.iconBtnAgregar.Name = "iconBtnAgregar";
+            this.iconBtnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.iconBtnAgregar.TabIndex = 19;
+            this.iconBtnAgregar.Text = "Guardar";
+            this.iconBtnAgregar.UseVisualStyleBackColor = true;
+            this.iconBtnAgregar.Click += new System.EventHandler(this.iconBtnAgregar_Click);
+            // 
+            // frmAgregarChofer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -274,10 +274,10 @@ namespace Diseño
             this.Controls.Add(this.txtCedula);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "AgregarChofer";
+            this.Name = "frmAgregarChofer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Viajes";
-            this.Load += new System.EventHandler(this.AgregarChofer_Load);
+            this.Text = "Agregar Chofer";
+            this.Load += new System.EventHandler(this.frmAgregarChofer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
