@@ -64,3 +64,5 @@ E:\Escritorio\MyProyecto\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.pdb
 E:\Escritorio\MyProyecto\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.frmAgregarChofer.resources
 E:\Escritorio\MyProyecto\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.frmLogin.resources
 E:\Escritorio\MyProyecto\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.frmTipoDeVehiculo.resources
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.frmProveedor.resources
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.frmViaje.resources
