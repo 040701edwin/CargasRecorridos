@@ -14,11 +14,12 @@ using CapaDatos.Modelo;
 
 namespace Diseño
 {
-    public partial class AgregarChofer : Form
+    public partial class frmAgregarChofer : Form
     {
         private ChoferDAO ochofDAO = new ChoferDAO();
+        private PaisDAO Opais = new PaisDAO();
         private bool NuevoRegistro = true;
-        public AgregarChofer()
+        public frmAgregarChofer()
         {
             InitializeComponent();
         }
@@ -54,31 +55,41 @@ namespace Diseño
                 ochof.CelularChofer = txtCelular.Text.Trim();
                 ochof.INSSChofer = txtINSS.Text.Trim();
                 ochof.DireccionChofer = txtDireccion.Text.Trim();
-                //ochof.Pais = 2;
+                ochof.PaisId = (int)comboBox1.SelectedValue;
                 if (ochofDAO.Agregar(ochof) == false)
                 {
                     MessageBox.Show("El nuevo registro no pudo ser grabado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    //return;
                 }
                 else
                 {
                     MessageBox.Show("El nuevo registro fue grabado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
+                    //return;
                 }
             }
         }
-        private void AgregarChofer_Load(object sender, EventArgs e)
+        //Listar los datos de pais en el combobox1
+        private void frmAgregarChofer_Load(object sender, EventArgs e)
         {
-            //Cargar ComboBox
-            comboBox1.Items.Add("Selecccione el pais");
-            comboBox1.Items.Add("Belice");
-            comboBox1.Items.Add("Costa Rica");
-            comboBox1.Items.Add("El Salvador");
-            comboBox1.Items.Add("Guatemala");
-            comboBox1.Items.Add("Honduras");
-            comboBox1.Items.Add("Nicaragua");
-            comboBox1.Items.Add("Panama");
+            comboBox1.Items.Add("Seleccione");
             comboBox1.SelectedIndex = 0;
+            comboBox1.DataSource = Opais.Listar(); //Me lista todos los paises en el combobox
+            comboBox1.DisplayMember = "CodigoPais"; //El campo que queremos mostrar
+            comboBox1.ValueMember = "Id"; //El dato que tomara para ser almacenado
+            //comboBox1.SelectedIndex = -1; //Campo vacio
         }
+        //private void frmAgregarChofer_Load(object sender, EventArgs e)
+        //{
+        //    //Cargar ComboBox
+        //    comboBox1.Items.Add("Selecccione el pais");
+        //    comboBox1.Items.Add("Belice");
+        //    comboBox1.Items.Add("Costa Rica");
+        //    comboBox1.Items.Add("El Salvador");
+        //    comboBox1.Items.Add("Guatemala");
+        //    comboBox1.Items.Add("Honduras");
+        //    comboBox1.Items.Add("Nicaragua");
+        //    comboBox1.Items.Add("Panama");
+        //    comboBox1.SelectedIndex = 0;
+        //}
     }
 }

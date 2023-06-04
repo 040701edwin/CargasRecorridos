@@ -13,3 +13,18 @@ E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\Ca
 E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\CapaLogica\bin\Debug\CapaLogica.dll.config
 E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\CapaLogica\bin\Debug\EntityFramework.SqlServer.dll
 E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\CapaLogica\bin\Debug\EntityFramework.SqlServer.xml
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\CapaLogica\bin\Debug\CapaLogica.dll.config
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\CapaLogica\bin\Debug\CapaLogica.dll
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\CapaLogica\bin\Debug\CapaLogica.pdb
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\CapaLogica\bin\Debug\CapaDatos.dll
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\CapaLogica\bin\Debug\EntityFramework.dll
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\CapaLogica\bin\Debug\EntityFramework.SqlServer.dll
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\CapaLogica\bin\Debug\CapaDatos.pdb
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\CapaLogica\bin\Debug\CapaDatos.dll.config
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\CapaLogica\bin\Debug\EntityFramework.xml
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\CapaLogica\bin\Debug\EntityFramework.SqlServer.xml
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\CapaLogica\obj\Debug\CapaLogica.csproj.AssemblyReference.cache
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\CapaLogica\obj\Debug\CapaLogica.csproj.CoreCompileInputs.cache
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\CapaLogica\obj\Debug\CapaLogica.csproj.CopyComplete
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\CapaLogica\obj\Debug\CapaLogica.dll
+E:\Escritorio\MyProyecto\DatosCargasRecorridos\CapaLogica\obj\Debug\CapaLogica.pdb

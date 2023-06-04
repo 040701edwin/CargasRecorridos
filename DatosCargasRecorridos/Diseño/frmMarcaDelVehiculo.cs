@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace Diseño
 {
-    public partial class Choferes : Form
+    public partial class frmMarcaDelVehiculo : Form
     {
-        public Choferes()
+        public frmMarcaDelVehiculo()
         {
             InitializeComponent();
-        }
-
-        private void iconBtnAgregar_Click(object sender, EventArgs e)
-        {
-            frmAgregarChofer aChof = new frmAgregarChofer();
-            aChof.ShowDialog();
         }
     }
 }
