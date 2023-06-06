@@ -11,6 +11,7 @@
     <EntitySet Name="ViajeChoferes" EntityType="Model1.Store.ViajeChoferes" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Paises" EntityType="Model1.Store.Paises" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Marcas" EntityType="Model1.Store.Marcas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ModeloDeLosVehiculos" EntityType="Model1.Store.ModeloDeLosVehiculos" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="TipoDeVehiculoVehiculo" Association="Model1.Store.TipoDeVehiculoVehiculo">
       <End Role="TipoDeVehiculo" EntitySet="TipoDeVehiculos" />
       <End Role="Vehiculo" EntitySet="Vehiculos" />
@@ -55,6 +56,14 @@
       <End Role="MarcaDelVehiculo" EntitySet="Marcas" />
       <End Role="Vehiculo" EntitySet="Vehiculos" />
     </AssociationSet>
+    <AssociationSet Name="MarcaDelVehiculoModeloDelVehiculo" Association="Model1.Store.MarcaDelVehiculoModeloDelVehiculo">
+      <End Role="MarcaDelVehiculo" EntitySet="Marcas" />
+      <End Role="ModeloDelVehiculo" EntitySet="ModeloDeLosVehiculos" />
+    </AssociationSet>
+    <AssociationSet Name="ModeloDelVehiculoVehiculo" Association="Model1.Store.ModeloDelVehiculoVehiculo">
+      <End Role="ModeloDelVehiculo" EntitySet="ModeloDeLosVehiculos" />
+      <End Role="Vehiculo" EntitySet="Vehiculos" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Vehiculos">
     <Key>
@@ -62,12 +71,13 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="PlacaVehiculo" Type="varchar" Nullable="false" MaxLength="15" />
-    <Property Name="DescripcionVehiculo" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="DescripcionVehiculo" Type="varchar" Nullable="true" MaxLength="50" />
     <Property Name="TipoDeVehiculoId" Type="int" Nullable="false" />
     <Property Name="MarcaDelVehiculoId" Type="int" Nullable="false" />
     <Property Name="CantidadPasajeros" Type="int" Nullable="false" />
     <Property Name="Tonelage" Type="decimal" Nullable="false" Precision="5" Scale="2" />
     <Property Name="EstadoVehiculo" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="ModeloDelVehiculoId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="TipoDeVehiculos">
     <Key>
@@ -75,7 +85,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CodigoTipoVehiculo" Type="char" Nullable="false" MaxLength="5" />
-    <Property Name="DescripcionTipoVehiculo" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="DescripcionTipoVehiculo" Type="varchar" Nullable="true" MaxLength="50" />
   </EntityType>
   <EntityType Name="Viajes">
     <Key>
@@ -85,7 +95,7 @@
     <Property Name="CodigoViaje" Type="char" Nullable="false" MaxLength="5" />
     <Property Name="CostoViaje" Type="int" Nullable="false" />
     <Property Name="PagoChoferViaje" Type="int" Nullable="false" />
-    <Property Name="DescripcionViaje" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="DescripcionViaje" Type="varchar" Nullable="true" MaxLength="50" />
     <Property Name="TipoDeViajeId" Type="int" Nullable="false" />
     <Property Name="ProveedorId" Type="int" Nullable="false" />
     <Property Name="ChoferId" Type="int" Nullable="false" />
@@ -110,13 +120,13 @@
     <Property Name="CodigoProveedor" Type="char" Nullable="false" MaxLength="5" />
     <Property Name="NombreEmpresaProveedor" Type="varchar" Nullable="false" MaxLength="20" />
     <Property Name="Nombre1Encargado" Type="varchar" Nullable="false" MaxLength="15" />
-    <Property Name="Nombre2Encargado" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="Nombre2Encargado" Type="varchar" Nullable="true" MaxLength="15" />
     <Property Name="Apellido1Encargado" Type="varchar" Nullable="false" MaxLength="15" />
-    <Property Name="Apellido2Encargado" Type="varchar" Nullable="false" MaxLength="15" />
-    <Property Name="Cargo" Type="varchar" Nullable="false" MaxLength="15" />
-    <Property Name="DireccionEmpresa" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Apellido2Encargado" Type="varchar" Nullable="true" MaxLength="15" />
+    <Property Name="Cargo" Type="varchar" Nullable="true" MaxLength="15" />
+    <Property Name="DireccionEmpresa" Type="varchar" Nullable="true" MaxLength="50" />
     <Property Name="CelularProveedor" Type="char" Nullable="false" MaxLength="12" />
-    <Property Name="Comentario" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Comentario" Type="varchar" Nullable="true" MaxLength="50" />
   </EntityType>
   <EntityType Name="Choferes">
     <Key>
@@ -125,12 +135,12 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CedulaChofer" Type="char" Nullable="false" MaxLength="16" />
     <Property Name="Nombre1Chofer" Type="varchar" Nullable="false" MaxLength="15" />
-    <Property Name="Nombre2Chofer" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="Nombre2Chofer" Type="varchar" Nullable="true" MaxLength="15" />
     <Property Name="Apellido1Chofer" Type="varchar" Nullable="false" MaxLength="15" />
-    <Property Name="Apellido2Chofer" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="Apellido2Chofer" Type="varchar" Nullable="true" MaxLength="15" />
     <Property Name="CelularChofer" Type="char" Nullable="false" MaxLength="12" />
-    <Property Name="INSSChofer" Type="char" Nullable="false" MaxLength="9" />
-    <Property Name="DireccionChofer" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="INSSChofer" Type="char" Nullable="true" MaxLength="9" />
+    <Property Name="DireccionChofer" Type="varchar" Nullable="true" MaxLength="50" />
     <Property Name="PaisId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="VehiculoViajes">
@@ -158,7 +168,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CodigoPais" Type="varchar" Nullable="false" MaxLength="10" />
-    <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Descripcion" Type="varchar" Nullable="true" MaxLength="50" />
   </EntityType>
   <EntityType Name="Marcas">
     <Key>
@@ -167,6 +177,14 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Marca" Type="varchar" Nullable="false" MaxLength="20" />
     <Property Name="Modelo" Type="varchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="ModeloDeLosVehiculos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Modelo" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="MarcaDelVehiculoId" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="TipoDeVehiculoVehiculo">
     <End Role="TipoDeVehiculo" Type="Model1.Store.TipoDeVehiculos" Multiplicity="1" />
@@ -297,6 +315,30 @@
       </Principal>
       <Dependent Role="Vehiculo">
         <PropertyRef Name="MarcaDelVehiculoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MarcaDelVehiculoModeloDelVehiculo">
+    <End Role="MarcaDelVehiculo" Type="Model1.Store.Marcas" Multiplicity="1" />
+    <End Role="ModeloDelVehiculo" Type="Model1.Store.ModeloDeLosVehiculos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MarcaDelVehiculo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ModeloDelVehiculo">
+        <PropertyRef Name="MarcaDelVehiculoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ModeloDelVehiculoVehiculo">
+    <End Role="ModeloDelVehiculo" Type="Model1.Store.ModeloDeLosVehiculos" Multiplicity="1" />
+    <End Role="Vehiculo" Type="Model1.Store.Vehiculos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModeloDelVehiculo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vehiculo">
+        <PropertyRef Name="ModeloDelVehiculoId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

@@ -17,6 +17,7 @@ namespace CapaDatos.Modelo
         public MarcaDelVehiculo()
         {
             this.Vehiculo = new HashSet<Vehiculo>();
+            this.ModeloDelVehiculo = new HashSet<ModeloDelVehiculo>();
         }
     
         public int Id { get; set; }
@@ -24,5 +25,6 @@ namespace CapaDatos.Modelo
         public string Modelo { get; set; }
     
         public virtual ICollection<Vehiculo> Vehiculo { get; set; }
+        public virtual ICollection<ModeloDelVehiculo> ModeloDelVehiculo { get; set; }
     }
 }
