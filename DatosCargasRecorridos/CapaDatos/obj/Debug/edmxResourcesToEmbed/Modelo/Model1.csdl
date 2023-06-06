@@ -55,6 +55,15 @@
       <End Role="MarcaDelVehiculo" EntitySet="Marcas" />
       <End Role="Vehiculo" EntitySet="Vehiculos" />
     </AssociationSet>
+    <EntitySet Name="ModeloDeLosVehiculos" EntityType="Model1.ModeloDelVehiculo" />
+    <AssociationSet Name="MarcaDelVehiculoModeloDelVehiculo" Association="Model1.MarcaDelVehiculoModeloDelVehiculo">
+      <End Role="MarcaDelVehiculo" EntitySet="Marcas" />
+      <End Role="ModeloDelVehiculo" EntitySet="ModeloDeLosVehiculos" />
+    </AssociationSet>
+    <AssociationSet Name="ModeloDelVehiculoVehiculo" Association="Model1.ModeloDelVehiculoVehiculo">
+      <End Role="ModeloDelVehiculo" EntitySet="ModeloDeLosVehiculos" />
+      <End Role="Vehiculo" EntitySet="Vehiculos" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Vehiculo">
     <Key>
@@ -62,7 +71,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="PlacaVehiculo" Type="String" Nullable="false" Unicode="false" MaxLength="15" FixedLength="false" />
-    <Property Name="DescripcionVehiculo" Type="String" Nullable="false" FixedLength="false" MaxLength="50" Unicode="false" />
+    <Property Name="DescripcionVehiculo" Type="String" Nullable="true" FixedLength="false" MaxLength="50" Unicode="false" />
     <NavigationProperty Name="TipoDeVehiculo" Relationship="Model1.TipoDeVehiculoVehiculo" FromRole="Vehiculo" ToRole="TipoDeVehiculo" />
     <Property Name="TipoDeVehiculoId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="VehiculoViaje" Relationship="Model1.VehiculoVehiculoViaje" FromRole="Vehiculo" ToRole="VehiculoViaje" />
@@ -71,6 +80,8 @@
     <Property Name="CantidadPasajeros" Type="Int32" Nullable="false" />
     <Property Name="Tonelage" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
     <Property Name="EstadoVehiculo" Type="String" Nullable="false" FixedLength="false" MaxLength="10" Unicode="false" />
+    <NavigationProperty Name="ModeloDelVehiculo" Relationship="Model1.ModeloDelVehiculoVehiculo" FromRole="Vehiculo" ToRole="ModeloDelVehiculo" />
+    <Property Name="ModeloDelVehiculoId" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="TipoDeVehiculo">
     <Key>
@@ -78,7 +89,7 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="CodigoTipoVehiculo" Type="String" Nullable="false" FixedLength="true" MaxLength="5" Unicode="false" />
-    <Property Name="DescripcionTipoVehiculo" Type="String" Nullable="false" FixedLength="false" MaxLength="50" Unicode="false" />
+    <Property Name="DescripcionTipoVehiculo" Type="String" Nullable="true" FixedLength="false" MaxLength="50" Unicode="false" />
     <NavigationProperty Name="Vehiculo" Relationship="Model1.TipoDeVehiculoVehiculo" FromRole="TipoDeVehiculo" ToRole="Vehiculo" />
   </EntityType>
   <Association Name="TipoDeVehiculoVehiculo">
@@ -101,7 +112,7 @@
     <Property Name="CodigoViaje" Type="String" Nullable="false" FixedLength="true" MaxLength="5" Unicode="false" />
     <Property Name="CostoViaje" Type="Int32" Nullable="false" />
     <Property Name="PagoChoferViaje" Type="Int32" Nullable="false" />
-    <Property Name="DescripcionViaje" Type="String" Nullable="false" FixedLength="false" MaxLength="50" Unicode="false" />
+    <Property Name="DescripcionViaje" Type="String" Nullable="true" FixedLength="false" MaxLength="50" Unicode="false" />
     <NavigationProperty Name="TipoDeViaje" Relationship="Model1.TipoDeViajeViaje" FromRole="Viaje" ToRole="TipoDeViaje" />
     <Property Name="TipoDeViajeId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Proveedor" Relationship="Model1.ProveedorViaje" FromRole="Viaje" ToRole="Proveedor" />
@@ -145,13 +156,13 @@
     <Property Name="CodigoProveedor" Type="String" Nullable="false" FixedLength="true" MaxLength="5" Unicode="false" />
     <Property Name="NombreEmpresaProveedor" Type="String" Nullable="false" FixedLength="false" MaxLength="20" Unicode="false" />
     <Property Name="Nombre1Encargado" Type="String" Nullable="false" FixedLength="false" MaxLength="15" Unicode="false" />
-    <Property Name="Nombre2Encargado" Type="String" Nullable="false" FixedLength="false" MaxLength="15" Unicode="false" />
+    <Property Name="Nombre2Encargado" Type="String" Nullable="true" FixedLength="false" MaxLength="15" Unicode="false" />
     <Property Name="Apellido1Encargado" Type="String" Nullable="false" FixedLength="false" MaxLength="15" Unicode="false" />
-    <Property Name="Apellido2Encargado" Type="String" Nullable="false" FixedLength="false" MaxLength="15" Unicode="false" />
-    <Property Name="Cargo" Type="String" Nullable="false" FixedLength="false" MaxLength="15" Unicode="false" />
-    <Property Name="DireccionEmpresa" Type="String" Nullable="false" FixedLength="false" MaxLength="50" Unicode="false" />
+    <Property Name="Apellido2Encargado" Type="String" Nullable="true" FixedLength="false" MaxLength="15" Unicode="false" />
+    <Property Name="Cargo" Type="String" Nullable="true" FixedLength="false" MaxLength="15" Unicode="false" />
+    <Property Name="DireccionEmpresa" Type="String" Nullable="true" FixedLength="false" MaxLength="50" Unicode="false" />
     <Property Name="CelularProveedor" Type="String" Nullable="false" FixedLength="true" MaxLength="12" Unicode="false" />
-    <Property Name="Comentario" Type="String" Nullable="false" FixedLength="false" Unicode="false" MaxLength="50" />
+    <Property Name="Comentario" Type="String" Nullable="true" FixedLength="false" Unicode="false" MaxLength="50" />
     <NavigationProperty Name="Viaje" Relationship="Model1.ProveedorViaje" FromRole="Proveedor" ToRole="Viaje" />
   </EntityType>
   <Association Name="ProveedorViaje">
@@ -173,12 +184,12 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="CedulaChofer" Type="String" Nullable="false" FixedLength="true" MaxLength="16" Unicode="false" />
     <Property Name="Nombre1Chofer" Type="String" Nullable="false" FixedLength="false" MaxLength="15" Unicode="false" />
-    <Property Name="Nombre2Chofer" Type="String" Nullable="false" FixedLength="false" MaxLength="15" Unicode="false" />
+    <Property Name="Nombre2Chofer" Type="String" Nullable="true" FixedLength="false" MaxLength="15" Unicode="false" />
     <Property Name="Apellido1Chofer" Type="String" Nullable="false" FixedLength="false" MaxLength="15" Unicode="false" />
-    <Property Name="Apellido2Chofer" Type="String" Nullable="false" FixedLength="false" MaxLength="15" Unicode="false" />
+    <Property Name="Apellido2Chofer" Type="String" Nullable="true" FixedLength="false" MaxLength="15" Unicode="false" />
     <Property Name="CelularChofer" Type="String" Nullable="false" FixedLength="true" MaxLength="12" Unicode="false" />
-    <Property Name="INSSChofer" Type="String" Nullable="false" FixedLength="true" MaxLength="9" Unicode="false" />
-    <Property Name="DireccionChofer" Type="String" Nullable="false" FixedLength="false" MaxLength="50" Unicode="false" />
+    <Property Name="INSSChofer" Type="String" Nullable="true" FixedLength="true" MaxLength="9" Unicode="false" />
+    <Property Name="DireccionChofer" Type="String" Nullable="true" FixedLength="false" MaxLength="50" Unicode="false" />
     <NavigationProperty Name="ViajeChofer" Relationship="Model1.ChoferViajeChofer" FromRole="Chofer" ToRole="ViajeChofer" />
     <NavigationProperty Name="Pais" Relationship="Model1.PaisChofer" FromRole="Chofer" ToRole="Pais" />
     <Property Name="PaisId" Type="Int32" Nullable="false" />
@@ -263,7 +274,7 @@
     <NavigationProperty Name="Viaje" Relationship="Model1.PaisViaje" FromRole="Pais" ToRole="Viaje" />
     <NavigationProperty Name="Viaje1" Relationship="Model1.PaisViaje1" FromRole="Pais" ToRole="Viaje" />
     <NavigationProperty Name="Chofer" Relationship="Model1.PaisChofer" FromRole="Pais" ToRole="Chofer" />
-    <Property Name="Descripcion" Type="String" Nullable="false" FixedLength="false" MaxLength="50" Unicode="false" />
+    <Property Name="Descripcion" Type="String" Nullable="true" FixedLength="false" MaxLength="50" Unicode="false" />
   </EntityType>
   <Association Name="PaisViaje">
     <End Type="Model1.Pais" Role="Pais" Multiplicity="1" />
@@ -309,6 +320,7 @@
     <Property Name="Marca" Type="String" Nullable="false" Unicode="false" MaxLength="20" FixedLength="false" />
     <Property Name="Modelo" Type="String" Nullable="false" Unicode="false" MaxLength="20" FixedLength="false" />
     <NavigationProperty Name="Vehiculo" Relationship="Model1.MarcaDelVehiculoVehiculo" FromRole="MarcaDelVehiculo" ToRole="Vehiculo" />
+    <NavigationProperty Name="ModeloDelVehiculo" Relationship="Model1.MarcaDelVehiculoModeloDelVehiculo" FromRole="MarcaDelVehiculo" ToRole="ModeloDelVehiculo" />
   </EntityType>
   <Association Name="MarcaDelVehiculoVehiculo">
     <End Type="Model1.MarcaDelVehiculo" Role="MarcaDelVehiculo" Multiplicity="1" />
@@ -319,6 +331,40 @@
       </Principal>
       <Dependent Role="Vehiculo">
         <PropertyRef Name="MarcaDelVehiculoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ModeloDelVehiculo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Modelo" Type="String" Nullable="false" FixedLength="false" MaxLength="20" Unicode="false" />
+    <NavigationProperty Name="MarcaDelVehiculo" Relationship="Model1.MarcaDelVehiculoModeloDelVehiculo" FromRole="ModeloDelVehiculo" ToRole="MarcaDelVehiculo" />
+    <Property Name="MarcaDelVehiculoId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Vehiculo" Relationship="Model1.ModeloDelVehiculoVehiculo" FromRole="ModeloDelVehiculo" ToRole="Vehiculo" />
+  </EntityType>
+  <Association Name="MarcaDelVehiculoModeloDelVehiculo">
+    <End Type="Model1.MarcaDelVehiculo" Role="MarcaDelVehiculo" Multiplicity="1" />
+    <End Type="Model1.ModeloDelVehiculo" Role="ModeloDelVehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MarcaDelVehiculo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ModeloDelVehiculo">
+        <PropertyRef Name="MarcaDelVehiculoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ModeloDelVehiculoVehiculo">
+    <End Type="Model1.ModeloDelVehiculo" Role="ModeloDelVehiculo" Multiplicity="1" />
+    <End Type="Model1.Vehiculo" Role="Vehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ModeloDelVehiculo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vehiculo">
+        <PropertyRef Name="ModeloDelVehiculoId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

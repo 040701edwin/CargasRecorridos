@@ -10,3 +10,15 @@ E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\Ca
 E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
 E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\CapaDatos\obj\Debug\CapaDatos.dll
 E:\Programación\Visual Studio\CargasRecorridos\DatosCargasRecorridos - copia\CapaDatos\obj\Debug\CapaDatos.pdb
+E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\CapaDatos\bin\Debug\CapaDatos.dll.config
+E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\CapaDatos\bin\Debug\CapaDatos.dll
+E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\CapaDatos\bin\Debug\CapaDatos.pdb
+E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\CapaDatos\bin\Debug\EntityFramework.dll
+E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\CapaDatos\bin\Debug\EntityFramework.SqlServer.dll
+E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\CapaDatos\bin\Debug\EntityFramework.xml
+E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\CapaDatos\bin\Debug\EntityFramework.SqlServer.xml
+E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
+E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
+E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\CapaDatos\obj\Debug\CapaDatos.dll
+E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\CapaDatos\obj\Debug\CapaDatos.pdb

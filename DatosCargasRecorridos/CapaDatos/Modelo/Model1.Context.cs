@@ -35,5 +35,6 @@ namespace CapaDatos.Modelo
         public DbSet<ViajeChofer> ViajeChoferes { get; set; }
         public DbSet<Pais> Paises { get; set; }
         public DbSet<MarcaDelVehiculo> Marcas { get; set; }
+        public DbSet<ModeloDelVehiculo> ModeloDeLosVehiculos { get; set; }
     }
 }

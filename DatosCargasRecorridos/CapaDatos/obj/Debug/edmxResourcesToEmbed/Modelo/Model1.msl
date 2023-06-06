@@ -12,6 +12,7 @@
           <ScalarProperty Name="CantidadPasajeros" ColumnName="CantidadPasajeros" />
           <ScalarProperty Name="Tonelage" ColumnName="Tonelage" />
           <ScalarProperty Name="EstadoVehiculo" ColumnName="EstadoVehiculo" />
+          <ScalarProperty Name="ModeloDelVehiculoId" ColumnName="ModeloDelVehiculoId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -120,6 +121,15 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Marca" ColumnName="Marca" />
           <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModeloDeLosVehiculos">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.ModeloDelVehiculo)">
+        <MappingFragment StoreEntitySet="ModeloDeLosVehiculos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+          <ScalarProperty Name="MarcaDelVehiculoId" ColumnName="MarcaDelVehiculoId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
