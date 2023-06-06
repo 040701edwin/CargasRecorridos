@@ -24,11 +24,11 @@
         <AssociationConnector Association="Model1.PaisViaje" />
         <AssociationConnector Association="Model1.PaisViaje1" />
         <AssociationConnector Association="Model1.PaisChofer" />
-        <EntityTypeShape EntityType="Model1.MarcaDelVehiculo" Width="1.5" PointX="0.875" PointY="2.125" />
-        <AssociationConnector Association="Model1.MarcaDelVehiculoVehiculo" />
         <EntityTypeShape EntityType="Model1.ModeloDelVehiculo" Width="1.5" PointX="0.875" PointY="4.75" />
-        <AssociationConnector Association="Model1.MarcaDelVehiculoModeloDelVehiculo" />
         <AssociationConnector Association="Model1.ModeloDelVehiculoVehiculo" />
+        <EntityTypeShape EntityType="Model1.MarcaVehiculo" Width="1.5" PointX="0.75" PointY="2.25" />
+        <AssociationConnector Association="Model1.MarcaVehiculoModeloDelVehiculo" />
+        <AssociationConnector Association="Model1.MarcaVehiculoVehiculo" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

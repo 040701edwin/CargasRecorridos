@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/05/2023 23:14:29
+-- Date Created: 06/06/2023 14:31:35
 -- Generated from EDMX file: E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\CapaDatos\Modelo\Model1.edmx
 -- --------------------------------------------------
 
@@ -47,8 +47,8 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_PaisChofer]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Choferes] DROP CONSTRAINT [FK_PaisChofer];
 GO
-IF OBJECT_ID(N'[dbo].[FK_MarcaDelVehiculoVehiculo]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Vehiculos] DROP CONSTRAINT [FK_MarcaDelVehiculoVehiculo];
+IF OBJECT_ID(N'[dbo].[FK_ModeloDelVehiculoVehiculo]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Vehiculos] DROP CONSTRAINT [FK_ModeloDelVehiculoVehiculo];
 GO
 
 -- --------------------------------------------------
@@ -82,8 +82,8 @@ GO
 IF OBJECT_ID(N'[dbo].[Paises]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Paises];
 GO
-IF OBJECT_ID(N'[dbo].[Marcas]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Marcas];
+IF OBJECT_ID(N'[dbo].[ModeloDeLosVehiculos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ModeloDeLosVehiculos];
 GO
 
 -- --------------------------------------------------
@@ -100,7 +100,8 @@ CREATE TABLE [dbo].[Vehiculos] (
     [CantidadPasajeros] int  NOT NULL,
     [Tonelage] decimal(5,2)  NOT NULL,
     [EstadoVehiculo] varchar(10)  NOT NULL,
-    [ModeloDelVehiculoId] int  NOT NULL
+    [ModeloDelVehiculoId] int  NOT NULL,
+    [MarcaVehiculoId] int  NOT NULL
 );
 GO
 
@@ -195,19 +196,19 @@ CREATE TABLE [dbo].[Paises] (
 );
 GO
 
--- Creating table 'Marcas'
-CREATE TABLE [dbo].[Marcas] (
-    [Id] int IDENTITY(1,1) NOT NULL,
-    [Marca] varchar(20)  NOT NULL,
-    [Modelo] varchar(20)  NOT NULL
-);
-GO
-
 -- Creating table 'ModeloDeLosVehiculos'
 CREATE TABLE [dbo].[ModeloDeLosVehiculos] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Modelo] varchar(20)  NOT NULL,
-    [MarcaDelVehiculoId] int  NOT NULL
+    [MarcaDelVehiculoId] int  NOT NULL,
+    [MarcaVehiculoId] int  NOT NULL
+);
+GO
+
+-- Creating table 'MarcaVehiculos'
+CREATE TABLE [dbo].[MarcaVehiculos] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Marca] varchar(20)  NOT NULL
 );
 GO
 
@@ -269,15 +270,15 @@ ADD CONSTRAINT [PK_Paises]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
--- Creating primary key on [Id] in table 'Marcas'
-ALTER TABLE [dbo].[Marcas]
-ADD CONSTRAINT [PK_Marcas]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
-GO
-
 -- Creating primary key on [Id] in table 'ModeloDeLosVehiculos'
 ALTER TABLE [dbo].[ModeloDeLosVehiculos]
 ADD CONSTRAINT [PK_ModeloDeLosVehiculos]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'MarcaVehiculos'
+ALTER TABLE [dbo].[MarcaVehiculos]
+ADD CONSTRAINT [PK_MarcaVehiculos]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -435,36 +436,6 @@ ON [dbo].[Choferes]
     ([PaisId]);
 GO
 
--- Creating foreign key on [MarcaDelVehiculoId] in table 'Vehiculos'
-ALTER TABLE [dbo].[Vehiculos]
-ADD CONSTRAINT [FK_MarcaDelVehiculoVehiculo]
-    FOREIGN KEY ([MarcaDelVehiculoId])
-    REFERENCES [dbo].[Marcas]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_MarcaDelVehiculoVehiculo'
-CREATE INDEX [IX_FK_MarcaDelVehiculoVehiculo]
-ON [dbo].[Vehiculos]
-    ([MarcaDelVehiculoId]);
-GO
-
--- Creating foreign key on [MarcaDelVehiculoId] in table 'ModeloDeLosVehiculos'
-ALTER TABLE [dbo].[ModeloDeLosVehiculos]
-ADD CONSTRAINT [FK_MarcaDelVehiculoModeloDelVehiculo]
-    FOREIGN KEY ([MarcaDelVehiculoId])
-    REFERENCES [dbo].[Marcas]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_MarcaDelVehiculoModeloDelVehiculo'
-CREATE INDEX [IX_FK_MarcaDelVehiculoModeloDelVehiculo]
-ON [dbo].[ModeloDeLosVehiculos]
-    ([MarcaDelVehiculoId]);
-GO
-
 -- Creating foreign key on [ModeloDelVehiculoId] in table 'Vehiculos'
 ALTER TABLE [dbo].[Vehiculos]
 ADD CONSTRAINT [FK_ModeloDelVehiculoVehiculo]
@@ -478,6 +449,36 @@ GO
 CREATE INDEX [IX_FK_ModeloDelVehiculoVehiculo]
 ON [dbo].[Vehiculos]
     ([ModeloDelVehiculoId]);
+GO
+
+-- Creating foreign key on [MarcaVehiculoId] in table 'ModeloDeLosVehiculos'
+ALTER TABLE [dbo].[ModeloDeLosVehiculos]
+ADD CONSTRAINT [FK_MarcaVehiculoModeloDelVehiculo]
+    FOREIGN KEY ([MarcaVehiculoId])
+    REFERENCES [dbo].[MarcaVehiculos]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_MarcaVehiculoModeloDelVehiculo'
+CREATE INDEX [IX_FK_MarcaVehiculoModeloDelVehiculo]
+ON [dbo].[ModeloDeLosVehiculos]
+    ([MarcaVehiculoId]);
+GO
+
+-- Creating foreign key on [MarcaVehiculoId] in table 'Vehiculos'
+ALTER TABLE [dbo].[Vehiculos]
+ADD CONSTRAINT [FK_MarcaVehiculoVehiculo]
+    FOREIGN KEY ([MarcaVehiculoId])
+    REFERENCES [dbo].[MarcaVehiculos]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_MarcaVehiculoVehiculo'
+CREATE INDEX [IX_FK_MarcaVehiculoVehiculo]
+ON [dbo].[Vehiculos]
+    ([MarcaVehiculoId]);
 GO
 
 -- --------------------------------------------------

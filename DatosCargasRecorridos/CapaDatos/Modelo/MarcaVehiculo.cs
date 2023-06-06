@@ -12,19 +12,18 @@ namespace CapaDatos.Modelo
     using System;
     using System.Collections.Generic;
     
-    public partial class MarcaDelVehiculo
+    public partial class MarcaVehiculo
     {
-        public MarcaDelVehiculo()
+        public MarcaVehiculo()
         {
-            this.Vehiculo = new HashSet<Vehiculo>();
             this.ModeloDelVehiculo = new HashSet<ModeloDelVehiculo>();
+            this.Vehiculo = new HashSet<Vehiculo>();
         }
     
         public int Id { get; set; }
         public string Marca { get; set; }
-        public string Modelo { get; set; }
     
-        public virtual ICollection<Vehiculo> Vehiculo { get; set; }
         public virtual ICollection<ModeloDelVehiculo> ModeloDelVehiculo { get; set; }
+        public virtual ICollection<Vehiculo> Vehiculo { get; set; }
     }
 }

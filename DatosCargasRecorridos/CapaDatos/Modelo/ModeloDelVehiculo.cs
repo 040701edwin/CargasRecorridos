@@ -22,8 +22,9 @@ namespace CapaDatos.Modelo
         public int Id { get; set; }
         public string Modelo { get; set; }
         public int MarcaDelVehiculoId { get; set; }
+        public int MarcaVehiculoId { get; set; }
     
-        public virtual MarcaDelVehiculo MarcaDelVehiculo { get; set; }
         public virtual ICollection<Vehiculo> Vehiculo { get; set; }
+        public virtual MarcaVehiculo MarcaVehiculo { get; set; }
     }
 }

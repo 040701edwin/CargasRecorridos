@@ -10,8 +10,8 @@
     <EntitySet Name="VehiculoViajes" EntityType="Model1.Store.VehiculoViajes" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ViajeChoferes" EntityType="Model1.Store.ViajeChoferes" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Paises" EntityType="Model1.Store.Paises" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Marcas" EntityType="Model1.Store.Marcas" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ModeloDeLosVehiculos" EntityType="Model1.Store.ModeloDeLosVehiculos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MarcaVehiculos" EntityType="Model1.Store.MarcaVehiculos" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="TipoDeVehiculoVehiculo" Association="Model1.Store.TipoDeVehiculoVehiculo">
       <End Role="TipoDeVehiculo" EntitySet="TipoDeVehiculos" />
       <End Role="Vehiculo" EntitySet="Vehiculos" />
@@ -52,16 +52,16 @@
       <End Role="Pais" EntitySet="Paises" />
       <End Role="Chofer" EntitySet="Choferes" />
     </AssociationSet>
-    <AssociationSet Name="MarcaDelVehiculoVehiculo" Association="Model1.Store.MarcaDelVehiculoVehiculo">
-      <End Role="MarcaDelVehiculo" EntitySet="Marcas" />
-      <End Role="Vehiculo" EntitySet="Vehiculos" />
-    </AssociationSet>
-    <AssociationSet Name="MarcaDelVehiculoModeloDelVehiculo" Association="Model1.Store.MarcaDelVehiculoModeloDelVehiculo">
-      <End Role="MarcaDelVehiculo" EntitySet="Marcas" />
-      <End Role="ModeloDelVehiculo" EntitySet="ModeloDeLosVehiculos" />
-    </AssociationSet>
     <AssociationSet Name="ModeloDelVehiculoVehiculo" Association="Model1.Store.ModeloDelVehiculoVehiculo">
       <End Role="ModeloDelVehiculo" EntitySet="ModeloDeLosVehiculos" />
+      <End Role="Vehiculo" EntitySet="Vehiculos" />
+    </AssociationSet>
+    <AssociationSet Name="MarcaVehiculoModeloDelVehiculo" Association="Model1.Store.MarcaVehiculoModeloDelVehiculo">
+      <End Role="MarcaVehiculo" EntitySet="MarcaVehiculos" />
+      <End Role="ModeloDelVehiculo" EntitySet="ModeloDeLosVehiculos" />
+    </AssociationSet>
+    <AssociationSet Name="MarcaVehiculoVehiculo" Association="Model1.Store.MarcaVehiculoVehiculo">
+      <End Role="MarcaVehiculo" EntitySet="MarcaVehiculos" />
       <End Role="Vehiculo" EntitySet="Vehiculos" />
     </AssociationSet>
   </EntityContainer>
@@ -78,6 +78,7 @@
     <Property Name="Tonelage" Type="decimal" Nullable="false" Precision="5" Scale="2" />
     <Property Name="EstadoVehiculo" Type="varchar" Nullable="false" MaxLength="10" />
     <Property Name="ModeloDelVehiculoId" Type="int" Nullable="false" />
+    <Property Name="MarcaVehiculoId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="TipoDeVehiculos">
     <Key>
@@ -170,14 +171,6 @@
     <Property Name="CodigoPais" Type="varchar" Nullable="false" MaxLength="10" />
     <Property Name="Descripcion" Type="varchar" Nullable="true" MaxLength="50" />
   </EntityType>
-  <EntityType Name="Marcas">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Marca" Type="varchar" Nullable="false" MaxLength="20" />
-    <Property Name="Modelo" Type="varchar" Nullable="false" MaxLength="20" />
-  </EntityType>
   <EntityType Name="ModeloDeLosVehiculos">
     <Key>
       <PropertyRef Name="Id" />
@@ -185,6 +178,14 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Modelo" Type="varchar" Nullable="false" MaxLength="20" />
     <Property Name="MarcaDelVehiculoId" Type="int" Nullable="false" />
+    <Property Name="MarcaVehiculoId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MarcaVehiculos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Marca" Type="varchar" Nullable="false" MaxLength="20" />
   </EntityType>
   <Association Name="TipoDeVehiculoVehiculo">
     <End Role="TipoDeVehiculo" Type="Model1.Store.TipoDeVehiculos" Multiplicity="1" />
@@ -306,30 +307,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="MarcaDelVehiculoVehiculo">
-    <End Role="MarcaDelVehiculo" Type="Model1.Store.Marcas" Multiplicity="1" />
-    <End Role="Vehiculo" Type="Model1.Store.Vehiculos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="MarcaDelVehiculo">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Vehiculo">
-        <PropertyRef Name="MarcaDelVehiculoId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="MarcaDelVehiculoModeloDelVehiculo">
-    <End Role="MarcaDelVehiculo" Type="Model1.Store.Marcas" Multiplicity="1" />
-    <End Role="ModeloDelVehiculo" Type="Model1.Store.ModeloDeLosVehiculos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="MarcaDelVehiculo">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="ModeloDelVehiculo">
-        <PropertyRef Name="MarcaDelVehiculoId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="ModeloDelVehiculoVehiculo">
     <End Role="ModeloDelVehiculo" Type="Model1.Store.ModeloDeLosVehiculos" Multiplicity="1" />
     <End Role="Vehiculo" Type="Model1.Store.Vehiculos" Multiplicity="*" />
@@ -339,6 +316,30 @@
       </Principal>
       <Dependent Role="Vehiculo">
         <PropertyRef Name="ModeloDelVehiculoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MarcaVehiculoModeloDelVehiculo">
+    <End Role="MarcaVehiculo" Type="Model1.Store.MarcaVehiculos" Multiplicity="1" />
+    <End Role="ModeloDelVehiculo" Type="Model1.Store.ModeloDeLosVehiculos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MarcaVehiculo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ModeloDelVehiculo">
+        <PropertyRef Name="MarcaVehiculoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MarcaVehiculoVehiculo">
+    <End Role="MarcaVehiculo" Type="Model1.Store.MarcaVehiculos" Multiplicity="1" />
+    <End Role="Vehiculo" Type="Model1.Store.Vehiculos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MarcaVehiculo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vehiculo">
+        <PropertyRef Name="MarcaVehiculoId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

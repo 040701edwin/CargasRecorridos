@@ -50,18 +50,18 @@
       <End Role="Pais" EntitySet="Paises" />
       <End Role="Chofer" EntitySet="Choferes" />
     </AssociationSet>
-    <EntitySet Name="Marcas" EntityType="Model1.MarcaDelVehiculo" />
-    <AssociationSet Name="MarcaDelVehiculoVehiculo" Association="Model1.MarcaDelVehiculoVehiculo">
-      <End Role="MarcaDelVehiculo" EntitySet="Marcas" />
-      <End Role="Vehiculo" EntitySet="Vehiculos" />
-    </AssociationSet>
     <EntitySet Name="ModeloDeLosVehiculos" EntityType="Model1.ModeloDelVehiculo" />
-    <AssociationSet Name="MarcaDelVehiculoModeloDelVehiculo" Association="Model1.MarcaDelVehiculoModeloDelVehiculo">
-      <End Role="MarcaDelVehiculo" EntitySet="Marcas" />
-      <End Role="ModeloDelVehiculo" EntitySet="ModeloDeLosVehiculos" />
-    </AssociationSet>
     <AssociationSet Name="ModeloDelVehiculoVehiculo" Association="Model1.ModeloDelVehiculoVehiculo">
       <End Role="ModeloDelVehiculo" EntitySet="ModeloDeLosVehiculos" />
+      <End Role="Vehiculo" EntitySet="Vehiculos" />
+    </AssociationSet>
+    <EntitySet Name="MarcaVehiculos" EntityType="Model1.MarcaVehiculo" />
+    <AssociationSet Name="MarcaVehiculoModeloDelVehiculo" Association="Model1.MarcaVehiculoModeloDelVehiculo">
+      <End Role="MarcaVehiculo" EntitySet="MarcaVehiculos" />
+      <End Role="ModeloDelVehiculo" EntitySet="ModeloDeLosVehiculos" />
+    </AssociationSet>
+    <AssociationSet Name="MarcaVehiculoVehiculo" Association="Model1.MarcaVehiculoVehiculo">
+      <End Role="MarcaVehiculo" EntitySet="MarcaVehiculos" />
       <End Role="Vehiculo" EntitySet="Vehiculos" />
     </AssociationSet>
   </EntityContainer>
@@ -75,13 +75,14 @@
     <NavigationProperty Name="TipoDeVehiculo" Relationship="Model1.TipoDeVehiculoVehiculo" FromRole="Vehiculo" ToRole="TipoDeVehiculo" />
     <Property Name="TipoDeVehiculoId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="VehiculoViaje" Relationship="Model1.VehiculoVehiculoViaje" FromRole="Vehiculo" ToRole="VehiculoViaje" />
-    <NavigationProperty Name="MarcaDelVehiculo" Relationship="Model1.MarcaDelVehiculoVehiculo" FromRole="Vehiculo" ToRole="MarcaDelVehiculo" />
     <Property Name="MarcaDelVehiculoId" Type="Int32" Nullable="false" />
     <Property Name="CantidadPasajeros" Type="Int32" Nullable="false" />
     <Property Name="Tonelage" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
     <Property Name="EstadoVehiculo" Type="String" Nullable="false" FixedLength="false" MaxLength="10" Unicode="false" />
     <NavigationProperty Name="ModeloDelVehiculo" Relationship="Model1.ModeloDelVehiculoVehiculo" FromRole="Vehiculo" ToRole="ModeloDelVehiculo" />
     <Property Name="ModeloDelVehiculoId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="MarcaVehiculo" Relationship="Model1.MarcaVehiculoVehiculo" FromRole="Vehiculo" ToRole="MarcaVehiculo" />
+    <Property Name="MarcaVehiculoId" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="TipoDeVehiculo">
     <Key>
@@ -312,50 +313,17 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityType Name="MarcaDelVehiculo">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Marca" Type="String" Nullable="false" Unicode="false" MaxLength="20" FixedLength="false" />
-    <Property Name="Modelo" Type="String" Nullable="false" Unicode="false" MaxLength="20" FixedLength="false" />
-    <NavigationProperty Name="Vehiculo" Relationship="Model1.MarcaDelVehiculoVehiculo" FromRole="MarcaDelVehiculo" ToRole="Vehiculo" />
-    <NavigationProperty Name="ModeloDelVehiculo" Relationship="Model1.MarcaDelVehiculoModeloDelVehiculo" FromRole="MarcaDelVehiculo" ToRole="ModeloDelVehiculo" />
-  </EntityType>
-  <Association Name="MarcaDelVehiculoVehiculo">
-    <End Type="Model1.MarcaDelVehiculo" Role="MarcaDelVehiculo" Multiplicity="1" />
-    <End Type="Model1.Vehiculo" Role="Vehiculo" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="MarcaDelVehiculo">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Vehiculo">
-        <PropertyRef Name="MarcaDelVehiculoId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityType Name="ModeloDelVehiculo">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Modelo" Type="String" Nullable="false" FixedLength="false" MaxLength="20" Unicode="false" />
-    <NavigationProperty Name="MarcaDelVehiculo" Relationship="Model1.MarcaDelVehiculoModeloDelVehiculo" FromRole="ModeloDelVehiculo" ToRole="MarcaDelVehiculo" />
     <Property Name="MarcaDelVehiculoId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Vehiculo" Relationship="Model1.ModeloDelVehiculoVehiculo" FromRole="ModeloDelVehiculo" ToRole="Vehiculo" />
+    <NavigationProperty Name="MarcaVehiculo" Relationship="Model1.MarcaVehiculoModeloDelVehiculo" FromRole="ModeloDelVehiculo" ToRole="MarcaVehiculo" />
+    <Property Name="MarcaVehiculoId" Type="Int32" Nullable="false" />
   </EntityType>
-  <Association Name="MarcaDelVehiculoModeloDelVehiculo">
-    <End Type="Model1.MarcaDelVehiculo" Role="MarcaDelVehiculo" Multiplicity="1" />
-    <End Type="Model1.ModeloDelVehiculo" Role="ModeloDelVehiculo" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="MarcaDelVehiculo">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="ModeloDelVehiculo">
-        <PropertyRef Name="MarcaDelVehiculoId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="ModeloDelVehiculoVehiculo">
     <End Type="Model1.ModeloDelVehiculo" Role="ModeloDelVehiculo" Multiplicity="1" />
     <End Type="Model1.Vehiculo" Role="Vehiculo" Multiplicity="*" />
@@ -365,6 +333,39 @@
       </Principal>
       <Dependent Role="Vehiculo">
         <PropertyRef Name="ModeloDelVehiculoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="MarcaVehiculo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Marca" Type="String" Nullable="false" FixedLength="false" MaxLength="20" Unicode="false" />
+    <NavigationProperty Name="ModeloDelVehiculo" Relationship="Model1.MarcaVehiculoModeloDelVehiculo" FromRole="MarcaVehiculo" ToRole="ModeloDelVehiculo" />
+    <NavigationProperty Name="Vehiculo" Relationship="Model1.MarcaVehiculoVehiculo" FromRole="MarcaVehiculo" ToRole="Vehiculo" />
+  </EntityType>
+  <Association Name="MarcaVehiculoModeloDelVehiculo">
+    <End Type="Model1.MarcaVehiculo" Role="MarcaVehiculo" Multiplicity="1" />
+    <End Type="Model1.ModeloDelVehiculo" Role="ModeloDelVehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MarcaVehiculo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ModeloDelVehiculo">
+        <PropertyRef Name="MarcaVehiculoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MarcaVehiculoVehiculo">
+    <End Type="Model1.MarcaVehiculo" Role="MarcaVehiculo" Multiplicity="1" />
+    <End Type="Model1.Vehiculo" Role="Vehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MarcaVehiculo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vehiculo">
+        <PropertyRef Name="MarcaVehiculoId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

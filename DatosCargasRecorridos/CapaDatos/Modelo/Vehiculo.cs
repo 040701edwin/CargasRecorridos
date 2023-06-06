@@ -28,10 +28,11 @@ namespace CapaDatos.Modelo
         public decimal Tonelage { get; set; }
         public string EstadoVehiculo { get; set; }
         public int ModeloDelVehiculoId { get; set; }
+        public int MarcaVehiculoId { get; set; }
     
         public virtual TipoDeVehiculo TipoDeVehiculo { get; set; }
         public virtual ICollection<VehiculoViaje> VehiculoViaje { get; set; }
-        public virtual MarcaDelVehiculo MarcaDelVehiculo { get; set; }
         public virtual ModeloDelVehiculo ModeloDelVehiculo { get; set; }
+        public virtual MarcaVehiculo MarcaVehiculo { get; set; }
     }
 }

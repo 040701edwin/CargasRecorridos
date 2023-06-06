@@ -56,7 +56,7 @@
     <Compile Include="Modelo\Chofer.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Modelo\MarcaDelVehiculo.cs">
+    <Compile Include="Modelo\MarcaVehiculo.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Model1.Context.cs">

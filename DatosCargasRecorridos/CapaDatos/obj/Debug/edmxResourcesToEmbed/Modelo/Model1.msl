@@ -13,6 +13,7 @@
           <ScalarProperty Name="Tonelage" ColumnName="Tonelage" />
           <ScalarProperty Name="EstadoVehiculo" ColumnName="EstadoVehiculo" />
           <ScalarProperty Name="ModeloDelVehiculoId" ColumnName="ModeloDelVehiculoId" />
+          <ScalarProperty Name="MarcaVehiculoId" ColumnName="MarcaVehiculoId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -115,21 +116,21 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Marcas">
-      <EntityTypeMapping TypeName="IsTypeOf(Model1.MarcaDelVehiculo)">
-        <MappingFragment StoreEntitySet="Marcas">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Marca" ColumnName="Marca" />
-          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="ModeloDeLosVehiculos">
       <EntityTypeMapping TypeName="IsTypeOf(Model1.ModeloDelVehiculo)">
         <MappingFragment StoreEntitySet="ModeloDeLosVehiculos">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Modelo" ColumnName="Modelo" />
           <ScalarProperty Name="MarcaDelVehiculoId" ColumnName="MarcaDelVehiculoId" />
+          <ScalarProperty Name="MarcaVehiculoId" ColumnName="MarcaVehiculoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MarcaVehiculos">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.MarcaVehiculo)">
+        <MappingFragment StoreEntitySet="MarcaVehiculos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
