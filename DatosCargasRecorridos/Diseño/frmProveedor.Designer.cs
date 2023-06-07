@@ -29,12 +29,12 @@ namespace Diseño
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.txtINSS = new System.Windows.Forms.TextBox();
             this.txtCelular = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.txtCargo = new System.Windows.Forms.TextBox();
             this.txtApellido2 = new System.Windows.Forms.TextBox();
-            this.txtApellido1 = new System.Windows.Forms.TextBox();
             this.txtNombre2 = new System.Windows.Forms.TextBox();
+            this.txtNombre1 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -42,14 +42,14 @@ namespace Diseño
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtNombre1 = new System.Windows.Forms.TextBox();
+            this.txtNomEmpresa = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtCedula = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtApellido1 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtComentario = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.iconBtnCerrar = new FontAwesome.Sharp.IconButton();
             this.iconBtnCancelar = new FontAwesome.Sharp.IconButton();
@@ -57,26 +57,29 @@ namespace Diseño
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtDireccion
-            // 
-            this.txtDireccion.Location = new System.Drawing.Point(77, 112);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(100, 20);
-            this.txtDireccion.TabIndex = 40;
-            // 
-            // txtINSS
-            // 
-            this.txtINSS.Location = new System.Drawing.Point(77, 138);
-            this.txtINSS.Name = "txtINSS";
-            this.txtINSS.Size = new System.Drawing.Size(100, 20);
-            this.txtINSS.TabIndex = 39;
-            // 
             // txtCelular
             // 
-            this.txtCelular.Location = new System.Drawing.Point(630, 47);
+            this.txtCelular.Location = new System.Drawing.Point(77, 112);
+            this.txtCelular.MaxLength = 12;
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(100, 20);
-            this.txtCelular.TabIndex = 38;
+            this.txtCelular.TabIndex = 40;
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.Location = new System.Drawing.Point(77, 138);
+            this.txtDireccion.MaxLength = 50;
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(100, 20);
+            this.txtDireccion.TabIndex = 39;
+            // 
+            // txtCargo
+            // 
+            this.txtCargo.Location = new System.Drawing.Point(630, 47);
+            this.txtCargo.MaxLength = 15;
+            this.txtCargo.Name = "txtCargo";
+            this.txtCargo.Size = new System.Drawing.Size(100, 20);
+            this.txtCargo.TabIndex = 38;
             // 
             // txtApellido2
             // 
@@ -85,19 +88,19 @@ namespace Diseño
             this.txtApellido2.Size = new System.Drawing.Size(100, 20);
             this.txtApellido2.TabIndex = 37;
             // 
-            // txtApellido1
-            // 
-            this.txtApellido1.Location = new System.Drawing.Point(257, 81);
-            this.txtApellido1.Name = "txtApellido1";
-            this.txtApellido1.Size = new System.Drawing.Size(100, 20);
-            this.txtApellido1.TabIndex = 36;
-            // 
             // txtNombre2
             // 
-            this.txtNombre2.Location = new System.Drawing.Point(257, 55);
+            this.txtNombre2.Location = new System.Drawing.Point(257, 81);
             this.txtNombre2.Name = "txtNombre2";
             this.txtNombre2.Size = new System.Drawing.Size(100, 20);
-            this.txtNombre2.TabIndex = 35;
+            this.txtNombre2.TabIndex = 36;
+            // 
+            // txtNombre1
+            // 
+            this.txtNombre1.Location = new System.Drawing.Point(257, 55);
+            this.txtNombre1.Name = "txtNombre1";
+            this.txtNombre1.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre1.TabIndex = 35;
             // 
             // label10
             // 
@@ -162,12 +165,14 @@ namespace Diseño
             this.label4.TabIndex = 28;
             this.label4.Text = "Nombre1";
             // 
-            // txtNombre1
+            // txtNomEmpresa
             // 
-            this.txtNombre1.Location = new System.Drawing.Point(77, 86);
-            this.txtNombre1.Name = "txtNombre1";
-            this.txtNombre1.Size = new System.Drawing.Size(100, 20);
-            this.txtNombre1.TabIndex = 27;
+            this.txtNomEmpresa.Location = new System.Drawing.Point(77, 86);
+            this.txtNomEmpresa.MaxLength = 20;
+            this.txtNomEmpresa.Name = "txtNomEmpresa";
+            this.txtNomEmpresa.Size = new System.Drawing.Size(100, 20);
+            this.txtNomEmpresa.TabIndex = 27;
+            this.txtNomEmpresa.Validating += new System.ComponentModel.CancelEventHandler(this.txtNomEmpresa_Validating);
             // 
             // label3
             // 
@@ -178,12 +183,13 @@ namespace Diseño
             this.label3.TabIndex = 26;
             this.label3.Text = "Empresa";
             // 
-            // txtCedula
+            // txtCodigo
             // 
-            this.txtCedula.Location = new System.Drawing.Point(77, 59);
-            this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(100, 20);
-            this.txtCedula.TabIndex = 25;
+            this.txtCodigo.Location = new System.Drawing.Point(77, 59);
+            this.txtCodigo.MaxLength = 5;
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(100, 20);
+            this.txtCodigo.TabIndex = 25;
             // 
             // label2
             // 
@@ -204,12 +210,12 @@ namespace Diseño
             this.label1.TabIndex = 23;
             this.label1.Text = "Agregar Proveedor";
             // 
-            // textBox1
+            // txtApellido1
             // 
-            this.textBox1.Location = new System.Drawing.Point(444, 51);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 46;
+            this.txtApellido1.Location = new System.Drawing.Point(444, 51);
+            this.txtApellido1.Name = "txtApellido1";
+            this.txtApellido1.Size = new System.Drawing.Size(100, 20);
+            this.txtApellido1.TabIndex = 46;
             // 
             // label11
             // 
@@ -220,12 +226,13 @@ namespace Diseño
             this.label11.TabIndex = 45;
             this.label11.Text = "Apellido1";
             // 
-            // textBox2
+            // txtComentario
             // 
-            this.textBox2.Location = new System.Drawing.Point(630, 77);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 47;
+            this.txtComentario.Location = new System.Drawing.Point(630, 77);
+            this.txtComentario.MaxLength = 50;
+            this.txtComentario.Name = "txtComentario";
+            this.txtComentario.Size = new System.Drawing.Size(100, 20);
+            this.txtComentario.TabIndex = 47;
             // 
             // dataGridView1
             // 
@@ -246,6 +253,7 @@ namespace Diseño
             this.iconBtnCerrar.TabIndex = 43;
             this.iconBtnCerrar.Text = "Cerrar";
             this.iconBtnCerrar.UseVisualStyleBackColor = true;
+            this.iconBtnCerrar.Click += new System.EventHandler(this.iconBtnCerrar_Click);
             // 
             // iconBtnCancelar
             // 
@@ -258,6 +266,7 @@ namespace Diseño
             this.iconBtnCancelar.TabIndex = 42;
             this.iconBtnCancelar.Text = "Cancelar";
             this.iconBtnCancelar.UseVisualStyleBackColor = true;
+            this.iconBtnCancelar.Click += new System.EventHandler(this.iconBtnCancelar_Click);
             // 
             // iconBtnAgregar
             // 
@@ -270,6 +279,7 @@ namespace Diseño
             this.iconBtnAgregar.TabIndex = 41;
             this.iconBtnAgregar.Text = "Guardar";
             this.iconBtnAgregar.UseVisualStyleBackColor = true;
+            this.iconBtnAgregar.Click += new System.EventHandler(this.iconBtnAgregar_Click);
             // 
             // frmProveedor
             // 
@@ -277,18 +287,18 @@ namespace Diseño
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(749, 422);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtComentario);
+            this.Controls.Add(this.txtApellido1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.iconBtnCerrar);
             this.Controls.Add(this.iconBtnCancelar);
             this.Controls.Add(this.iconBtnAgregar);
-            this.Controls.Add(this.txtDireccion);
-            this.Controls.Add(this.txtINSS);
             this.Controls.Add(this.txtCelular);
+            this.Controls.Add(this.txtDireccion);
+            this.Controls.Add(this.txtCargo);
             this.Controls.Add(this.txtApellido2);
-            this.Controls.Add(this.txtApellido1);
             this.Controls.Add(this.txtNombre2);
+            this.Controls.Add(this.txtNombre1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -296,9 +306,9 @@ namespace Diseño
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtNombre1);
+            this.Controls.Add(this.txtNomEmpresa);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtCedula);
+            this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmProveedor";
@@ -313,12 +323,12 @@ namespace Diseño
         private FontAwesome.Sharp.IconButton iconBtnCerrar;
         private FontAwesome.Sharp.IconButton iconBtnCancelar;
         private FontAwesome.Sharp.IconButton iconBtnAgregar;
-        private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.TextBox txtINSS;
         private System.Windows.Forms.TextBox txtCelular;
+        private System.Windows.Forms.TextBox txtDireccion;
+        private System.Windows.Forms.TextBox txtCargo;
         private System.Windows.Forms.TextBox txtApellido2;
-        private System.Windows.Forms.TextBox txtApellido1;
         private System.Windows.Forms.TextBox txtNombre2;
+        private System.Windows.Forms.TextBox txtNombre1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -326,14 +336,14 @@ namespace Diseño
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtNombre1;
+        private System.Windows.Forms.TextBox txtNomEmpresa;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtCedula;
+        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtApellido1;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtComentario;
         private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
