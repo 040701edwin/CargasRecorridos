@@ -34,5 +34,10 @@ namespace CapaLogica
             ochof = db.Choferes.DefaultIfEmpty(null).FirstOrDefault(ch => ch.CedulaChofer.Trim() == pCodigo.Trim()); //ch abreviatura de chofer
             return (ochof);
         }
+        //Metodo para listar los datos de la tabla
+        public List<Chofer> Listar()
+        {
+            return (db.Choferes.ToList());
+        }
     }
 }

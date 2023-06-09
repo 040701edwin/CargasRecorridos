@@ -90,7 +90,6 @@ namespace Diseño
             else
             {
                 NuevoRegistro = true;
-                txtCodigo.Text = string.Empty; txtCodigo.Focus();
                 txtNombre1.Text = string.Empty;
                 txtNombre2.Text = string.Empty;
                 txtApellido1.Text = string.Empty;

@@ -33,5 +33,9 @@ namespace CapaLogica
             oProveedor   = db.Proveedores.DefaultIfEmpty(null).FirstOrDefault(cp => cp.CodigoProveedor.Trim() == pCodigo.Trim()); //cp significa codigo proveedor
             return oProveedor;
         }
+        public List<Proveedor> Listar()
+        {
+            return (db.Proveedores.ToList());
+        }
     }
 }

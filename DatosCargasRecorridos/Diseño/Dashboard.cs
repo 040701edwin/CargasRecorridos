@@ -182,5 +182,12 @@ namespace Diseño
         {
             WindowState = FormWindowState.Minimized;
         }
+
+        private void iconButton1_Click_1(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color1);
+            frmViaje frm = new frmViaje();
+            frm.ShowDialog();
+        }
     }
 }
