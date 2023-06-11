@@ -29,7 +29,7 @@ namespace Diseño
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtPaisOrigen = new System.Windows.Forms.ComboBox();
+            this.cmbPaisOrigen = new System.Windows.Forms.ComboBox();
             this.iconBtnCerrar = new FontAwesome.Sharp.IconButton();
             this.iconBtnCancelar = new FontAwesome.Sharp.IconButton();
             this.iconBtnAgregar = new FontAwesome.Sharp.IconButton();
@@ -38,7 +38,6 @@ namespace Diseño
             this.txtPago = new System.Windows.Forms.TextBox();
             this.txtTonelaje = new System.Windows.Forms.TextBox();
             this.txtPasajeros = new System.Windows.Forms.TextBox();
-            this.txtTipo = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -46,24 +45,25 @@ namespace Diseño
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtChofer = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtPaisDestino = new System.Windows.Forms.ComboBox();
+            this.cmbPaisDestino = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtProveedor = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.cmbChofer = new System.Windows.Forms.ComboBox();
+            this.cmbTipo = new System.Windows.Forms.ComboBox();
+            this.cmbProveedor = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // txtPaisOrigen
+            // cmbPaisOrigen
             // 
-            this.txtPaisOrigen.FormattingEnabled = true;
-            this.txtPaisOrigen.Location = new System.Drawing.Point(124, 209);
-            this.txtPaisOrigen.Name = "txtPaisOrigen";
-            this.txtPaisOrigen.Size = new System.Drawing.Size(100, 21);
-            this.txtPaisOrigen.TabIndex = 44;
+            this.cmbPaisOrigen.FormattingEnabled = true;
+            this.cmbPaisOrigen.Location = new System.Drawing.Point(124, 209);
+            this.cmbPaisOrigen.Name = "cmbPaisOrigen";
+            this.cmbPaisOrigen.Size = new System.Drawing.Size(100, 21);
+            this.cmbPaisOrigen.TabIndex = 44;
             // 
             // iconBtnCerrar
             // 
@@ -76,6 +76,7 @@ namespace Diseño
             this.iconBtnCerrar.TabIndex = 43;
             this.iconBtnCerrar.Text = "Cerrar";
             this.iconBtnCerrar.UseVisualStyleBackColor = true;
+            this.iconBtnCerrar.Click += new System.EventHandler(this.iconBtnCerrar_Click);
             // 
             // iconBtnCancelar
             // 
@@ -100,6 +101,7 @@ namespace Diseño
             this.iconBtnAgregar.TabIndex = 41;
             this.iconBtnAgregar.Text = "Guardar";
             this.iconBtnAgregar.UseVisualStyleBackColor = true;
+            this.iconBtnAgregar.Click += new System.EventHandler(this.iconBtnAgregar_Click);
             // 
             // txtCosto
             // 
@@ -135,13 +137,6 @@ namespace Diseño
             this.txtPasajeros.Name = "txtPasajeros";
             this.txtPasajeros.Size = new System.Drawing.Size(100, 20);
             this.txtPasajeros.TabIndex = 36;
-            // 
-            // txtTipo
-            // 
-            this.txtTipo.Location = new System.Drawing.Point(124, 131);
-            this.txtTipo.Name = "txtTipo";
-            this.txtTipo.Size = new System.Drawing.Size(100, 20);
-            this.txtTipo.TabIndex = 35;
             // 
             // label10
             // 
@@ -206,13 +201,6 @@ namespace Diseño
             this.label4.TabIndex = 28;
             this.label4.Text = "Tipo";
             // 
-            // txtChofer
-            // 
-            this.txtChofer.Location = new System.Drawing.Point(124, 105);
-            this.txtChofer.Name = "txtChofer";
-            this.txtChofer.Size = new System.Drawing.Size(100, 20);
-            this.txtChofer.TabIndex = 27;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -228,6 +216,7 @@ namespace Diseño
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigo.TabIndex = 25;
+            this.txtCodigo.Validating += new System.ComponentModel.CancelEventHandler(this.txtCodigo_Validating);
             // 
             // label2
             // 
@@ -248,13 +237,13 @@ namespace Diseño
             this.label1.TabIndex = 23;
             this.label1.Text = "Agregar Viaje";
             // 
-            // txtPaisDestino
+            // cmbPaisDestino
             // 
-            this.txtPaisDestino.FormattingEnabled = true;
-            this.txtPaisDestino.Location = new System.Drawing.Point(124, 235);
-            this.txtPaisDestino.Name = "txtPaisDestino";
-            this.txtPaisDestino.Size = new System.Drawing.Size(100, 21);
-            this.txtPaisDestino.TabIndex = 45;
+            this.cmbPaisDestino.FormattingEnabled = true;
+            this.cmbPaisDestino.Location = new System.Drawing.Point(124, 235);
+            this.cmbPaisDestino.Name = "cmbPaisDestino";
+            this.cmbPaisDestino.Size = new System.Drawing.Size(100, 21);
+            this.cmbPaisDestino.TabIndex = 45;
             // 
             // label11
             // 
@@ -265,13 +254,6 @@ namespace Diseño
             this.label11.TabIndex = 46;
             this.label11.Text = "Descripcion";
             // 
-            // txtProveedor
-            // 
-            this.txtProveedor.Location = new System.Drawing.Point(124, 313);
-            this.txtProveedor.Name = "txtProveedor";
-            this.txtProveedor.Size = new System.Drawing.Size(100, 20);
-            this.txtProveedor.TabIndex = 47;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -281,16 +263,43 @@ namespace Diseño
             this.label12.TabIndex = 48;
             this.label12.Text = "Proveedor";
             // 
+            // cmbChofer
+            // 
+            this.cmbChofer.FormattingEnabled = true;
+            this.cmbChofer.Location = new System.Drawing.Point(124, 105);
+            this.cmbChofer.Name = "cmbChofer";
+            this.cmbChofer.Size = new System.Drawing.Size(100, 21);
+            this.cmbChofer.TabIndex = 49;
+            // 
+            // cmbTipo
+            // 
+            this.cmbTipo.FormattingEnabled = true;
+            this.cmbTipo.Location = new System.Drawing.Point(124, 131);
+            this.cmbTipo.MaxLength = 5;
+            this.cmbTipo.Name = "cmbTipo";
+            this.cmbTipo.Size = new System.Drawing.Size(100, 21);
+            this.cmbTipo.TabIndex = 50;
+            // 
+            // cmbProveedor
+            // 
+            this.cmbProveedor.FormattingEnabled = true;
+            this.cmbProveedor.Location = new System.Drawing.Point(124, 313);
+            this.cmbProveedor.Name = "cmbProveedor";
+            this.cmbProveedor.Size = new System.Drawing.Size(100, 21);
+            this.cmbProveedor.TabIndex = 51;
+            // 
             // frmViaje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(309, 462);
+            this.Controls.Add(this.cmbProveedor);
+            this.Controls.Add(this.cmbTipo);
+            this.Controls.Add(this.cmbChofer);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.txtProveedor);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.txtPaisDestino);
-            this.Controls.Add(this.txtPaisOrigen);
+            this.Controls.Add(this.cmbPaisDestino);
+            this.Controls.Add(this.cmbPaisOrigen);
             this.Controls.Add(this.iconBtnCerrar);
             this.Controls.Add(this.iconBtnCancelar);
             this.Controls.Add(this.iconBtnAgregar);
@@ -299,7 +308,6 @@ namespace Diseño
             this.Controls.Add(this.txtPago);
             this.Controls.Add(this.txtTonelaje);
             this.Controls.Add(this.txtPasajeros);
-            this.Controls.Add(this.txtTipo);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -307,13 +315,13 @@ namespace Diseño
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtChofer);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmViaje";
             this.Text = "Viaje";
+            this.Load += new System.EventHandler(this.frmViaje_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,7 +329,7 @@ namespace Diseño
 
         #endregion
 
-        private System.Windows.Forms.ComboBox txtPaisOrigen;
+        private System.Windows.Forms.ComboBox cmbPaisOrigen;
         private FontAwesome.Sharp.IconButton iconBtnCerrar;
         private FontAwesome.Sharp.IconButton iconBtnCancelar;
         private FontAwesome.Sharp.IconButton iconBtnAgregar;
@@ -330,7 +338,6 @@ namespace Diseño
         private System.Windows.Forms.TextBox txtPago;
         private System.Windows.Forms.TextBox txtTonelaje;
         private System.Windows.Forms.TextBox txtPasajeros;
-        private System.Windows.Forms.TextBox txtTipo;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -338,14 +345,15 @@ namespace Diseño
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtChofer;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox txtPaisDestino;
+        private System.Windows.Forms.ComboBox cmbPaisDestino;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtProveedor;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox cmbChofer;
+        private System.Windows.Forms.ComboBox cmbTipo;
+        private System.Windows.Forms.ComboBox cmbProveedor;
     }
 }

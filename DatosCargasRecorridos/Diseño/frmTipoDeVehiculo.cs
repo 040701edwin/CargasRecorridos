@@ -16,6 +16,7 @@ namespace Diseño
     public partial class frmTipoDeVehiculo : Form
     {
         private TipoDeVehiculoDAO oTipVehiculoDAO = new TipoDeVehiculoDAO();
+        private TipoDeVehiculo oTipoDeVehicullo = new TipoDeVehiculo();
         private bool NuevoRegistro = false;
         public frmTipoDeVehiculo()
         {
@@ -67,9 +68,14 @@ namespace Diseño
         private void frmTipoDeVehiculo_Load(object sender, EventArgs e)
         {
             comboBox1.Items.Add("Seleccione");
-            comboBox1.Items.Add("vehca");
-            comboBox1.Items.Add("vehre");
             comboBox1.SelectedIndex = 0;
+            comboBox1.DataSource = oTipVehiculoDAO.Listar(); //Me lista todos los paises en el combobox
+            comboBox1.DisplayMember = "CodigoTipoVehiculo"; //El campo que queremos mostrar
+            //comboBox1.ValueMember = "Id"; //El dato que tomara para ser almacenado
+            //comboBox1.Items.Add("Seleccione");
+            //comboBox1.Items.Add("vehca");
+            //comboBox1.Items.Add("vehre");
+            //comboBox1.SelectedIndex = 0;
         }
 
         private void comboBox1_Validating(object sender, CancelEventArgs e)

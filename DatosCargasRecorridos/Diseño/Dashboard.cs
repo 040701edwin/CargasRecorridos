@@ -131,6 +131,8 @@ namespace Diseño
         private void iconButton4_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color4);
+            frmProveedor frm = new frmProveedor();
+            frm.ShowDialog();
         }
         #endregion
 
@@ -179,6 +181,13 @@ namespace Diseño
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
+        }
+
+        private void iconButton1_Click_1(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color1);
+            frmViaje frm = new frmViaje();
+            frm.ShowDialog();
         }
     }
 }

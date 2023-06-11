@@ -29,5 +29,11 @@ namespace CapaLogica
             oTipVehiculo = db.TipoDeVehiculos.DefaultIfEmpty(null).FirstOrDefault(tp => tp.CodigoTipoVehiculo.Trim() == pCodigo.Trim()); //tp abreviatura de tipo de vehiculo
             return (oTipVehiculo);
         }
+
+        //Metodo para listar los datos de la tabla
+        public List<TipoDeVehiculo> Listar()
+        {
+            return (db.TipoDeVehiculos.ToList());
+        }
     }
 }

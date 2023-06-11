@@ -95,3 +95,4 @@ E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debu
 E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.csproj.CopyComplete
 E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.exe
 E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.pdb
+E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.frmModelo.resources
