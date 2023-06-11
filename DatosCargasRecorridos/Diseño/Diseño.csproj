@@ -102,6 +102,12 @@
     <Compile Include="frmMarcaDelVehiculo.Designer.cs">
       <DependentUpon>frmMarcaDelVehiculo.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMostrarViajes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMostrarViajes.Designer.cs">
+      <DependentUpon>frmMostrarViajes.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPais.cs">
       <SubType>Form</SubType>
     </Compile>
