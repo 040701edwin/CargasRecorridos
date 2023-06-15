@@ -101,5 +101,7 @@ namespace Diseño
                 txtComentario.Text = string.Empty;
             }
         }
+
+       
     }
 }

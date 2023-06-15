@@ -84,6 +84,12 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMas.Designer.cs">
+      <DependentUpon>frmMas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmModelo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,11 +188,20 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMas.resx">
+      <DependentUpon>frmMas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmModelo.resx">
       <DependentUpon>frmModelo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMostrarViajes.resx">
+      <DependentUpon>frmMostrarViajes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmProveedor.resx">
       <DependentUpon>frmProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVehiculo.resx">
+      <DependentUpon>frmVehiculo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmViaje.resx">
       <DependentUpon>frmViaje.cs</DependentUpon>
