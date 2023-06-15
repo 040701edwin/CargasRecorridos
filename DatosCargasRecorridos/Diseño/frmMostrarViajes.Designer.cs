@@ -29,12 +29,111 @@ namespace Diseño
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.iconBtnAgregar = new FontAwesome.Sharp.IconButton();
+            this.iconBtnBuscar = new FontAwesome.Sharp.IconButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBuscar.Location = new System.Drawing.Point(58, 62);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(299, 20);
+            this.txtBuscar.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 65);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Buscar";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(214, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 27);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Viajes";
+            // 
+            // iconBtnAgregar
+            // 
+            this.iconBtnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconBtnAgregar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconBtnAgregar.IconColor = System.Drawing.Color.Black;
+            this.iconBtnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconBtnAgregar.Location = new System.Drawing.Point(476, 60);
+            this.iconBtnAgregar.Name = "iconBtnAgregar";
+            this.iconBtnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.iconBtnAgregar.TabIndex = 9;
+            this.iconBtnAgregar.Text = "Agregar";
+            this.iconBtnAgregar.UseVisualStyleBackColor = true;
+            this.iconBtnAgregar.Click += new System.EventHandler(this.iconBtnAgregar_Click);
+            // 
+            // iconBtnBuscar
+            // 
+            this.iconBtnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconBtnBuscar.BackColor = System.Drawing.SystemColors.Control;
+            this.iconBtnBuscar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconBtnBuscar.IconColor = System.Drawing.Color.Black;
+            this.iconBtnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconBtnBuscar.Location = new System.Drawing.Point(363, 60);
+            this.iconBtnBuscar.Name = "iconBtnBuscar";
+            this.iconBtnBuscar.Size = new System.Drawing.Size(107, 23);
+            this.iconBtnBuscar.TabIndex = 8;
+            this.iconBtnBuscar.Text = "Buscar";
+            this.iconBtnBuscar.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 111);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(560, 361);
+            this.dataGridView1.TabIndex = 10;
+            // 
+            // frmMostrarViajes
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(557, 469);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.iconBtnAgregar);
+            this.Controls.Add(this.iconBtnBuscar);
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Name = "frmMostrarViajes";
             this.Text = "frmMostrarViajes";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private FontAwesome.Sharp.IconButton iconBtnAgregar;
+        private FontAwesome.Sharp.IconButton iconBtnBuscar;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

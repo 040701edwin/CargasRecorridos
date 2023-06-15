@@ -113,13 +113,14 @@ namespace Diseño
         private void iconButton1_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new frmTipoDeVehiculo());
+            OpenChildForm(new frmMostrarViajes());
             
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
+            OpenChildForm(new frmVehiculo());
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
@@ -130,9 +131,7 @@ namespace Diseño
 
         private void iconButton4_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender, RGBColors.color4);
-            frmProveedor frm = new frmProveedor();
-            frm.ShowDialog();
+            
         }
         #endregion
 
@@ -183,10 +182,17 @@ namespace Diseño
             WindowState = FormWindowState.Minimized;
         }
 
-        private void iconButton1_Click_1(object sender, EventArgs e)
+        private void iconBtnMasOpciones_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            frmViaje frm = new frmViaje();
+            frmMas frm = new frmMas();
+            frm.ShowDialog();
+        }
+
+        private void iconBtnProveedores_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color5);
+            frmProveedor frm = new frmProveedor();
             frm.ShowDialog();
         }
     }

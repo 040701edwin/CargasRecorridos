@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace Diseño
 {
-    public partial class frmMostrarViajes : Form
+    public partial class frmMas : Form
     {
-        public frmMostrarViajes()
+        public frmMas()
         {
             InitializeComponent();
-        }
-
-        private void iconBtnAgregar_Click(object sender, EventArgs e)
-        {
-            frmViaje frm = new frmViaje();
-            frm.ShowDialog();
         }
     }
 }

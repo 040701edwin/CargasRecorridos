@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/06/2023 14:31:35
--- Generated from EDMX file: E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\CapaDatos\Modelo\Model1.edmx
+-- Date Created: 06/14/2023 19:57:22
+-- Generated from EDMX file: C:\Users\USUARIO\Desktop\MyProyecto\CargasRecorridos\DatosCargasRecorridos\CapaDatos\Modelo\Model1.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -50,6 +50,12 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_ModeloDelVehiculoVehiculo]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Vehiculos] DROP CONSTRAINT [FK_ModeloDelVehiculoVehiculo];
 GO
+IF OBJECT_ID(N'[dbo].[FK_MarcaVehiculoModeloDelVehiculo]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ModeloDeLosVehiculos] DROP CONSTRAINT [FK_MarcaVehiculoModeloDelVehiculo];
+GO
+IF OBJECT_ID(N'[dbo].[FK_MarcaVehiculoVehiculo]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Vehiculos] DROP CONSTRAINT [FK_MarcaVehiculoVehiculo];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -84,6 +90,9 @@ IF OBJECT_ID(N'[dbo].[Paises]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[ModeloDeLosVehiculos]', 'U') IS NOT NULL
     DROP TABLE [dbo].[ModeloDeLosVehiculos];
+GO
+IF OBJECT_ID(N'[dbo].[MarcaVehiculos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MarcaVehiculos];
 GO
 
 -- --------------------------------------------------
