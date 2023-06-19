@@ -111,6 +111,7 @@ namespace Diseño
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(557, 469);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.iconBtnAgregar);
@@ -118,6 +119,7 @@ namespace Diseño
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.DoubleBuffered = true;
             this.Name = "Choferes";
             this.Text = "Choferes";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

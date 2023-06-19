@@ -39,9 +39,10 @@ namespace Diseño
                 oViaje.CodigoViaje = txtCodigo.Text.Trim();
                 oViaje.ChoferId = (int)cmbChofer.SelectedValue;
                 oViaje.TipoDeViajeId = (int)cmbTipo.SelectedValue;
+                oViaje.CantidadPasajeros = int.Parse(txtPasajeros.Text.Trim());
                 oViaje.Tonelage = decimal.Parse(txtTonelaje.Text.Trim());
                 oViaje.PaisId = (int)cmbPaisOrigen.SelectedValue;
-                oViaje.PaisId = (int)cmbPaisDestino.SelectedValue;
+                oViaje.PaisId1 = (int)cmbPaisDestino.SelectedValue;
                 oViaje.CostoViaje = int.Parse(txtCosto.Text.Trim());
                 oViaje.PagoChoferViaje = int.Parse(txtPago.Text.Trim());
                 oViaje.ProveedorId = (int)cmbProveedor.SelectedValue;
@@ -59,7 +60,22 @@ namespace Diseño
             }
             else
             {
-
+                Viaje oViaje = oViajeDAO.Buscar(txtCodigo.Text.Trim());
+                oViaje.ChoferId = (int)cmbChofer.SelectedValue;
+                oViaje.TipoDeViajeId = (int)cmbTipo.SelectedValue;
+                oViaje.CantidadPasajeros = int.Parse(txtPasajeros.Text.Trim());
+                oViaje.Tonelage = decimal.Parse(txtTonelaje.Text.Trim());
+                oViaje.PaisId = (int)cmbPaisOrigen.SelectedValue;
+                oViaje.PaisId1 = (int)cmbPaisDestino.SelectedValue;
+                oViaje.CostoViaje = int.Parse(txtCosto.Text.Trim());
+                oViaje.PagoChoferViaje = int.Parse(txtPago.Text.Trim());
+                oViaje.ProveedorId = (int)cmbProveedor.SelectedValue;
+                oViaje.DescripcionViaje = txtDescripcion.Text.Trim();
+                if (oViajeDAO.Modificar(oViaje) == false)
+                    MessageBox.Show("El registro no fue modificado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                    MessageBox.Show("Registro Modificado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Limpiar();
             }
         }
 
@@ -74,6 +90,7 @@ namespace Diseño
             cmbTipo.DataSource = oTipoDeViajeDAO.Listar();
             cmbTipo.DisplayMember = "CodigoTipoViaje";
             cmbTipo.ValueMember = "Id";
+            cmbTipo.SelectedIndex = 2;
 
             cmbPaisOrigen.DataSource = oPaisDAO.Listar();
             cmbPaisOrigen.DisplayMember = "CodigoPais";
@@ -94,18 +111,41 @@ namespace Diseño
             oViaje = oViajeDAO.Buscar(txtCodigo.Text.Trim());
             if(oViaje != null)
             {
+                MessageBox.Show("Codigo existente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+                iconBtnAgregar.Text = "Modificar";
                 NuevoRegistro = false;
+                cmbChofer.SelectedValue = oViaje.ChoferId;
+                cmbTipo.SelectedValue = oViaje.TipoDeViajeId;
                 txtPasajeros.Text = oViaje.CantidadPasajeros.ToString();
+                txtTonelaje.Text = oViaje.Tonelage.ToString();
+                cmbPaisOrigen.SelectedValue = oViaje.PaisId;
+                cmbPaisDestino.SelectedValue = oViaje.PaisId1;
+                txtCosto.Text = oViaje.CostoViaje.ToString();
+                txtPago.Text = oViaje.PagoChoferViaje.ToString();
+                cmbProveedor.SelectedValue = oViaje.ProveedorId;
                 txtDescripcion.Text = oViaje.DescripcionViaje.Trim();
-                
-                
             }
             else
-            {
                 NuevoRegistro = true;
+        }
 
-            }
-
+        private void iconBtnCancelar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+        private void Limpiar()
+        {
+            txtCodigo.Text = string.Empty; txtCodigo.Focus();
+            cmbChofer.SelectedIndex = -1;
+            cmbTipo.SelectedItem = -1;
+            txtPasajeros.Text = string.Empty;
+            txtTonelaje.Text = string.Empty;
+            cmbPaisOrigen.SelectedValue = -1;
+            cmbPaisDestino.SelectedValue = -1;
+            txtCosto.Text = string.Empty;
+            txtPago.Text = string.Empty;
+            cmbProveedor.SelectedIndex = -1;
+            txtDescripcion.Text = string.Empty;
         }
     }
 }

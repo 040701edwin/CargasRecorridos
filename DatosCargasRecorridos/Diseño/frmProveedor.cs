@@ -48,9 +48,17 @@ namespace Diseño
                     //return;
                 }
             }
+            else
+            {
+
+            }
         }
 
         private void iconBtnCancelar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+        }
+        private void Limpiar()
         {
             txtCodigo.Text = string.Empty; txtCodigo.Focus();
             txtNombre1.Text = string.Empty;
@@ -63,7 +71,6 @@ namespace Diseño
             txtNomEmpresa.Text = string.Empty;
             txtComentario.Text = string.Empty;
         }
-
         private void iconBtnCerrar_Click(object sender, EventArgs e)
         {
             Close();
@@ -77,6 +84,7 @@ namespace Diseño
             {
                 NuevoRegistro = false;
                 MessageBox.Show("Registro existente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                iconBtnAgregar.Text = "Modificar";
                 txtCodigo.Text = oProveedor.CodigoProveedor.Trim();
                 txtCelular.Text = oProveedor.CelularProveedor.Trim();
                 txtDireccion.Text = oProveedor.DireccionEmpresa.Trim();
@@ -88,18 +96,7 @@ namespace Diseño
                 txtComentario.Text = oProveedor.Comentario.Trim();
             }
             else
-            {
                 NuevoRegistro = true;
-                txtNombre1.Text = string.Empty;
-                txtNombre2.Text = string.Empty;
-                txtApellido1.Text = string.Empty;
-                txtApellido2.Text = string.Empty;
-                txtCelular.Text = string.Empty;
-                txtCargo.Text = string.Empty;
-                txtDireccion.Text = string.Empty;
-                //txtNomEmpresa.Text = string.Empty;
-                txtComentario.Text = string.Empty;
-            }
         }
 
        
