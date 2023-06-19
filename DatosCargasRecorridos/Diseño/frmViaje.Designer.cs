@@ -89,6 +89,7 @@ namespace Diseño
             this.iconBtnCancelar.TabIndex = 42;
             this.iconBtnCancelar.Text = "Cancelar";
             this.iconBtnCancelar.UseVisualStyleBackColor = true;
+            this.iconBtnCancelar.Click += new System.EventHandler(this.iconBtnCancelar_Click);
             // 
             // iconBtnAgregar
             // 

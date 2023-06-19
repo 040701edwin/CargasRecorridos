@@ -133,8 +133,8 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="CodigoTipoViaje" Type="String" Nullable="false" />
-    <Property Name="DescripcionTipoViaje" Type="String" Nullable="false" />
+    <Property Name="CodigoTipoViaje" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="DescripcionTipoViaje" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="Viaje" Relationship="Model1.TipoDeViajeViaje" FromRole="TipoDeViaje" ToRole="Viaje" />
   </EntityType>
   <Association Name="TipoDeViajeViaje">
@@ -204,9 +204,9 @@
     <Property Name="VehiculoId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Viaje" Relationship="Model1.ViajeVehiculoViaje" FromRole="VehiculoViaje" ToRole="Viaje" />
     <Property Name="ViajeId" Type="Int32" Nullable="false" />
-    <Property Name="FechaHoraSalida" Type="Time" Nullable="false" />
-    <Property Name="FechaHoraLlegada" Type="String" Nullable="false" />
-    <Property Name="FechaHoraRetorno" Type="String" Nullable="false" />
+    <Property Name="FechaHoraSalida" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="FechaHoraLlegada" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="FechaHoraRetorno" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
   </EntityType>
   <EntityType Name="ViajeChofer">
     <Key>

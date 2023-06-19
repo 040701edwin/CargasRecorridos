@@ -78,6 +78,7 @@ namespace Diseño
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(100, 20);
             this.txtCedula.TabIndex = 2;
+            this.txtCedula.Validating += new System.ComponentModel.CancelEventHandler(this.txtCedula_Validating);
             // 
             // txtNombre1
             // 
