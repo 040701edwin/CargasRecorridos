@@ -105,7 +105,6 @@ CREATE TABLE [dbo].[Vehiculos] (
     [PlacaVehiculo] varchar(15)  NOT NULL,
     [DescripcionVehiculo] varchar(50)  NULL,
     [TipoDeVehiculoId] int  NOT NULL,
-    [MarcaDelVehiculoId] int  NOT NULL,
     [CantidadPasajeros] int  NOT NULL,
     [Tonelage] decimal(5,2)  NOT NULL,
     [EstadoVehiculo] varchar(10)  NOT NULL,
@@ -209,7 +208,6 @@ GO
 CREATE TABLE [dbo].[ModeloDeLosVehiculos] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Modelo] varchar(20)  NOT NULL,
-    [MarcaDelVehiculoId] int  NOT NULL,
     [MarcaVehiculoId] int  NOT NULL
 );
 GO

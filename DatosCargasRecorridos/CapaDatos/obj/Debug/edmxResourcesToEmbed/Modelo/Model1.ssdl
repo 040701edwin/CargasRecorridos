@@ -28,7 +28,6 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Modelo" Type="varchar" MaxLength="20" Nullable="false" />
-    <Property Name="MarcaDelVehiculoId" Type="int" Nullable="false" />
     <Property Name="MarcaVehiculoId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Paises">
@@ -79,7 +78,6 @@
     <Property Name="PlacaVehiculo" Type="varchar" MaxLength="15" Nullable="false" />
     <Property Name="DescripcionVehiculo" Type="varchar" MaxLength="50" />
     <Property Name="TipoDeVehiculoId" Type="int" Nullable="false" />
-    <Property Name="MarcaDelVehiculoId" Type="int" Nullable="false" />
     <Property Name="CantidadPasajeros" Type="int" Nullable="false" />
     <Property Name="Tonelage" Type="decimal" Precision="5" Scale="2" Nullable="false" />
     <Property Name="EstadoVehiculo" Type="varchar" MaxLength="10" Nullable="false" />

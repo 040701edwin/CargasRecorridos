@@ -23,7 +23,6 @@ namespace CapaDatos.Modelo
         public string PlacaVehiculo { get; set; }
         public string DescripcionVehiculo { get; set; }
         public int TipoDeVehiculoId { get; set; }
-        public int MarcaDelVehiculoId { get; set; }
         public int CantidadPasajeros { get; set; }
         public decimal Tonelage { get; set; }
         public string EstadoVehiculo { get; set; }

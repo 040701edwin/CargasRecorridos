@@ -33,7 +33,6 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Modelo" Type="varchar" MaxLength="20" Nullable="false" />
-          <Property Name="MarcaDelVehiculoId" Type="int" Nullable="false" />
           <Property Name="MarcaVehiculoId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Paises">
@@ -84,7 +83,6 @@
           <Property Name="PlacaVehiculo" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="DescripcionVehiculo" Type="varchar" MaxLength="50" />
           <Property Name="TipoDeVehiculoId" Type="int" Nullable="false" />
-          <Property Name="MarcaDelVehiculoId" Type="int" Nullable="false" />
           <Property Name="CantidadPasajeros" Type="int" Nullable="false" />
           <Property Name="Tonelage" Type="decimal" Precision="5" Scale="2" Nullable="false" />
           <Property Name="EstadoVehiculo" Type="varchar" MaxLength="10" Nullable="false" />
@@ -427,7 +425,6 @@
           <NavigationProperty Name="TipoDeVehiculo" Relationship="Model1.TipoDeVehiculoVehiculo" FromRole="Vehiculo" ToRole="TipoDeVehiculo" />
           <Property Name="TipoDeVehiculoId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="VehiculoViaje" Relationship="Model1.VehiculoVehiculoViaje" FromRole="Vehiculo" ToRole="VehiculoViaje" />
-          <Property Name="MarcaDelVehiculoId" Type="Int32" Nullable="false" />
           <Property Name="CantidadPasajeros" Type="Int32" Nullable="false" />
           <Property Name="Tonelage" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
           <Property Name="EstadoVehiculo" Type="String" Nullable="false" FixedLength="false" MaxLength="10" Unicode="false" />
@@ -671,7 +668,6 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Modelo" Type="String" Nullable="false" FixedLength="false" MaxLength="20" Unicode="false" />
-          <Property Name="MarcaDelVehiculoId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Vehiculo" Relationship="Model1.ModeloDelVehiculoVehiculo" FromRole="ModeloDelVehiculo" ToRole="Vehiculo" />
           <NavigationProperty Name="MarcaVehiculo" Relationship="Model1.MarcaVehiculoModeloDelVehiculo" FromRole="ModeloDelVehiculo" ToRole="MarcaVehiculo" />
           <Property Name="MarcaVehiculoId" Type="Int32" Nullable="false" />
@@ -734,7 +730,6 @@
           <ScalarProperty Name="PlacaVehiculo" ColumnName="PlacaVehiculo" />
           <ScalarProperty Name="DescripcionVehiculo" ColumnName="DescripcionVehiculo" />
           <ScalarProperty Name="TipoDeVehiculoId" ColumnName="TipoDeVehiculoId" />
-          <ScalarProperty Name="MarcaDelVehiculoId" ColumnName="MarcaDelVehiculoId" />
           <ScalarProperty Name="CantidadPasajeros" ColumnName="CantidadPasajeros" />
           <ScalarProperty Name="Tonelage" ColumnName="Tonelage" />
           <ScalarProperty Name="EstadoVehiculo" ColumnName="EstadoVehiculo" />
@@ -847,7 +842,6 @@
         <MappingFragment StoreEntitySet="ModeloDeLosVehiculos">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Modelo" ColumnName="Modelo" />
-          <ScalarProperty Name="MarcaDelVehiculoId" ColumnName="MarcaDelVehiculoId" />
           <ScalarProperty Name="MarcaVehiculoId" ColumnName="MarcaVehiculoId" />
         </MappingFragment>
       </EntityTypeMapping>
