@@ -9,7 +9,7 @@ using System.Data.Entity;
 
 namespace CapaLogica
 {
-    class VehiculoDAO
+    public class VehiculoDAO
     {
         Model1Container db = new Model1Container();
 
@@ -31,8 +31,8 @@ namespace CapaLogica
         public Vehiculo Buscar(string pCodigo)
         {
             Vehiculo oVehiculo;
-            oVehiculo = db.Vehiculos.DefaultIfEmpty(null).FirstOrDefault(vh => vh.PlacaVehiculo.Trim() == pCodigo.Trim()); //vh abreviatura de vehiculo
-            return (oVehiculo);
+            oVehiculo = db.Vehiculos.DefaultIfEmpty(null).FirstOrDefault(ph => ph.PlacaVehiculo.Trim() == pCodigo.Trim()); //ph abreviatura plca de vehiculo
+            return oVehiculo;
         }
         //Metodo para listar los datos de la tabla
         public List<Vehiculo> Listar()

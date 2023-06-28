@@ -133,3 +133,4 @@ C:\Users\USUARIO\Desktop\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Dise�
 E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.frmMas.resources
 E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.frmMostrarViajes.resources
 E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.frmVehiculo.resources
+E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.frmAgregarVehiculo.resources
