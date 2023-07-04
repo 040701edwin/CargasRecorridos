@@ -10,18 +10,15 @@
 namespace CapaDatos.Modelo
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class VehiculoViaje
+    public partial class usp_DetalleViaje_Result
     {
-        public int Id { get; set; }
-        public int VehiculoId { get; set; }
-        public int ViajeId { get; set; }
-        public Nullable<System.DateTime> FechaHoraSalida { get; set; }
-        public Nullable<System.DateTime> FechaHoraLlegada { get; set; }
-        public Nullable<System.DateTime> FechaHoraRetorno { get; set; }
-    
-        public virtual Vehiculo Vehiculo { get; set; }
-        public virtual Viaje Viaje { get; set; }
+        public string Viaje { get; set; }
+        public string Placa { get; set; }
+        public string Marca { get; set; }
+        public string Modelo { get; set; }
+        public Nullable<System.DateTime> Salida { get; set; }
+        public Nullable<System.DateTime> Llegada { get; set; }
+        public Nullable<System.DateTime> Retorno { get; set; }
     }
 }

@@ -132,5 +132,36 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="usp_BucarViaje" FunctionName="Model1.Store.usp_BucarViaje">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model1.usp_BucarViaje_Result">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Costo" ColumnName="Costo" />
+          <ScalarProperty Name="Pago" ColumnName="Pago" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
+          <ScalarProperty Name="CodigoChofer" ColumnName="CodigoChofer" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Origen" ColumnName="Origen" />
+          <ScalarProperty Name="Destino" ColumnName="Destino" />
+          <ScalarProperty Name="Pasajeros" ColumnName="Pasajeros" />
+          <ScalarProperty Name="Tonelaje" ColumnName="Tonelaje" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_DetalleViaje" FunctionName="Model1.Store.usp_DetalleViaje">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model1.usp_DetalleViaje_Result">
+          <ScalarProperty Name="Viaje" ColumnName="Viaje" />
+          <ScalarProperty Name="Placa" ColumnName="Placa" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+          <ScalarProperty Name="Salida" ColumnName="Salida" />
+          <ScalarProperty Name="Llegada" ColumnName="Llegada" />
+          <ScalarProperty Name="Retorno" ColumnName="Retorno" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

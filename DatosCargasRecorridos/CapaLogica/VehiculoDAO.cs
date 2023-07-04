@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using CapaDatos;
 using CapaDatos.Modelo;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 
 namespace CapaLogica
 {
