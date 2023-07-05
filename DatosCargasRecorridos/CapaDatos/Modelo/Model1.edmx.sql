@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/14/2023 19:57:22
--- Generated from EDMX file: C:\Users\USUARIO\Desktop\MyProyecto\CargasRecorridos\DatosCargasRecorridos\CapaDatos\Modelo\Model1.edmx
+-- Date Created: 07/02/2023 22:05:54
+-- Generated from EDMX file: E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\CapaDatos\Modelo\Model1.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -17,38 +17,8 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_TipoDeVehiculoVehiculo]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Vehiculos] DROP CONSTRAINT [FK_TipoDeVehiculoVehiculo];
-GO
-IF OBJECT_ID(N'[dbo].[FK_TipoDeViajeViaje]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Viajes] DROP CONSTRAINT [FK_TipoDeViajeViaje];
-GO
-IF OBJECT_ID(N'[dbo].[FK_ProveedorViaje]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Viajes] DROP CONSTRAINT [FK_ProveedorViaje];
-GO
-IF OBJECT_ID(N'[dbo].[FK_ViajeViajeChofer]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[ViajeChoferes] DROP CONSTRAINT [FK_ViajeViajeChofer];
-GO
 IF OBJECT_ID(N'[dbo].[FK_ChoferViajeChofer]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[ViajeChoferes] DROP CONSTRAINT [FK_ChoferViajeChofer];
-GO
-IF OBJECT_ID(N'[dbo].[FK_VehiculoVehiculoViaje]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[VehiculoViajes] DROP CONSTRAINT [FK_VehiculoVehiculoViaje];
-GO
-IF OBJECT_ID(N'[dbo].[FK_ViajeVehiculoViaje]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[VehiculoViajes] DROP CONSTRAINT [FK_ViajeVehiculoViaje];
-GO
-IF OBJECT_ID(N'[dbo].[FK_PaisViaje]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Viajes] DROP CONSTRAINT [FK_PaisViaje];
-GO
-IF OBJECT_ID(N'[dbo].[FK_PaisViaje1]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Viajes] DROP CONSTRAINT [FK_PaisViaje1];
-GO
-IF OBJECT_ID(N'[dbo].[FK_PaisChofer]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Choferes] DROP CONSTRAINT [FK_PaisChofer];
-GO
-IF OBJECT_ID(N'[dbo].[FK_ModeloDelVehiculoVehiculo]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Vehiculos] DROP CONSTRAINT [FK_ModeloDelVehiculoVehiculo];
 GO
 IF OBJECT_ID(N'[dbo].[FK_MarcaVehiculoModeloDelVehiculo]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[ModeloDeLosVehiculos] DROP CONSTRAINT [FK_MarcaVehiculoModeloDelVehiculo];
@@ -56,28 +26,64 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_MarcaVehiculoVehiculo]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Vehiculos] DROP CONSTRAINT [FK_MarcaVehiculoVehiculo];
 GO
+IF OBJECT_ID(N'[dbo].[FK_ModeloDelVehiculoVehiculo]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Vehiculos] DROP CONSTRAINT [FK_ModeloDelVehiculoVehiculo];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PaisChofer]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Choferes] DROP CONSTRAINT [FK_PaisChofer];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PaisViaje]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Viajes] DROP CONSTRAINT [FK_PaisViaje];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PaisViaje1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Viajes] DROP CONSTRAINT [FK_PaisViaje1];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ProveedorViaje]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Viajes] DROP CONSTRAINT [FK_ProveedorViaje];
+GO
+IF OBJECT_ID(N'[dbo].[FK_TipoDeVehiculoVehiculo]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Vehiculos] DROP CONSTRAINT [FK_TipoDeVehiculoVehiculo];
+GO
+IF OBJECT_ID(N'[dbo].[FK_TipoDeViajeViaje]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Viajes] DROP CONSTRAINT [FK_TipoDeViajeViaje];
+GO
+IF OBJECT_ID(N'[dbo].[FK_VehiculoVehiculoViaje]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[VehiculoViajes] DROP CONSTRAINT [FK_VehiculoVehiculoViaje];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ViajeVehiculoViaje]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[VehiculoViajes] DROP CONSTRAINT [FK_ViajeVehiculoViaje];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ViajeViajeChofer]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ViajeChoferes] DROP CONSTRAINT [FK_ViajeViajeChofer];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[Vehiculos]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Vehiculos];
+IF OBJECT_ID(N'[dbo].[Choferes]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Choferes];
 GO
-IF OBJECT_ID(N'[dbo].[TipoDeVehiculos]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[TipoDeVehiculos];
+IF OBJECT_ID(N'[dbo].[MarcaVehiculos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MarcaVehiculos];
 GO
-IF OBJECT_ID(N'[dbo].[Viajes]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Viajes];
+IF OBJECT_ID(N'[dbo].[ModeloDeLosVehiculos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ModeloDeLosVehiculos];
 GO
-IF OBJECT_ID(N'[dbo].[TipoDeViajes]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[TipoDeViajes];
+IF OBJECT_ID(N'[dbo].[Paises]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Paises];
 GO
 IF OBJECT_ID(N'[dbo].[Proveedores]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Proveedores];
 GO
-IF OBJECT_ID(N'[dbo].[Choferes]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Choferes];
+IF OBJECT_ID(N'[dbo].[TipoDeVehiculos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TipoDeVehiculos];
+GO
+IF OBJECT_ID(N'[dbo].[TipoDeViajes]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TipoDeViajes];
+GO
+IF OBJECT_ID(N'[dbo].[Vehiculos]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Vehiculos];
 GO
 IF OBJECT_ID(N'[dbo].[VehiculoViajes]', 'U') IS NOT NULL
     DROP TABLE [dbo].[VehiculoViajes];
@@ -85,14 +91,8 @@ GO
 IF OBJECT_ID(N'[dbo].[ViajeChoferes]', 'U') IS NOT NULL
     DROP TABLE [dbo].[ViajeChoferes];
 GO
-IF OBJECT_ID(N'[dbo].[Paises]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[Paises];
-GO
-IF OBJECT_ID(N'[dbo].[ModeloDeLosVehiculos]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[ModeloDeLosVehiculos];
-GO
-IF OBJECT_ID(N'[dbo].[MarcaVehiculos]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[MarcaVehiculos];
+IF OBJECT_ID(N'[dbo].[Viajes]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Viajes];
 GO
 
 -- --------------------------------------------------
@@ -105,7 +105,6 @@ CREATE TABLE [dbo].[Vehiculos] (
     [PlacaVehiculo] varchar(15)  NOT NULL,
     [DescripcionVehiculo] varchar(50)  NULL,
     [TipoDeVehiculoId] int  NOT NULL,
-    [MarcaDelVehiculoId] int  NOT NULL,
     [CantidadPasajeros] int  NOT NULL,
     [Tonelage] decimal(5,2)  NOT NULL,
     [EstadoVehiculo] varchar(10)  NOT NULL,
@@ -183,9 +182,9 @@ CREATE TABLE [dbo].[VehiculoViajes] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [VehiculoId] int  NOT NULL,
     [ViajeId] int  NOT NULL,
-    [FechaHoraSalida] time  NOT NULL,
-    [FechaHoraLlegada] nvarchar(max)  NOT NULL,
-    [FechaHoraRetorno] nvarchar(max)  NOT NULL
+    [FechaHoraSalida] datetime  NULL,
+    [FechaHoraLlegada] datetime  NULL,
+    [FechaHoraRetorno] datetime  NULL
 );
 GO
 
@@ -209,7 +208,6 @@ GO
 CREATE TABLE [dbo].[ModeloDeLosVehiculos] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Modelo] varchar(20)  NOT NULL,
-    [MarcaDelVehiculoId] int  NOT NULL,
     [MarcaVehiculoId] int  NOT NULL
 );
 GO

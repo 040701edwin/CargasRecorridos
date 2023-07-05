@@ -16,5 +16,11 @@ namespace Diseño
         {
             InitializeComponent();
         }
+
+        private void iconBtnAgregar_Click(object sender, EventArgs e)
+        {
+            frmAgregarVehiculo frm = new frmAgregarVehiculo();
+            frm.ShowDialog();
+        }
     }
 }

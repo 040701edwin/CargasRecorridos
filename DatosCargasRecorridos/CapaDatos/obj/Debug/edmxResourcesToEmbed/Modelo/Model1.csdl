@@ -64,6 +64,12 @@
       <End Role="MarcaVehiculo" EntitySet="MarcaVehiculos" />
       <End Role="Vehiculo" EntitySet="Vehiculos" />
     </AssociationSet>
+    <FunctionImport Name="usp_BucarViaje" ReturnType="Collection(Model1.usp_BucarViaje_Result)">
+      <Parameter Name="codv" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_DetalleViaje" ReturnType="Collection(Model1.usp_DetalleViaje_Result)">
+      <Parameter Name="codv" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="Vehiculo">
     <Key>
@@ -75,7 +81,6 @@
     <NavigationProperty Name="TipoDeVehiculo" Relationship="Model1.TipoDeVehiculoVehiculo" FromRole="Vehiculo" ToRole="TipoDeVehiculo" />
     <Property Name="TipoDeVehiculoId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="VehiculoViaje" Relationship="Model1.VehiculoVehiculoViaje" FromRole="Vehiculo" ToRole="VehiculoViaje" />
-    <Property Name="MarcaDelVehiculoId" Type="Int32" Nullable="false" />
     <Property Name="CantidadPasajeros" Type="Int32" Nullable="false" />
     <Property Name="Tonelage" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
     <Property Name="EstadoVehiculo" Type="String" Nullable="false" FixedLength="false" MaxLength="10" Unicode="false" />
@@ -204,9 +209,9 @@
     <Property Name="VehiculoId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Viaje" Relationship="Model1.ViajeVehiculoViaje" FromRole="VehiculoViaje" ToRole="Viaje" />
     <Property Name="ViajeId" Type="Int32" Nullable="false" />
-    <Property Name="FechaHoraSalida" Type="Time" Nullable="false" Precision="7" />
-    <Property Name="FechaHoraLlegada" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-    <Property Name="FechaHoraRetorno" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="FechaHoraSalida" Type="DateTime" Nullable="true" Precision="3" />
+    <Property Name="FechaHoraLlegada" Type="DateTime" Nullable="true" Precision="3" />
+    <Property Name="FechaHoraRetorno" Type="DateTime" Nullable="true" Precision="3" />
   </EntityType>
   <EntityType Name="ViajeChofer">
     <Key>
@@ -319,7 +324,6 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Modelo" Type="String" Nullable="false" FixedLength="false" MaxLength="20" Unicode="false" />
-    <Property Name="MarcaDelVehiculoId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Vehiculo" Relationship="Model1.ModeloDelVehiculoVehiculo" FromRole="ModeloDelVehiculo" ToRole="Vehiculo" />
     <NavigationProperty Name="MarcaVehiculo" Relationship="Model1.MarcaVehiculoModeloDelVehiculo" FromRole="ModeloDelVehiculo" ToRole="MarcaVehiculo" />
     <Property Name="MarcaVehiculoId" Type="Int32" Nullable="false" />
@@ -369,4 +373,27 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <ComplexType Name="usp_BucarViaje_Result">
+    <Property Type="String" Name="Codigo" Nullable="false" MaxLength="5" />
+    <Property Type="Int32" Name="Costo" Nullable="false" />
+    <Property Type="Int32" Name="Pago" Nullable="false" />
+    <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Tipo" Nullable="false" />
+    <Property Type="String" Name="Proveedor" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="CodigoChofer" Nullable="false" MaxLength="16" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Origen" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Destino" Nullable="false" MaxLength="10" />
+    <Property Type="Int32" Name="Pasajeros" Nullable="false" />
+    <Property Type="Decimal" Name="Tonelaje" Nullable="false" Precision="5" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="usp_DetalleViaje_Result">
+    <Property Type="String" Name="Viaje" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="Placa" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Marca" Nullable="false" MaxLength="20" />
+    <Property Type="String" Name="Modelo" Nullable="false" MaxLength="20" />
+    <Property Type="DateTime" Name="Salida" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="Llegada" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="Retorno" Nullable="true" Precision="23" />
+  </ComplexType>
 </Schema>

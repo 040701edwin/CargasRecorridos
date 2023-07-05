@@ -10,20 +10,15 @@
 namespace CapaDatos.Modelo
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class ModeloDelVehiculo
+    public partial class usp_DetalleViaje_Result
     {
-        public ModeloDelVehiculo()
-        {
-            this.Vehiculo = new HashSet<Vehiculo>();
-        }
-    
-        public int Id { get; set; }
+        public string Viaje { get; set; }
+        public string Placa { get; set; }
+        public string Marca { get; set; }
         public string Modelo { get; set; }
-        public int MarcaVehiculoId { get; set; }
-    
-        public virtual ICollection<Vehiculo> Vehiculo { get; set; }
-        public virtual MarcaVehiculo MarcaVehiculo { get; set; }
+        public Nullable<System.DateTime> Salida { get; set; }
+        public Nullable<System.DateTime> Llegada { get; set; }
+        public Nullable<System.DateTime> Retorno { get; set; }
     }
 }

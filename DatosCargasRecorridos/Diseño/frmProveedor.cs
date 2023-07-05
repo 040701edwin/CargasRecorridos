@@ -50,13 +50,36 @@ namespace Diseño
             }
             else
             {
-
+                Proveedor oProveedor = oProveedorDAO.Buscar(txtCodigo.Text.Trim());
+                oProveedor.CodigoProveedor = txtCodigo.Text.Trim();
+                oProveedor.NombreEmpresaProveedor = txtNomEmpresa.Text.Trim();
+                oProveedor.CelularProveedor = txtCelular.Text.Trim();
+                oProveedor.DireccionEmpresa = txtDireccion.Text.Trim();
+                oProveedor.Nombre1Encargado = txtNombre1.Text.Trim();
+                oProveedor.Nombre2Encargado = txtNombre2.Text.Trim();
+                oProveedor.Apellido1Encargado = txtApellido1.Text.Trim();
+                oProveedor.Apellido2Encargado = txtApellido2.Text.Trim();
+                oProveedor.Cargo = txtCargo.Text.Trim();
+                oProveedor.Comentario = txtComentario.Text.Trim();
+                if (oProveedorDAO.Modificar(oProveedor) == false)
+                {
+                    MessageBox.Show("El registro no fue modificado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //return;
+                }
+                else
+                {
+                    MessageBox.Show("Registro Modificado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //return;
+                }
+                iconBtnAgregar.Text = "Guardar";
             }
+            Limpiar();
         }
 
         private void iconBtnCancelar_Click(object sender, EventArgs e)
         {
             Limpiar();
+            iconBtnAgregar.Text = "Guardar";
         }
         private void Limpiar()
         {
@@ -76,17 +99,17 @@ namespace Diseño
             Close();
         }
 
-        private void txtNomEmpresa_Validating(object sender, CancelEventArgs e)
+        private void txtCodigo_Validating(object sender, CancelEventArgs e)
         {
             Proveedor oProveedor;
-            oProveedor = oProveedorDAO.Buscar(txtNomEmpresa.Text.Trim());
+            oProveedor = oProveedorDAO.Buscar(txtCodigo.Text.Trim());
             if(oProveedor != null)
             {
                 NuevoRegistro = false;
                 MessageBox.Show("Registro existente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 iconBtnAgregar.Text = "Modificar";
-                txtCodigo.Text = oProveedor.CodigoProveedor.Trim();
                 txtCelular.Text = oProveedor.CelularProveedor.Trim();
+                txtNomEmpresa.Text = oProveedor.NombreEmpresaProveedor.Trim();
                 txtDireccion.Text = oProveedor.DireccionEmpresa.Trim();
                 txtNombre1.Text = oProveedor.Nombre1Encargado.Trim();
                 txtNombre2.Text = oProveedor.Nombre2Encargado.Trim();

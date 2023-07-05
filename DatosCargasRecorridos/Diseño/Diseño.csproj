@@ -84,6 +84,12 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAgregarVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarVehiculo.Designer.cs">
+      <DependentUpon>frmAgregarVehiculo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,8 +191,14 @@
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAgregarVehiculo.resx">
+      <DependentUpon>frmAgregarVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMarcaDelVehiculo.resx">
+      <DependentUpon>frmMarcaDelVehiculo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMas.resx">
       <DependentUpon>frmMas.cs</DependentUpon>

@@ -33,5 +33,9 @@ namespace CapaLogica
             oModelo = db.ModeloDeLosVehiculos.DefaultIfEmpty(null).FirstOrDefault(mo => mo.Modelo.Trim() == pCodigo.Trim()); //mo significa modelo
             return oModelo;
         }
+        public List<ModeloDelVehiculo> Listar()
+        {
+            return (db.ModeloDeLosVehiculos.ToList());
+        }
     }
 }

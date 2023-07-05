@@ -12,6 +12,10 @@ namespace CapaDatos.Modelo
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    //using System.Data.Objects;
+    using System.Data.Objects.DataClasses;
+    using System.Data.Entity.Core.Objects; //Agregar
+    using System.Linq;
     
     public partial class Model1Container : DbContext
     {
@@ -36,5 +40,23 @@ namespace CapaDatos.Modelo
         public DbSet<Pais> Paises { get; set; }
         public DbSet<ModeloDelVehiculo> ModeloDeLosVehiculos { get; set; }
         public DbSet<MarcaVehiculo> MarcaVehiculos { get; set; }
+    
+        public virtual ObjectResult<usp_BucarViaje_Result> usp_BucarViaje(string codv)
+        {
+            var codvParameter = codv != null ?
+                new ObjectParameter("codv", codv) :
+                new ObjectParameter("codv", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_BucarViaje_Result>("usp_BucarViaje", codvParameter);
+        }
+    
+        public virtual ObjectResult<usp_DetalleViaje_Result> usp_DetalleViaje(string codv)
+        {
+            var codvParameter = codv != null ?
+                new ObjectParameter("codv", codv) :
+                new ObjectParameter("codv", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_DetalleViaje_Result>("usp_DetalleViaje", codvParameter);
+        }
     }
 }

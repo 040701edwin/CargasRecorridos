@@ -10,7 +10,7 @@ using System.Data.Entity;
 
 namespace CapaLogica
 {
-    class MarcaDeVehiculoDAO
+    public class MarcaDeVehiculoDAO
     {
         Model1Container db = new Model1Container();
 

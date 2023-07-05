@@ -92,6 +92,7 @@ namespace Diseño
             this.iconBtnAgregar.TabIndex = 10;
             this.iconBtnAgregar.Text = "Agregar";
             this.iconBtnAgregar.UseVisualStyleBackColor = true;
+            this.iconBtnAgregar.Click += new System.EventHandler(this.iconBtnAgregar_Click);
             // 
             // iconBtnBuscar
             // 

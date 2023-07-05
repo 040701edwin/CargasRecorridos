@@ -17,9 +17,9 @@ namespace CapaDatos.Modelo
         public int Id { get; set; }
         public int VehiculoId { get; set; }
         public int ViajeId { get; set; }
-        public System.TimeSpan FechaHoraSalida { get; set; }
-        public string FechaHoraLlegada { get; set; }
-        public string FechaHoraRetorno { get; set; }
+        public Nullable<System.DateTime> FechaHoraSalida { get; set; }
+        public Nullable<System.DateTime> FechaHoraLlegada { get; set; }
+        public Nullable<System.DateTime> FechaHoraRetorno { get; set; }
     
         public virtual Vehiculo Vehiculo { get; set; }
         public virtual Viaje Viaje { get; set; }
