@@ -197,6 +197,9 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMarcaDelVehiculo.resx">
+      <DependentUpon>frmMarcaDelVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMas.resx">
       <DependentUpon>frmMas.cs</DependentUpon>
     </EmbeddedResource>

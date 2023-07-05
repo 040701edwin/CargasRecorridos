@@ -172,7 +172,7 @@ namespace Diseño
             this.txtNomEmpresa.Name = "txtNomEmpresa";
             this.txtNomEmpresa.Size = new System.Drawing.Size(100, 20);
             this.txtNomEmpresa.TabIndex = 27;
-            this.txtNomEmpresa.Validating += new System.ComponentModel.CancelEventHandler(this.txtNomEmpresa_Validating);
+            this.txtCodigo.Validating += new System.ComponentModel.CancelEventHandler(this.txtCodigo_Validating);
             // 
             // label3
             // 
