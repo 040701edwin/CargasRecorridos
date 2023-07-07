@@ -75,6 +75,7 @@ namespace Diseño
             // txtCedula
             // 
             this.txtCedula.Location = new System.Drawing.Point(119, 79);
+            this.txtCedula.MaxLength = 16;
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(100, 20);
             this.txtCedula.TabIndex = 2;
@@ -83,6 +84,7 @@ namespace Diseño
             // txtNombre1
             // 
             this.txtNombre1.Location = new System.Drawing.Point(119, 105);
+            this.txtNombre1.MaxLength = 15;
             this.txtNombre1.Name = "txtNombre1";
             this.txtNombre1.Size = new System.Drawing.Size(100, 20);
             this.txtNombre1.TabIndex = 4;
@@ -162,6 +164,7 @@ namespace Diseño
             // txtNombre2
             // 
             this.txtNombre2.Location = new System.Drawing.Point(119, 131);
+            this.txtNombre2.MaxLength = 15;
             this.txtNombre2.Name = "txtNombre2";
             this.txtNombre2.Size = new System.Drawing.Size(100, 20);
             this.txtNombre2.TabIndex = 12;
@@ -169,6 +172,7 @@ namespace Diseño
             // txtApellido1
             // 
             this.txtApellido1.Location = new System.Drawing.Point(119, 157);
+            this.txtApellido1.MaxLength = 15;
             this.txtApellido1.Name = "txtApellido1";
             this.txtApellido1.Size = new System.Drawing.Size(100, 20);
             this.txtApellido1.TabIndex = 13;
@@ -176,6 +180,7 @@ namespace Diseño
             // txtApellido2
             // 
             this.txtApellido2.Location = new System.Drawing.Point(119, 183);
+            this.txtApellido2.MaxLength = 15;
             this.txtApellido2.Name = "txtApellido2";
             this.txtApellido2.Size = new System.Drawing.Size(100, 20);
             this.txtApellido2.TabIndex = 14;
@@ -183,6 +188,7 @@ namespace Diseño
             // txtCelular
             // 
             this.txtCelular.Location = new System.Drawing.Point(119, 209);
+            this.txtCelular.MaxLength = 12;
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(100, 20);
             this.txtCelular.TabIndex = 15;
@@ -190,6 +196,7 @@ namespace Diseño
             // txtINSS
             // 
             this.txtINSS.Location = new System.Drawing.Point(119, 235);
+            this.txtINSS.MaxLength = 9;
             this.txtINSS.Name = "txtINSS";
             this.txtINSS.Size = new System.Drawing.Size(100, 20);
             this.txtINSS.TabIndex = 16;
@@ -197,6 +204,7 @@ namespace Diseño
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(119, 261);
+            this.txtDireccion.MaxLength = 50;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(100, 20);
             this.txtDireccion.TabIndex = 17;

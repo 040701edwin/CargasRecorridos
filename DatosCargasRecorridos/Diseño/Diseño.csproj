@@ -180,6 +180,16 @@
     <Compile Include="frmViajeChofer.Designer.cs">
       <DependentUpon>frmViajeChofer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RecorridosDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecorridosDataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmAgregarChofer.resx">
@@ -209,14 +219,23 @@
     <EmbeddedResource Include="frmMostrarViajes.resx">
       <DependentUpon>frmMostrarViajes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPais.resx">
+      <DependentUpon>frmPais.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmProveedor.resx">
       <DependentUpon>frmProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTipoDeViaje.resx">
+      <DependentUpon>frmTipoDeViaje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVehiculo.resx">
       <DependentUpon>frmVehiculo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmViaje.resx">
       <DependentUpon>frmViaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViajeChofer.resx">
+      <DependentUpon>frmViajeChofer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -231,6 +250,21 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="RecorridosDataSet.xsc">
+      <DependentUpon>RecorridosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RecorridosDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RecorridosDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RecorridosDataSet.xss">
+      <DependentUpon>RecorridosDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\Logo.jpg" />
   </ItemGroup>
   <ItemGroup>

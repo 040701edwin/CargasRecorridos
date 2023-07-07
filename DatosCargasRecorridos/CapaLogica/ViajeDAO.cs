@@ -33,5 +33,10 @@ namespace CapaLogica
             oViaje = db.Viajes.DefaultIfEmpty(null).FirstOrDefault(cv => cv.CodigoViaje.Trim() == pCodigo.Trim()); //ch abreviatura de Codigo viaje
             return oViaje;
         }
+        //Resultado de la busqueda del procedimiento almacenado
+        public List<usp_BucarViaje_Result> proBuscarViaje(string codv)
+        {
+            return db.usp_BucarViaje(codv).ToList();
+        }
     }
 }

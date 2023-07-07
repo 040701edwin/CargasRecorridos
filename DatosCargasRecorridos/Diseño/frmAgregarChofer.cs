@@ -39,6 +39,7 @@ namespace Diseño
         private void iconBtnCancelar_Click(object sender, EventArgs e)
         {
             Limpiar();
+            iconBtnAgregar.Text = "Guardar";
         }
 
         private void iconBtnCerrar_Click(object sender, EventArgs e)
@@ -92,6 +93,7 @@ namespace Diseño
                     MessageBox.Show("Registro Modificado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     //return;
                 }
+                iconBtnAgregar.Text = "Guardar";
             }
             Limpiar();
         }

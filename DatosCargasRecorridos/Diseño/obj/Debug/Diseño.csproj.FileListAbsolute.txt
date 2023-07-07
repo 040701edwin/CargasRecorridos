@@ -134,3 +134,7 @@ E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debu
 E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.frmMostrarViajes.resources
 E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.frmVehiculo.resources
 E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.frmAgregarVehiculo.resources
+E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.frmMarcaDelVehiculo.resources
+E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.frmPais.resources
+E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.frmTipoDeViaje.resources
+E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.frmViajeChofer.resources

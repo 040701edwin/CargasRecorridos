@@ -114,6 +114,7 @@ namespace Diseño
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(124, 342);
+            this.txtDescripcion.MaxLength = 50;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(100, 20);
             this.txtDescripcion.TabIndex = 39;
@@ -214,6 +215,7 @@ namespace Diseño
             // txtCodigo
             // 
             this.txtCodigo.Location = new System.Drawing.Point(124, 79);
+            this.txtCodigo.MaxLength = 5;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigo.TabIndex = 25;

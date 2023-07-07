@@ -50,6 +50,7 @@ namespace Diseño
             this.iconBtnCerrar.TabIndex = 64;
             this.iconBtnCerrar.Text = "Cerrar";
             this.iconBtnCerrar.UseVisualStyleBackColor = true;
+            this.iconBtnCerrar.Click += new System.EventHandler(this.iconBtnCerrar_Click);
             // 
             // iconBtnCancelar
             // 
@@ -62,6 +63,7 @@ namespace Diseño
             this.iconBtnCancelar.TabIndex = 63;
             this.iconBtnCancelar.Text = "Cancelar";
             this.iconBtnCancelar.UseVisualStyleBackColor = true;
+            this.iconBtnCancelar.Click += new System.EventHandler(this.iconBtnCancelar_Click);
             // 
             // iconBtnAgregar
             // 
@@ -88,10 +90,11 @@ namespace Diseño
             // txtMarca
             // 
             this.txtMarca.Location = new System.Drawing.Point(74, 48);
-            this.txtMarca.MaxLength = 5;
+            this.txtMarca.MaxLength = 20;
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(100, 20);
             this.txtMarca.TabIndex = 49;
+            this.txtMarca.Validating += new System.ComponentModel.CancelEventHandler(this.txtMarca_Validating);
             // 
             // label1
             // 

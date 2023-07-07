@@ -84,6 +84,7 @@ namespace Diseño
             // txtApellido2
             // 
             this.txtApellido2.Location = new System.Drawing.Point(444, 77);
+            this.txtApellido2.MaxLength = 15;
             this.txtApellido2.Name = "txtApellido2";
             this.txtApellido2.Size = new System.Drawing.Size(100, 20);
             this.txtApellido2.TabIndex = 37;
@@ -91,6 +92,7 @@ namespace Diseño
             // txtNombre2
             // 
             this.txtNombre2.Location = new System.Drawing.Point(257, 81);
+            this.txtNombre2.MaxLength = 15;
             this.txtNombre2.Name = "txtNombre2";
             this.txtNombre2.Size = new System.Drawing.Size(100, 20);
             this.txtNombre2.TabIndex = 36;
@@ -98,6 +100,7 @@ namespace Diseño
             // txtNombre1
             // 
             this.txtNombre1.Location = new System.Drawing.Point(257, 55);
+            this.txtNombre1.MaxLength = 15;
             this.txtNombre1.Name = "txtNombre1";
             this.txtNombre1.Size = new System.Drawing.Size(100, 20);
             this.txtNombre1.TabIndex = 35;
@@ -172,7 +175,6 @@ namespace Diseño
             this.txtNomEmpresa.Name = "txtNomEmpresa";
             this.txtNomEmpresa.Size = new System.Drawing.Size(100, 20);
             this.txtNomEmpresa.TabIndex = 27;
-            this.txtCodigo.Validating += new System.ComponentModel.CancelEventHandler(this.txtCodigo_Validating);
             // 
             // label3
             // 
@@ -190,6 +192,7 @@ namespace Diseño
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigo.TabIndex = 25;
+            this.txtCodigo.Validating += new System.ComponentModel.CancelEventHandler(this.txtCodigo_Validating);
             // 
             // label2
             // 
@@ -213,6 +216,7 @@ namespace Diseño
             // txtApellido1
             // 
             this.txtApellido1.Location = new System.Drawing.Point(444, 51);
+            this.txtApellido1.MaxLength = 15;
             this.txtApellido1.Name = "txtApellido1";
             this.txtApellido1.Size = new System.Drawing.Size(100, 20);
             this.txtApellido1.TabIndex = 46;

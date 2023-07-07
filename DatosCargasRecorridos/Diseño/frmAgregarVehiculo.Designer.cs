@@ -62,6 +62,7 @@ namespace Diseño
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(126, 268);
+            this.txtDescripcion.MaxLength = 50;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(100, 20);
             this.txtDescripcion.TabIndex = 40;
@@ -146,6 +147,7 @@ namespace Diseño
             // txtPlaca
             // 
             this.txtPlaca.Location = new System.Drawing.Point(126, 86);
+            this.txtPlaca.MaxLength = 15;
             this.txtPlaca.Name = "txtPlaca";
             this.txtPlaca.Size = new System.Drawing.Size(100, 20);
             this.txtPlaca.TabIndex = 25;
@@ -229,6 +231,7 @@ namespace Diseño
             // 
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Location = new System.Drawing.Point(126, 241);
+            this.cmbEstado.MaxLength = 10;
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(100, 21);
             this.cmbEstado.TabIndex = 47;

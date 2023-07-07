@@ -29,13 +29,31 @@ namespace Diseño
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.iconBtnAgregar = new FontAwesome.Sharp.IconButton();
             this.iconBtnBuscar = new FontAwesome.Sharp.IconButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.recorridosDataSet = new Diseño.RecorridosDataSet();
+            this.uspBucarViajeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usp_BucarViajeTableAdapter = new Diseño.RecorridosDataSetTableAdapters.usp_BucarViajeTableAdapter();
+            this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoChoferDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.origenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.destinoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pasajerosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tonelajeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pagoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recorridosDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uspBucarViajeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBuscar
@@ -96,17 +114,119 @@ namespace Diseño
             this.iconBtnBuscar.TabIndex = 8;
             this.iconBtnBuscar.Text = "Buscar";
             this.iconBtnBuscar.UseVisualStyleBackColor = false;
+            this.iconBtnBuscar.Click += new System.EventHandler(this.iconBtnBuscar_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codigoDataGridViewTextBoxColumn,
+            this.codigoChoferDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn,
+            this.tipoDataGridViewTextBoxColumn,
+            this.origenDataGridViewTextBoxColumn,
+            this.destinoDataGridViewTextBoxColumn,
+            this.pasajerosDataGridViewTextBoxColumn,
+            this.tonelajeDataGridViewTextBoxColumn,
+            this.costoDataGridViewTextBoxColumn,
+            this.pagoDataGridViewTextBoxColumn,
+            this.proveedorDataGridViewTextBoxColumn,
+            this.descripcionDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.uspBucarViajeBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(0, 111);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(560, 361);
             this.dataGridView1.TabIndex = 10;
+            // 
+            // recorridosDataSet
+            // 
+            this.recorridosDataSet.DataSetName = "RecorridosDataSet";
+            this.recorridosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // uspBucarViajeBindingSource
+            // 
+            this.uspBucarViajeBindingSource.DataMember = "usp_BucarViaje";
+            this.uspBucarViajeBindingSource.DataSource = this.recorridosDataSet;
+            // 
+            // usp_BucarViajeTableAdapter
+            // 
+            this.usp_BucarViajeTableAdapter.ClearBeforeFill = true;
+            // 
+            // codigoDataGridViewTextBoxColumn
+            // 
+            this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
+            this.codigoDataGridViewTextBoxColumn.HeaderText = "Viaje";
+            this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
+            // 
+            // codigoChoferDataGridViewTextBoxColumn
+            // 
+            this.codigoChoferDataGridViewTextBoxColumn.DataPropertyName = "CodigoChofer";
+            this.codigoChoferDataGridViewTextBoxColumn.HeaderText = "CodigoChofer";
+            this.codigoChoferDataGridViewTextBoxColumn.Name = "codigoChoferDataGridViewTextBoxColumn";
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
+            // tipoDataGridViewTextBoxColumn
+            // 
+            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
+            // 
+            // origenDataGridViewTextBoxColumn
+            // 
+            this.origenDataGridViewTextBoxColumn.DataPropertyName = "Origen";
+            this.origenDataGridViewTextBoxColumn.HeaderText = "Origen";
+            this.origenDataGridViewTextBoxColumn.Name = "origenDataGridViewTextBoxColumn";
+            // 
+            // destinoDataGridViewTextBoxColumn
+            // 
+            this.destinoDataGridViewTextBoxColumn.DataPropertyName = "Destino";
+            this.destinoDataGridViewTextBoxColumn.HeaderText = "Destino";
+            this.destinoDataGridViewTextBoxColumn.Name = "destinoDataGridViewTextBoxColumn";
+            // 
+            // pasajerosDataGridViewTextBoxColumn
+            // 
+            this.pasajerosDataGridViewTextBoxColumn.DataPropertyName = "Pasajeros";
+            this.pasajerosDataGridViewTextBoxColumn.HeaderText = "Pasajeros";
+            this.pasajerosDataGridViewTextBoxColumn.Name = "pasajerosDataGridViewTextBoxColumn";
+            // 
+            // tonelajeDataGridViewTextBoxColumn
+            // 
+            this.tonelajeDataGridViewTextBoxColumn.DataPropertyName = "Tonelaje";
+            this.tonelajeDataGridViewTextBoxColumn.HeaderText = "Tonelaje";
+            this.tonelajeDataGridViewTextBoxColumn.Name = "tonelajeDataGridViewTextBoxColumn";
+            // 
+            // costoDataGridViewTextBoxColumn
+            // 
+            this.costoDataGridViewTextBoxColumn.DataPropertyName = "Costo";
+            this.costoDataGridViewTextBoxColumn.HeaderText = "Costo";
+            this.costoDataGridViewTextBoxColumn.Name = "costoDataGridViewTextBoxColumn";
+            // 
+            // pagoDataGridViewTextBoxColumn
+            // 
+            this.pagoDataGridViewTextBoxColumn.DataPropertyName = "Pago";
+            this.pagoDataGridViewTextBoxColumn.HeaderText = "Pago";
+            this.pagoDataGridViewTextBoxColumn.Name = "pagoDataGridViewTextBoxColumn";
+            // 
+            // proveedorDataGridViewTextBoxColumn
+            // 
+            this.proveedorDataGridViewTextBoxColumn.DataPropertyName = "Proveedor";
+            this.proveedorDataGridViewTextBoxColumn.HeaderText = "Proveedor";
+            this.proveedorDataGridViewTextBoxColumn.Name = "proveedorDataGridViewTextBoxColumn";
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
             // 
             // frmMostrarViajes
             // 
@@ -122,6 +242,8 @@ namespace Diseño
             this.Name = "frmMostrarViajes";
             this.Text = "frmMostrarViajes";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recorridosDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uspBucarViajeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -135,5 +257,20 @@ namespace Diseño
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource uspBucarViajeBindingSource;
+        private RecorridosDataSet recorridosDataSet;
+        private RecorridosDataSetTableAdapters.usp_BucarViajeTableAdapter usp_BucarViajeTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigoChoferDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn origenDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn destinoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pasajerosDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tonelajeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pagoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proveedorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
     }
 }
