@@ -18,7 +18,7 @@ namespace Diseño
         private VehiculoViajeDAO oVehiculoViajeDAO = new VehiculoViajeDAO();
         private ViajeDAO oViajeDAO = new ViajeDAO();
         private VehiculoDAO oVehiculoDAO = new VehiculoDAO();
-        private bool NuevoRegistro = false;
+        //private bool NuevoRegistro = false;
         public frmVehiculoViaje()
         {
             InitializeComponent();
