@@ -36,8 +36,8 @@ namespace Diseño
             this.iconBtnAgregar = new FontAwesome.Sharp.IconButton();
             this.iconBtnBuscar = new FontAwesome.Sharp.IconButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.recorridosDataSet = new Diseño.RecorridosDataSet();
             this.uspBucarViajeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.recorridosDataSet = new Diseño.RecorridosDataSet();
             this.usp_BucarViajeTableAdapter = new Diseño.RecorridosDataSetTableAdapters.usp_BucarViajeTableAdapter();
             this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoChoferDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,9 +51,10 @@ namespace Diseño
             this.pagoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.proveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewLinkColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.recorridosDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uspBucarViajeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recorridosDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBuscar
@@ -135,22 +136,23 @@ namespace Diseño
             this.costoDataGridViewTextBoxColumn,
             this.pagoDataGridViewTextBoxColumn,
             this.proveedorDataGridViewTextBoxColumn,
-            this.descripcionDataGridViewTextBoxColumn});
+            this.descripcionDataGridViewTextBoxColumn,
+            this.Eliminar});
             this.dataGridView1.DataSource = this.uspBucarViajeBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(0, 111);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(560, 361);
             this.dataGridView1.TabIndex = 10;
             // 
-            // recorridosDataSet
-            // 
-            this.recorridosDataSet.DataSetName = "RecorridosDataSet";
-            this.recorridosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // uspBucarViajeBindingSource
             // 
             this.uspBucarViajeBindingSource.DataMember = "usp_BucarViaje";
             this.uspBucarViajeBindingSource.DataSource = this.recorridosDataSet;
+            // 
+            // recorridosDataSet
+            // 
+            this.recorridosDataSet.DataSetName = "RecorridosDataSet";
+            this.recorridosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // usp_BucarViajeTableAdapter
             // 
@@ -228,6 +230,14 @@ namespace Diseño
             this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
             this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
             // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Text = "Eliminar";
+            this.Eliminar.UseColumnTextForLinkValue = true;
+            // 
             // frmMostrarViajes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -242,8 +252,8 @@ namespace Diseño
             this.Name = "frmMostrarViajes";
             this.Text = "frmMostrarViajes";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.recorridosDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uspBucarViajeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recorridosDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,5 +282,6 @@ namespace Diseño
         private System.Windows.Forms.DataGridViewTextBoxColumn pagoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn proveedorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewLinkColumn Eliminar;
     }
 }

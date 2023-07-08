@@ -282,6 +282,9 @@
   <Function Name="usp_DetalleViaje" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="codv" Type="varchar" Mode="In" />
   </Function>
+  <Function Name="usp_MostrarChofer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cedula" Type="varchar" Mode="In" />
+  </Function>
   <EntityContainer Name="Model1StoreContainer">
     <EntitySet Name="Choferes" EntityType="Self.Choferes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MarcaVehiculos" EntityType="Self.MarcaVehiculos" Schema="dbo" store:Type="Tables" />

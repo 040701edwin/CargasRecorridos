@@ -12,9 +12,8 @@ namespace CapaDatos.Modelo
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    //using System.Data.Objects;
+    using System.Data.Objects;
     using System.Data.Objects.DataClasses;
-    using System.Data.Entity.Core.Objects; //Agregar
     using System.Linq;
     
     public partial class Model1Container : DbContext
@@ -57,6 +56,15 @@ namespace CapaDatos.Modelo
                 new ObjectParameter("codv", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_DetalleViaje_Result>("usp_DetalleViaje", codvParameter);
+        }
+    
+        public virtual ObjectResult<usp_MostrarChofer_Result> usp_MostrarChofer(string cedula)
+        {
+            var cedulaParameter = cedula != null ?
+                new ObjectParameter("cedula", cedula) :
+                new ObjectParameter("cedula", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_MostrarChofer_Result>("usp_MostrarChofer", cedulaParameter);
         }
     }
 }

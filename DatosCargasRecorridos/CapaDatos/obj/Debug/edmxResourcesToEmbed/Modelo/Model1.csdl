@@ -70,13 +70,16 @@
     <FunctionImport Name="usp_DetalleViaje" ReturnType="Collection(Model1.usp_DetalleViaje_Result)">
       <Parameter Name="codv" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="usp_MostrarChofer" ReturnType="Collection(Model1.usp_MostrarChofer_Result)">
+      <Parameter Name="cedula" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="Vehiculo">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="PlacaVehiculo" Type="String" Nullable="false" Unicode="false" MaxLength="15" FixedLength="false" />
+    <Property Name="PlacaVehiculo" Type="String" Nullable="false" FixedLength="false" Unicode="false" MaxLength="15" />
     <Property Name="DescripcionVehiculo" Type="String" Nullable="true" FixedLength="false" MaxLength="50" Unicode="false" />
     <NavigationProperty Name="TipoDeVehiculo" Relationship="Model1.TipoDeVehiculoVehiculo" FromRole="Vehiculo" ToRole="TipoDeVehiculo" />
     <Property Name="TipoDeVehiculoId" Type="Int32" Nullable="false" />
@@ -395,5 +398,16 @@
     <Property Type="DateTime" Name="Salida" Nullable="true" Precision="23" />
     <Property Type="DateTime" Name="Llegada" Nullable="true" Precision="23" />
     <Property Type="DateTime" Name="Retorno" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="usp_MostrarChofer_Result">
+    <Property Type="String" Name="Cedula" Nullable="false" MaxLength="16" />
+    <Property Type="String" Name="Nombre" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Segundo_Nombre" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Apellido" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Segundo_Apellido" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="celular" Nullable="false" MaxLength="16" />
+    <Property Type="String" Name="INSS" Nullable="true" MaxLength="9" />
+    <Property Type="String" Name="Pais" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Direccion" Nullable="true" MaxLength="50" />
   </ComplexType>
 </Schema>
