@@ -95,6 +95,15 @@
     <Compile Include="Modelo\usp_DetalleViaje_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\usp_MostrarChofer_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\usp_Proveedor_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\usp_Vehiculo_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Vehiculo.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

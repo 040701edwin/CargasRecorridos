@@ -287,6 +287,15 @@
         <Function Name="usp_DetalleViaje" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="codv" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="usp_MostrarChofer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cedula" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_Proveedor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="codigo" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="usp_Vehiculo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="placa" Type="varchar" Mode="In" />
+        </Function>
         <EntityContainer Name="Model1StoreContainer">
           <EntitySet Name="Choferes" EntityType="Self.Choferes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MarcaVehiculos" EntityType="Self.MarcaVehiculos" Schema="dbo" store:Type="Tables" />
@@ -421,10 +430,19 @@
             <End Role="Vehiculo" EntitySet="Vehiculos" />
           </AssociationSet>
           <FunctionImport Name="usp_BucarViaje" ReturnType="Collection(Model1.usp_BucarViaje_Result)">
-            <Parameter Name="codv" Mode="In" Type="String" />
+          <Parameter Name="codv" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_DetalleViaje" ReturnType="Collection(Model1.usp_DetalleViaje_Result)">
-            <Parameter Name="codv" Mode="In" Type="String" />
+          <Parameter Name="codv" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_MostrarChofer" ReturnType="Collection(Model1.usp_MostrarChofer_Result)">
+          <Parameter Name="cedula" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_Proveedor" ReturnType="Collection(Model1.usp_Proveedor_Result)">
+            <Parameter Name="codigo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_Vehiculo" ReturnType="Collection(Model1.usp_Vehiculo_Result)">
+            <Parameter Name="placa" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="Vehiculo">
@@ -432,7 +450,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="PlacaVehiculo" Type="String" Nullable="false" Unicode="false" MaxLength="15" FixedLength="false" />
+          <Property Name="PlacaVehiculo" Type="String" Nullable="false" FixedLength="false" Unicode="false" MaxLength="15" />
           <Property Name="DescripcionVehiculo" Type="String" Nullable="true" FixedLength="false" MaxLength="50" Unicode="false" />
           <NavigationProperty Name="TipoDeVehiculo" Relationship="Model1.TipoDeVehiculoVehiculo" FromRole="Vehiculo" ToRole="TipoDeVehiculo" />
           <Property Name="TipoDeVehiculoId" Type="Int32" Nullable="false" />
@@ -752,6 +770,39 @@
           <Property Type="DateTime" Name="Llegada" Nullable="true" Precision="23" />
           <Property Type="DateTime" Name="Retorno" Nullable="true" Precision="23" />
         </ComplexType>
+        <ComplexType Name="usp_MostrarChofer_Result">
+          <Property Type="String" Name="Cedula" Nullable="false" MaxLength="16" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="Segundo_Nombre" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="Apellido" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="Segundo_Apellido" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="celular" Nullable="false" MaxLength="16" />
+          <Property Type="String" Name="INSS" Nullable="true" MaxLength="9" />
+          <Property Type="String" Name="Pais" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Direccion" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="usp_Proveedor_Result">
+          <Property Type="String" Name="Codigo" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="Empresa" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="Segundo_Nombre" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="Apellido" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="Segundo_Apellido" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="Cargo" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="Celuar" Nullable="false" MaxLength="12" />
+          <Property Type="String" Name="Direccion_Empresa" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Comentario" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="usp_Vehiculo_Result">
+          <Property Type="String" Name="Placa" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="Marca" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Modelo" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="Tipo" Nullable="false" MaxLength="5" />
+          <Property Type="Int32" Name="Pasajero" Nullable="false" />
+          <Property Type="Decimal" Name="Tonelaje" Nullable="false" Precision="5" Scale="2" />
+          <Property Type="String" Name="Estado" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="50" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -917,6 +968,51 @@
                 <ScalarProperty Name="Salida" ColumnName="Salida" />
                 <ScalarProperty Name="Llegada" ColumnName="Llegada" />
                 <ScalarProperty Name="Retorno" ColumnName="Retorno" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_MostrarChofer" FunctionName="Model1.Store.usp_MostrarChofer">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model1.usp_MostrarChofer_Result">
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Segundo_Nombre" ColumnName="Segundo_Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Segundo_Apellido" ColumnName="Segundo_Apellido" />
+                <ScalarProperty Name="celular" ColumnName="celular" />
+                <ScalarProperty Name="INSS" ColumnName="INSS" />
+                <ScalarProperty Name="Pais" ColumnName="Pais" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_Proveedor" FunctionName="Model1.Store.usp_Proveedor">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model1.usp_Proveedor_Result">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Segundo_Nombre" ColumnName="Segundo_Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Segundo_Apellido" ColumnName="Segundo_Apellido" />
+                <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+                <ScalarProperty Name="Celuar" ColumnName="Celuar" />
+                <ScalarProperty Name="Direccion_Empresa" ColumnName="Direccion_Empresa" />
+                <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_Vehiculo" FunctionName="Model1.Store.usp_Vehiculo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model1.usp_Vehiculo_Result">
+                <ScalarProperty Name="Placa" ColumnName="Placa" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Pasajero" ColumnName="Pasajero" />
+                <ScalarProperty Name="Tonelaje" ColumnName="Tonelaje" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

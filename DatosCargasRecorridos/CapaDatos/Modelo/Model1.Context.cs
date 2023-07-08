@@ -16,7 +16,7 @@ namespace CapaDatos.Modelo
     using System.Data.Objects.DataClasses;
     using System.Data.Entity.Core.Objects; //Agregar
     using System.Linq;
-    
+
     public partial class Model1Container : DbContext
     {
         public Model1Container()
@@ -57,6 +57,33 @@ namespace CapaDatos.Modelo
                 new ObjectParameter("codv", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_DetalleViaje_Result>("usp_DetalleViaje", codvParameter);
+        }
+    
+        public virtual ObjectResult<usp_MostrarChofer_Result> usp_MostrarChofer(string cedula)
+        {
+            var cedulaParameter = cedula != null ?
+                new ObjectParameter("cedula", cedula) :
+                new ObjectParameter("cedula", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_MostrarChofer_Result>("usp_MostrarChofer", cedulaParameter);
+        }
+    
+        public virtual ObjectResult<usp_Proveedor_Result> usp_Proveedor(string codigo)
+        {
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_Proveedor_Result>("usp_Proveedor", codigoParameter);
+        }
+    
+        public virtual ObjectResult<usp_Vehiculo_Result> usp_Vehiculo(string placa)
+        {
+            var placaParameter = placa != null ?
+                new ObjectParameter("placa", placa) :
+                new ObjectParameter("placa", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_Vehiculo_Result>("usp_Vehiculo", placaParameter);
         }
     }
 }

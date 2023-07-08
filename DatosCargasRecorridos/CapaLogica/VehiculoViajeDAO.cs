@@ -9,7 +9,7 @@ using System.Data.Entity;
 
 namespace CapaLogica
 {
-    class VehiculoViajeDAO
+    public class VehiculoViajeDAO
     {
         Model1Container db = new Model1Container();
 
@@ -38,6 +38,10 @@ namespace CapaLogica
         public List<Vehiculo> Listar()
         {
             return (db.Vehiculos.ToList());
+        }
+        public List<usp_DetalleViaje_Result> proDetalleViaje(string codv)
+        {
+            return db.usp_DetalleViaje(codv).ToList();
         }
     }
 }

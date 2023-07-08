@@ -231,6 +231,9 @@
     <EmbeddedResource Include="frmVehiculo.resx">
       <DependentUpon>frmVehiculo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmVehiculoViaje.resx">
+      <DependentUpon>frmVehiculoViaje.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmViaje.resx">
       <DependentUpon>frmViaje.cs</DependentUpon>
     </EmbeddedResource>
