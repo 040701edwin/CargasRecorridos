@@ -190,6 +190,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecorridosDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RecorridosDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecorridosDataSet1.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmAgregarChofer.resx">
@@ -267,6 +272,17 @@
     </None>
     <None Include="RecorridosDataSet.xss">
       <DependentUpon>RecorridosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RecorridosDataSet1.xsc">
+      <DependentUpon>RecorridosDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="RecorridosDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RecorridosDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RecorridosDataSet1.xss">
+      <DependentUpon>RecorridosDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Resources\Logo.jpg" />
   </ItemGroup>

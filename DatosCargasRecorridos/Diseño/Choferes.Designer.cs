@@ -29,13 +29,28 @@ namespace Diseño
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.iconBtnBuscar = new FontAwesome.Sharp.IconButton();
             this.iconBtnAgregar = new FontAwesome.Sharp.IconButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.recorridosDataSet1 = new Diseño.RecorridosDataSet1();
+            this.uspMostrarChoferBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usp_MostrarChoferTableAdapter = new Diseño.RecorridosDataSet1TableAdapters.usp_MostrarChoferTableAdapter();
+            this.cedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.segundoNombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.segundoApellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.celularDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iNSSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recorridosDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uspMostrarChoferBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -81,6 +96,7 @@ namespace Diseño
             this.iconBtnBuscar.TabIndex = 3;
             this.iconBtnBuscar.Text = "Buscar";
             this.iconBtnBuscar.UseVisualStyleBackColor = true;
+            this.iconBtnBuscar.Click += new System.EventHandler(this.iconBtnBuscar_Click);
             // 
             // iconBtnAgregar
             // 
@@ -101,11 +117,91 @@ namespace Diseño
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cedulaDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn,
+            this.segundoNombreDataGridViewTextBoxColumn,
+            this.apellidoDataGridViewTextBoxColumn,
+            this.segundoApellidoDataGridViewTextBoxColumn,
+            this.celularDataGridViewTextBoxColumn,
+            this.iNSSDataGridViewTextBoxColumn,
+            this.paisDataGridViewTextBoxColumn,
+            this.direccionDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.uspMostrarChoferBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(-1, 111);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(560, 361);
             this.dataGridView1.TabIndex = 5;
+            // 
+            // recorridosDataSet1
+            // 
+            this.recorridosDataSet1.DataSetName = "RecorridosDataSet1";
+            this.recorridosDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // uspMostrarChoferBindingSource
+            // 
+            this.uspMostrarChoferBindingSource.DataMember = "usp_MostrarChofer";
+            this.uspMostrarChoferBindingSource.DataSource = this.recorridosDataSet1;
+            // 
+            // usp_MostrarChoferTableAdapter
+            // 
+            this.usp_MostrarChoferTableAdapter.ClearBeforeFill = true;
+            // 
+            // cedulaDataGridViewTextBoxColumn
+            // 
+            this.cedulaDataGridViewTextBoxColumn.DataPropertyName = "Cedula";
+            this.cedulaDataGridViewTextBoxColumn.HeaderText = "Cedula";
+            this.cedulaDataGridViewTextBoxColumn.Name = "cedulaDataGridViewTextBoxColumn";
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            // 
+            // segundoNombreDataGridViewTextBoxColumn
+            // 
+            this.segundoNombreDataGridViewTextBoxColumn.DataPropertyName = "Segundo_Nombre";
+            this.segundoNombreDataGridViewTextBoxColumn.HeaderText = "Segundo_Nombre";
+            this.segundoNombreDataGridViewTextBoxColumn.Name = "segundoNombreDataGridViewTextBoxColumn";
+            // 
+            // apellidoDataGridViewTextBoxColumn
+            // 
+            this.apellidoDataGridViewTextBoxColumn.DataPropertyName = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.HeaderText = "Apellido";
+            this.apellidoDataGridViewTextBoxColumn.Name = "apellidoDataGridViewTextBoxColumn";
+            // 
+            // segundoApellidoDataGridViewTextBoxColumn
+            // 
+            this.segundoApellidoDataGridViewTextBoxColumn.DataPropertyName = "Segundo_Apellido";
+            this.segundoApellidoDataGridViewTextBoxColumn.HeaderText = "Segundo_Apellido";
+            this.segundoApellidoDataGridViewTextBoxColumn.Name = "segundoApellidoDataGridViewTextBoxColumn";
+            // 
+            // celularDataGridViewTextBoxColumn
+            // 
+            this.celularDataGridViewTextBoxColumn.DataPropertyName = "celular";
+            this.celularDataGridViewTextBoxColumn.HeaderText = "celular";
+            this.celularDataGridViewTextBoxColumn.Name = "celularDataGridViewTextBoxColumn";
+            // 
+            // iNSSDataGridViewTextBoxColumn
+            // 
+            this.iNSSDataGridViewTextBoxColumn.DataPropertyName = "INSS";
+            this.iNSSDataGridViewTextBoxColumn.HeaderText = "INSS";
+            this.iNSSDataGridViewTextBoxColumn.Name = "iNSSDataGridViewTextBoxColumn";
+            // 
+            // paisDataGridViewTextBoxColumn
+            // 
+            this.paisDataGridViewTextBoxColumn.DataPropertyName = "Pais";
+            this.paisDataGridViewTextBoxColumn.HeaderText = "Pais";
+            this.paisDataGridViewTextBoxColumn.Name = "paisDataGridViewTextBoxColumn";
+            // 
+            // direccionDataGridViewTextBoxColumn
+            // 
+            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "Direccion";
+            this.direccionDataGridViewTextBoxColumn.HeaderText = "Direccion";
+            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
             // 
             // Choferes
             // 
@@ -123,6 +219,8 @@ namespace Diseño
             this.Name = "Choferes";
             this.Text = "Choferes";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recorridosDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uspMostrarChoferBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,5 +234,17 @@ namespace Diseño
         private FontAwesome.Sharp.IconButton iconBtnBuscar;
         private FontAwesome.Sharp.IconButton iconBtnAgregar;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cedulaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn segundoNombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn segundoApellidoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn celularDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iNSSDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paisDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource uspMostrarChoferBindingSource;
+        private RecorridosDataSet1 recorridosDataSet1;
+        private RecorridosDataSet1TableAdapters.usp_MostrarChoferTableAdapter usp_MostrarChoferTableAdapter;
     }
 }
