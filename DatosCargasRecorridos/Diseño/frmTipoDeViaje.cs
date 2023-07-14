@@ -34,7 +34,7 @@ namespace Diseño
 
         private void iconBtnGuardar_Click(object sender, EventArgs e)
         {
-            if(NuevoRegistro == false)
+            if(NuevoRegistro == true)
             {
                 TipoDeViaje oTipoViaje = new TipoDeViaje();
                 oTipoViaje.CodigoTipoViaje = txtCodigo.Text.Trim();
@@ -55,6 +55,7 @@ namespace Diseño
                 iconBtnGuardar.Text = "Guardar";
             }
             Limpiar();
+            uspTipoViajeBindingSource.DataSource = oTipoViajeDAO.proTipoViaje(txtCodigo.Text.Trim());
         }
 
         private void iconBtnCerrar_Click(object sender, EventArgs e)
@@ -76,6 +77,11 @@ namespace Diseño
             }
             else
                 NuevoRegistro = true;
+        }
+
+        private void frmTipoDeViaje_Load(object sender, EventArgs e)
+        {
+            uspTipoViajeBindingSource.DataSource = oTipoViajeDAO.proTipoViaje(txtCodigo.Text.Trim());
         }
     }
 }

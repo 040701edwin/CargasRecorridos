@@ -29,6 +29,7 @@ namespace Diseño
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.iconBtnCerrar = new FontAwesome.Sharp.IconButton();
             this.iconBtnGuardar = new FontAwesome.Sharp.IconButton();
@@ -38,7 +39,13 @@ namespace Diseño
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.recorridosDataSet8 = new Diseño.RecorridosDataSet8();
+            this.uspTipoViajeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usp_TipoViajeTableAdapter = new Diseño.RecorridosDataSet8TableAdapters.usp_TipoViajeTableAdapter();
+            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recorridosDataSet8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uspTipoViajeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCodigo
@@ -78,10 +85,14 @@ namespace Diseño
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tipoDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.uspTipoViajeBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(42, 146);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(175, 164);
+            this.dataGridView1.Size = new System.Drawing.Size(141, 164);
             this.dataGridView1.TabIndex = 18;
             // 
             // txtDescripcion
@@ -133,6 +144,26 @@ namespace Diseño
             this.label1.TabIndex = 13;
             this.label1.Text = "Tipos de Viaje";
             // 
+            // recorridosDataSet8
+            // 
+            this.recorridosDataSet8.DataSetName = "RecorridosDataSet8";
+            this.recorridosDataSet8.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // uspTipoViajeBindingSource
+            // 
+            this.uspTipoViajeBindingSource.DataMember = "usp_TipoViaje";
+            this.uspTipoViajeBindingSource.DataSource = this.recorridosDataSet8;
+            // 
+            // usp_TipoViajeTableAdapter
+            // 
+            this.usp_TipoViajeTableAdapter.ClearBeforeFill = true;
+            // 
+            // tipoDataGridViewTextBoxColumn
+            // 
+            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
+            // 
             // frmTipoDeViaje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -149,7 +180,10 @@ namespace Diseño
             this.Controls.Add(this.label1);
             this.Name = "frmTipoDeViaje";
             this.Text = "TipoDeViaje";
+            this.Load += new System.EventHandler(this.frmTipoDeViaje_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recorridosDataSet8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uspTipoViajeBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,5 +200,9 @@ namespace Diseño
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource uspTipoViajeBindingSource;
+        private RecorridosDataSet8 recorridosDataSet8;
+        private RecorridosDataSet8TableAdapters.usp_TipoViajeTableAdapter usp_TipoViajeTableAdapter;
     }
 }

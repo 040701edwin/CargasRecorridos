@@ -122,6 +122,9 @@ namespace Diseño
                 NuevoRegistro = true;
         }
 
-       
+        private void iconBtnBuscar_Click(object sender, EventArgs e)
+        {
+            uspProveedorBindingSource.DataSource = oProveedorDAO.proBuscarProveedor(txtBuscar.Text.Trim());
+        }
     }
 }

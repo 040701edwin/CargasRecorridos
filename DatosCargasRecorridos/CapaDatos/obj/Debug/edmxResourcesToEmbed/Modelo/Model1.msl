@@ -208,5 +208,57 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_ObtenerViaje" FunctionName="Model1.Store.usp_ObtenerViaje">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model1.usp_ObtenerViaje_Result">
+          <ScalarProperty Name="idViaje" ColumnName="idViaje" />
+          <ScalarProperty Name="idChofer" ColumnName="idChofer" />
+          <ScalarProperty Name="idVehiculo" ColumnName="idVehiculo" />
+          <ScalarProperty Name="idTipoViaje" ColumnName="idTipoViaje" />
+          <ScalarProperty Name="idTipoVehiculo" ColumnName="idTipoVehiculo" />
+          <ScalarProperty Name="idOrigen" ColumnName="idOrigen" />
+          <ScalarProperty Name="idDestino" ColumnName="idDestino" />
+          <ScalarProperty Name="Salida" ColumnName="Salida" />
+          <ScalarProperty Name="Llegada" ColumnName="Llegada" />
+          <ScalarProperty Name="Retorno" ColumnName="Retorno" />
+          <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="MarcaVehiculo" FunctionName="Model1.Store.usp_MarcaVehiculo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model1.MarcaVehiculo_Result">
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_Pais" FunctionName="Model1.Store.usp_Pais">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model1.usp_Pais_Result">
+          <ScalarProperty Name="Pais" ColumnName="Pais" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sup_Modelo" FunctionName="Model1.Store.usp_Modelo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model1.sup_Modelo_Result">
+          <ScalarProperty Name="Modelos" ColumnName="Modelos" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_TipoVehiculo" FunctionName="Model1.Store.usp_TipoVehiculo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model1.usp_TipoVehiculo_Result">
+          <ScalarProperty Name="CodigoTipoVehiculo" ColumnName="CodigoTipoVehiculo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_TipoViaje" FunctionName="Model1.Store.usp_TipoViaje">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model1.usp_TipoViaje_Result">
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

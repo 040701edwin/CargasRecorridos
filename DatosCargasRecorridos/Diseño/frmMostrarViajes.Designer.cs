@@ -36,9 +36,6 @@ namespace Diseño
             this.iconBtnAgregar = new FontAwesome.Sharp.IconButton();
             this.iconBtnBuscar = new FontAwesome.Sharp.IconButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.uspBucarViajeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.recorridosDataSet = new Diseño.RecorridosDataSet();
-            this.usp_BucarViajeTableAdapter = new Diseño.RecorridosDataSetTableAdapters.usp_BucarViajeTableAdapter();
             this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoChoferDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +49,9 @@ namespace Diseño
             this.proveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.uspBucarViajeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.recorridosDataSet = new Diseño.RecorridosDataSet();
+            this.usp_BucarViajeTableAdapter = new Diseño.RecorridosDataSetTableAdapters.usp_BucarViajeTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uspBucarViajeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recorridosDataSet)).BeginInit();
@@ -143,20 +143,7 @@ namespace Diseño
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(560, 361);
             this.dataGridView1.TabIndex = 10;
-            // 
-            // uspBucarViajeBindingSource
-            // 
-            this.uspBucarViajeBindingSource.DataMember = "usp_BucarViaje";
-            this.uspBucarViajeBindingSource.DataSource = this.recorridosDataSet;
-            // 
-            // recorridosDataSet
-            // 
-            this.recorridosDataSet.DataSetName = "RecorridosDataSet";
-            this.recorridosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // usp_BucarViajeTableAdapter
-            // 
-            this.usp_BucarViajeTableAdapter.ClearBeforeFill = true;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // codigoDataGridViewTextBoxColumn
             // 
@@ -237,6 +224,20 @@ namespace Diseño
             this.Eliminar.ReadOnly = true;
             this.Eliminar.Text = "Eliminar";
             this.Eliminar.UseColumnTextForLinkValue = true;
+            // 
+            // uspBucarViajeBindingSource
+            // 
+            this.uspBucarViajeBindingSource.DataMember = "usp_BucarViaje";
+            this.uspBucarViajeBindingSource.DataSource = this.recorridosDataSet;
+            // 
+            // recorridosDataSet
+            // 
+            this.recorridosDataSet.DataSetName = "RecorridosDataSet";
+            this.recorridosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usp_BucarViajeTableAdapter
+            // 
+            this.usp_BucarViajeTableAdapter.ClearBeforeFill = true;
             // 
             // frmMostrarViajes
             // 

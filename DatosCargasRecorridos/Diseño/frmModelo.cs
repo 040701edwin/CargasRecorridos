@@ -47,6 +47,7 @@ namespace Diseño
                 iconBtnAgregar.Text = "Guardar";
             }
             Limpiar();
+            uspModeloBindingSource.DataSource = oModeloDAO.proModelo(txtModelo.Text.Trim());
         }
 
         private void iconBtnCancelar_Click(object sender, EventArgs e)
@@ -71,6 +72,8 @@ namespace Diseño
             cmbMarca.DisplayMember = "Marca";
             cmbMarca.ValueMember = "Id";
             cmbMarca.SelectedIndex = 1;
+
+            uspModeloBindingSource.DataSource = oModeloDAO.proModelo(txtModelo.Text.Trim());
         }
 
         private void txtModelo_Validating(object sender, CancelEventArgs e)

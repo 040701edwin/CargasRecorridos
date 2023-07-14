@@ -30,7 +30,7 @@ namespace CapaLogica
         public Viaje Buscar(string pCodigo)
         {
             Viaje oViaje;
-            oViaje = db.Viajes.DefaultIfEmpty(null).FirstOrDefault(cv => cv.CodigoViaje.Trim() == pCodigo.Trim()); //ch abreviatura de Codigo viaje
+            oViaje = db.Viajes.DefaultIfEmpty(null).FirstOrDefault(cv => cv.CodigoViaje.Trim() == pCodigo.Trim()); //cv abreviatura de Codigo viaje
             return oViaje;
         }
         public List<Viaje> Listar()

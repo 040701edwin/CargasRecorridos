@@ -36,7 +36,8 @@ namespace Diseño
                     MessageBox.Show("El nuevo registro no pudo ser grabado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                     MessageBox.Show("El nuevo registro fue grabado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }else
+            }
+            else
             {
                 MarcaVehiculo oMarca = oMarcaDAO.Buscar(txtMarca.Text.Trim());
                 oMarca.Marca = txtMarca.Text.Trim();
@@ -47,6 +48,7 @@ namespace Diseño
                 iconBtnAgregar.Text = "Guardar";
             }
             Limpiar();
+            uspMarcaVehiculoBindingSource.DataSource = oMarcaDAO.proBuscarVehiculo(txtMarca.Text.Trim());
         }
 
         private void iconBtnCancelar_Click(object sender, EventArgs e)
@@ -74,5 +76,11 @@ namespace Diseño
             else
                 NuevoRegistro = true;
         }
+
+        private void frmMarcaDelVehiculo_Load(object sender, EventArgs e)
+        {
+            uspMarcaVehiculoBindingSource.DataSource = oMarcaDAO.proBuscarVehiculo(txtMarca.Text.Trim());
+        }
+
     }
 }

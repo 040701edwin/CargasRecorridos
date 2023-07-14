@@ -46,6 +46,24 @@
     <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.6.3.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\VisualBasic.PowerPacks.Vs.1.0.0\lib\Microsoft.VisualBasic.dll</HintPath>
       <Private>True</Private>
@@ -126,6 +144,18 @@
     <Compile Include="frmPais.Designer.cs">
       <DependentUpon>frmPais.cs</DependentUpon>
     </Compile>
+    <Compile Include="Operaciones\frmDatosViajecs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones\frmDatosViajecs.Designer.cs">
+      <DependentUpon>frmDatosViajecs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operaciones\frmViajeM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operaciones\frmViajeM.Designer.cs">
+      <DependentUpon>frmViajeM.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -195,6 +225,42 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecorridosDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RecorridosDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecorridosDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RecorridosDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecorridosDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RecorridosDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecorridosDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RecorridosDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecorridosDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RecorridosDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecorridosDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RecorridosDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecorridosDataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RecorridosDataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecorridosDataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmAgregarChofer.resx">
@@ -245,6 +311,13 @@
     <EmbeddedResource Include="frmViajeChofer.resx">
       <DependentUpon>frmViajeChofer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Informes\rptViajes.rdlc" />
+    <EmbeddedResource Include="Operaciones\frmDatosViajecs.resx">
+      <DependentUpon>frmDatosViajecs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operaciones\frmViajeM.resx">
+      <DependentUpon>frmViajeM.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -284,6 +357,83 @@
     <None Include="RecorridosDataSet1.xss">
       <DependentUpon>RecorridosDataSet1.xsd</DependentUpon>
     </None>
+    <None Include="RecorridosDataSet2.xsc">
+      <DependentUpon>RecorridosDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="RecorridosDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RecorridosDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RecorridosDataSet2.xss">
+      <DependentUpon>RecorridosDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="RecorridosDataSet3.xsc">
+      <DependentUpon>RecorridosDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="RecorridosDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RecorridosDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RecorridosDataSet3.xss">
+      <DependentUpon>RecorridosDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="RecorridosDataSet4.xsc">
+      <DependentUpon>RecorridosDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="RecorridosDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RecorridosDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RecorridosDataSet4.xss">
+      <DependentUpon>RecorridosDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="RecorridosDataSet5.xsc">
+      <DependentUpon>RecorridosDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="RecorridosDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RecorridosDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RecorridosDataSet5.xss">
+      <DependentUpon>RecorridosDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="RecorridosDataSet6.xsc">
+      <DependentUpon>RecorridosDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="RecorridosDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RecorridosDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RecorridosDataSet6.xss">
+      <DependentUpon>RecorridosDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="RecorridosDataSet7.xsc">
+      <DependentUpon>RecorridosDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="RecorridosDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RecorridosDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RecorridosDataSet7.xss">
+      <DependentUpon>RecorridosDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="RecorridosDataSet8.xsc">
+      <DependentUpon>RecorridosDataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="RecorridosDataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RecorridosDataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RecorridosDataSet8.xss">
+      <DependentUpon>RecorridosDataSet8.xsd</DependentUpon>
+    </None>
     <None Include="Resources\Logo.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -298,6 +448,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -34,7 +34,7 @@ namespace Diseño
 
         private void iconBtnAgregar_Click(object sender, EventArgs e)
         {
-            if(NuevoRegistro == false)
+            if(NuevoRegistro == true)
             {
                 Pais oPais = new Pais();
                 oPais.CodigoPais = txtCodigo.Text.Trim();
@@ -56,6 +56,7 @@ namespace Diseño
                 iconBtnAgregar.Text = "Guardar";
             }
             Limpiar();
+            uspPaisBindingSource.DataSource = oPaisDAO.proPais(txtPais.Text.Trim());
         }
 
         private void iconBtnCerrar_Click(object sender, EventArgs e)
@@ -76,7 +77,15 @@ namespace Diseño
                 txtPais.Text = oPais.Descripcion.Trim();
             }
             else
+            {
                 NuevoRegistro = true;
+                iconBtnAgregar.Text = "Guardar";
+            }
+        }
+        //Cargar lo paises en la grid
+        private void frmPais_Load(object sender, EventArgs e)
+        {
+            uspPaisBindingSource.DataSource = oPaisDAO.proPais(txtPais.Text.Trim());
         }
     }
 }

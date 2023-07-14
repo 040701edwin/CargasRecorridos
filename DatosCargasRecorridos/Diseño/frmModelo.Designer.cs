@@ -29,6 +29,7 @@ namespace Diseño
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.iconBtnCerrar = new FontAwesome.Sharp.IconButton();
             this.iconBtnCancelar = new FontAwesome.Sharp.IconButton();
@@ -38,15 +39,25 @@ namespace Diseño
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbMarca = new System.Windows.Forms.ComboBox();
+            this.recorridosDataSet6 = new Diseño.RecorridosDataSet6();
+            this.uspModeloBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usp_ModeloTableAdapter = new Diseño.RecorridosDataSet6TableAdapters.usp_ModeloTableAdapter();
+            this.modelosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recorridosDataSet6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uspModeloBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(34, 149);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.modelosDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.uspModeloBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(57, 149);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(178, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(138, 150);
             this.dataGridView1.TabIndex = 72;
             // 
             // iconBtnCerrar
@@ -133,6 +144,26 @@ namespace Diseño
             this.cmbMarca.Size = new System.Drawing.Size(100, 21);
             this.cmbMarca.TabIndex = 75;
             // 
+            // recorridosDataSet6
+            // 
+            this.recorridosDataSet6.DataSetName = "RecorridosDataSet6";
+            this.recorridosDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // uspModeloBindingSource
+            // 
+            this.uspModeloBindingSource.DataMember = "usp_Modelo";
+            this.uspModeloBindingSource.DataSource = this.recorridosDataSet6;
+            // 
+            // usp_ModeloTableAdapter
+            // 
+            this.usp_ModeloTableAdapter.ClearBeforeFill = true;
+            // 
+            // modelosDataGridViewTextBoxColumn
+            // 
+            this.modelosDataGridViewTextBoxColumn.DataPropertyName = "Modelos";
+            this.modelosDataGridViewTextBoxColumn.HeaderText = "Modelos";
+            this.modelosDataGridViewTextBoxColumn.Name = "modelosDataGridViewTextBoxColumn";
+            // 
             // frmModelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -151,6 +182,8 @@ namespace Diseño
             this.Text = "Modelo";
             this.Load += new System.EventHandler(this.frmModelo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recorridosDataSet6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uspModeloBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,5 +200,9 @@ namespace Diseño
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbMarca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modelosDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource uspModeloBindingSource;
+        private RecorridosDataSet6 recorridosDataSet6;
+        private RecorridosDataSet6TableAdapters.usp_ModeloTableAdapter usp_ModeloTableAdapter;
     }
 }

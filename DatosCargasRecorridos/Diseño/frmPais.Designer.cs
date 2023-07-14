@@ -29,6 +29,7 @@ namespace Diseño
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
@@ -38,7 +39,13 @@ namespace Diseño
             this.iconBtnCerrar = new FontAwesome.Sharp.IconButton();
             this.iconBtnCancelar = new FontAwesome.Sharp.IconButton();
             this.iconBtnAgregar = new FontAwesome.Sharp.IconButton();
+            this.recorridosDataSet5 = new Diseño.RecorridosDataSet5();
+            this.uspPaisBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usp_PaisTableAdapter = new Diseño.RecorridosDataSet5TableAdapters.usp_PaisTableAdapter();
+            this.paisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recorridosDataSet5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uspPaisBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -52,10 +59,14 @@ namespace Diseño
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(37, 149);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.paisDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.uspPaisBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(48, 149);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(178, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(142, 150);
             this.dataGridView1.TabIndex = 82;
             // 
             // label4
@@ -133,6 +144,26 @@ namespace Diseño
             this.iconBtnAgregar.UseVisualStyleBackColor = true;
             this.iconBtnAgregar.Click += new System.EventHandler(this.iconBtnAgregar_Click);
             // 
+            // recorridosDataSet5
+            // 
+            this.recorridosDataSet5.DataSetName = "RecorridosDataSet5";
+            this.recorridosDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // uspPaisBindingSource
+            // 
+            this.uspPaisBindingSource.DataMember = "usp_Pais";
+            this.uspPaisBindingSource.DataSource = this.recorridosDataSet5;
+            // 
+            // usp_PaisTableAdapter
+            // 
+            this.usp_PaisTableAdapter.ClearBeforeFill = true;
+            // 
+            // paisDataGridViewTextBoxColumn
+            // 
+            this.paisDataGridViewTextBoxColumn.DataPropertyName = "Pais";
+            this.paisDataGridViewTextBoxColumn.HeaderText = "Pais";
+            this.paisDataGridViewTextBoxColumn.Name = "paisDataGridViewTextBoxColumn";
+            // 
             // frmPais
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -149,7 +180,10 @@ namespace Diseño
             this.Controls.Add(this.label1);
             this.Name = "frmPais";
             this.Text = "Pais";
+            this.Load += new System.EventHandler(this.frmPais_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recorridosDataSet5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uspPaisBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,5 +199,9 @@ namespace Diseño
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPais;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paisDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource uspPaisBindingSource;
+        private RecorridosDataSet5 recorridosDataSet5;
+        private RecorridosDataSet5TableAdapters.usp_PaisTableAdapter usp_PaisTableAdapter;
     }
 }

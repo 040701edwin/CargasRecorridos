@@ -29,6 +29,7 @@ namespace Diseño
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,7 +39,13 @@ namespace Diseño
             this.iconBtnGuardar = new FontAwesome.Sharp.IconButton();
             this.iconBtnCerrar = new FontAwesome.Sharp.IconButton();
             this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.recorridosDataSet7 = new Diseño.RecorridosDataSet7();
+            this.uspTipoVehiculoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usp_TipoVehiculoTableAdapter = new Diseño.RecorridosDataSet7TableAdapters.usp_TipoVehiculoTableAdapter();
+            this.codigoTipoVehiculoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recorridosDataSet7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uspTipoVehiculoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -92,10 +99,14 @@ namespace Diseño
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(36, 142);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codigoTipoVehiculoDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.uspTipoVehiculoBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(58, 146);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(175, 164);
+            this.dataGridView1.Size = new System.Drawing.Size(144, 164);
             this.dataGridView1.TabIndex = 8;
             // 
             // iconBtnGuardar
@@ -133,6 +144,26 @@ namespace Diseño
             this.txtCodigo.TabIndex = 12;
             this.txtCodigo.Validating += new System.ComponentModel.CancelEventHandler(this.txtCodigo_Validating);
             // 
+            // recorridosDataSet7
+            // 
+            this.recorridosDataSet7.DataSetName = "RecorridosDataSet7";
+            this.recorridosDataSet7.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // uspTipoVehiculoBindingSource
+            // 
+            this.uspTipoVehiculoBindingSource.DataMember = "usp_TipoVehiculo";
+            this.uspTipoVehiculoBindingSource.DataSource = this.recorridosDataSet7;
+            // 
+            // usp_TipoVehiculoTableAdapter
+            // 
+            this.usp_TipoVehiculoTableAdapter.ClearBeforeFill = true;
+            // 
+            // codigoTipoVehiculoDataGridViewTextBoxColumn
+            // 
+            this.codigoTipoVehiculoDataGridViewTextBoxColumn.DataPropertyName = "CodigoTipoVehiculo";
+            this.codigoTipoVehiculoDataGridViewTextBoxColumn.HeaderText = "CodigoTipoVehiculo";
+            this.codigoTipoVehiculoDataGridViewTextBoxColumn.Name = "codigoTipoVehiculoDataGridViewTextBoxColumn";
+            // 
             // frmTipoDeVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -149,7 +180,10 @@ namespace Diseño
             this.Controls.Add(this.label1);
             this.Name = "frmTipoDeVehiculo";
             this.Text = "TipoDeVehiculo";
+            this.Load += new System.EventHandler(this.frmTipoDeVehiculo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recorridosDataSet7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uspTipoVehiculoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,5 +200,9 @@ namespace Diseño
         private FontAwesome.Sharp.IconButton iconBtnGuardar;
         private FontAwesome.Sharp.IconButton iconBtnCerrar;
         private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigoTipoVehiculoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource uspTipoVehiculoBindingSource;
+        private RecorridosDataSet7 recorridosDataSet7;
+        private RecorridosDataSet7TableAdapters.usp_TipoVehiculoTableAdapter usp_TipoVehiculoTableAdapter;
     }
 }

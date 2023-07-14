@@ -39,5 +39,9 @@ namespace CapaLogica
         {
             return (db.TipoDeVehiculos.ToList());
         }
+        public List<usp_TipoVehiculo_Result> proTipoVehiculo(string cod)
+        {
+            return db.usp_TipoVehiculo(cod).ToList();
+        }
     }
 }

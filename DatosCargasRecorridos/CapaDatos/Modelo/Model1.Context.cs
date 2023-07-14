@@ -12,11 +12,10 @@ namespace CapaDatos.Modelo
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    //using System.Data.Objects;
+    using System.Data.Entity.Core.Objects;
     using System.Data.Objects.DataClasses;
-    using System.Data.Entity.Core.Objects; //Agregar
     using System.Linq;
-
+    
     public partial class Model1Container : DbContext
     {
         public Model1Container()
@@ -84,6 +83,60 @@ namespace CapaDatos.Modelo
                 new ObjectParameter("placa", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_Vehiculo_Result>("usp_Vehiculo", placaParameter);
+        }
+    
+        public virtual ObjectResult<usp_ObtenerViaje_Result> usp_ObtenerViaje(Nullable<int> idProveedor)
+        {
+            var idProveedorParameter = idProveedor.HasValue ?
+                new ObjectParameter("idProveedor", idProveedor) :
+                new ObjectParameter("idProveedor", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ObtenerViaje_Result>("usp_ObtenerViaje", idProveedorParameter);
+        }
+    
+        public virtual ObjectResult<MarcaVehiculo_Result> MarcaVehiculo(string codigo)
+        {
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<MarcaVehiculo_Result>("MarcaVehiculo", codigoParameter);
+        }
+    
+        public virtual ObjectResult<usp_Pais_Result> usp_Pais(string codigo)
+        {
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_Pais_Result>("usp_Pais", codigoParameter);
+        }
+    
+        public virtual ObjectResult<sup_Modelo_Result> sup_Modelo(string codigo)
+        {
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sup_Modelo_Result>("sup_Modelo", codigoParameter);
+        }
+    
+        public virtual ObjectResult<usp_TipoVehiculo_Result> usp_TipoVehiculo(string codigo)
+        {
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_TipoVehiculo_Result>("usp_TipoVehiculo", codigoParameter);
+        }
+    
+        public virtual ObjectResult<usp_TipoViaje_Result> usp_TipoViaje(string codigo)
+        {
+            var codigoParameter = codigo != null ?
+                new ObjectParameter("codigo", codigo) :
+                new ObjectParameter("codigo", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_TipoViaje_Result>("usp_TipoViaje", codigoParameter);
         }
     }
 }

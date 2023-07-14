@@ -57,6 +57,7 @@ namespace Diseño
                 iconBtnGuardar.Text = "Guardar";
             }
             Limpiar();
+            uspTipoVehiculoBindingSource.DataSource = oTipVehiculoDAO.proTipoVehiculo(txtCodigo.Text.Trim());
         }
         private void Limpiar()
         {
@@ -86,6 +87,11 @@ namespace Diseño
             }
             else
                 NuevoRegistro = true;
+        }
+
+        private void frmTipoDeVehiculo_Load(object sender, EventArgs e)
+        {
+            uspTipoVehiculoBindingSource.DataSource = oTipVehiculoDAO.proTipoVehiculo(txtCodigo.Text.Trim());
         }
     }
 }

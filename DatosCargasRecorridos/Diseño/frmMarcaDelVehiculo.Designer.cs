@@ -29,6 +29,7 @@ namespace Diseño
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.iconBtnCerrar = new FontAwesome.Sharp.IconButton();
             this.iconBtnCancelar = new FontAwesome.Sharp.IconButton();
             this.iconBtnAgregar = new FontAwesome.Sharp.IconButton();
@@ -36,7 +37,13 @@ namespace Diseño
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.recorridosDataSet4 = new Diseño.RecorridosDataSet4();
+            this.uspMarcaVehiculoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usp_MarcaVehiculoTableAdapter = new Diseño.RecorridosDataSet4TableAdapters.usp_MarcaVehiculoTableAdapter();
+            this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recorridosDataSet4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uspMarcaVehiculoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // iconBtnCerrar
@@ -108,11 +115,35 @@ namespace Diseño
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.marcaDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.uspMarcaVehiculoBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(89, 118);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(95, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(129, 150);
             this.dataGridView1.TabIndex = 65;
+            // 
+            // recorridosDataSet4
+            // 
+            this.recorridosDataSet4.DataSetName = "RecorridosDataSet4";
+            this.recorridosDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // uspMarcaVehiculoBindingSource
+            // 
+            this.uspMarcaVehiculoBindingSource.DataMember = "usp_MarcaVehiculo";
+            this.uspMarcaVehiculoBindingSource.DataSource = this.recorridosDataSet4;
+            // 
+            // usp_MarcaVehiculoTableAdapter
+            // 
+            this.usp_MarcaVehiculoTableAdapter.ClearBeforeFill = true;
+            // 
+            // marcaDataGridViewTextBoxColumn
+            // 
+            this.marcaDataGridViewTextBoxColumn.DataPropertyName = "Marca";
+            this.marcaDataGridViewTextBoxColumn.HeaderText = "Marca";
+            this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
             // 
             // frmMarcaDelVehiculo
             // 
@@ -128,7 +159,10 @@ namespace Diseño
             this.Controls.Add(this.label1);
             this.Name = "frmMarcaDelVehiculo";
             this.Text = "MarcaDelVehiculo";
+            this.Load += new System.EventHandler(this.frmMarcaDelVehiculo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recorridosDataSet4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uspMarcaVehiculoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,5 +176,9 @@ namespace Diseño
         private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn marcaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource uspMarcaVehiculoBindingSource;
+        private RecorridosDataSet4 recorridosDataSet4;
+        private RecorridosDataSet4TableAdapters.usp_MarcaVehiculoTableAdapter usp_MarcaVehiculoTableAdapter;
     }
 }
