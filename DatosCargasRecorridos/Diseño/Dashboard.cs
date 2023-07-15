@@ -128,10 +128,11 @@ namespace Diseño
             ActivateButton(sender, RGBColors.color3);
             OpenChildForm(new Choferes());
         }
-
+        //BtnReporte
         private void iconButton4_Click(object sender, EventArgs e)
         {
-            
+            frmReport frm = new frmReport();
+            frm.ShowDialog();
         }
         #endregion
 

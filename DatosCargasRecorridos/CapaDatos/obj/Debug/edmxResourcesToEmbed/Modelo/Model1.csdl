@@ -97,6 +97,9 @@
     <FunctionImport Name="usp_TipoViaje" ReturnType="Collection(Model1.usp_TipoViaje_Result)">
       <Parameter Name="codigo" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="usp_ViajeProveedor" ReturnType="Collection(Model1.usp_ViajeProveedor_Result)">
+      <Parameter Name="cod" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="Vehiculo">
     <Key>
@@ -483,5 +486,17 @@
   </ComplexType>
   <ComplexType Name="usp_TipoViaje_Result">
     <Property Type="String" Name="Tipo" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="usp_ViajeProveedor_Result">
+    <Property Type="String" Name="Codigo" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="Cedula" Nullable="false" MaxLength="16" />
+    <Property Type="String" Name="Placa" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="Viaje" Nullable="false" />
+    <Property Type="String" Name="Vehiculo" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="Origen" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Destino" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="Salida" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="Llegada" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Proveedor" Nullable="false" MaxLength="20" />
   </ComplexType>
 </Schema>

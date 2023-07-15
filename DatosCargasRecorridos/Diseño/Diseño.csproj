@@ -144,6 +144,12 @@
     <Compile Include="frmPais.Designer.cs">
       <DependentUpon>frmPais.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReport.Designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Operaciones\frmDatosViajecs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -260,6 +266,41 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecorridosDataSet8.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RecorridosDataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecorridosDataSet9.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\frmChoferInforme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporte\frmChoferInforme.Designer.cs">
+      <DependentUpon>frmChoferInforme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\frmDetalleProveedorInforme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporte\frmDetalleProveedorInforme.Designer.cs">
+      <DependentUpon>frmDetalleProveedorInforme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\frmProveedoresInforme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporte\frmProveedoresInforme.Designer.cs">
+      <DependentUpon>frmProveedoresInforme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\frmVehiculoInforme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporte\frmVehiculoInforme.Designer.cs">
+      <DependentUpon>frmVehiculoInforme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\frmVijaeInforme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporte\frmVijaeInforme.Designer.cs">
+      <DependentUpon>frmVijaeInforme.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -296,6 +337,9 @@
     <EmbeddedResource Include="frmProveedor.resx">
       <DependentUpon>frmProveedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTipoDeViaje.resx">
       <DependentUpon>frmTipoDeViaje.cs</DependentUpon>
     </EmbeddedResource>
@@ -311,6 +355,10 @@
     <EmbeddedResource Include="frmViajeChofer.resx">
       <DependentUpon>frmViajeChofer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Informes\rptChoferes.rdlc" />
+    <EmbeddedResource Include="Informes\rptDetalleProveedor.rdlc" />
+    <EmbeddedResource Include="Informes\rptProveedores.rdlc" />
+    <EmbeddedResource Include="Informes\rptVehiculos.rdlc" />
     <EmbeddedResource Include="Informes\rptViajes.rdlc" />
     <EmbeddedResource Include="Operaciones\frmDatosViajecs.resx">
       <DependentUpon>frmDatosViajecs.cs</DependentUpon>
@@ -325,12 +373,32 @@
     <EmbeddedResource Include="frmTipoDeVehiculo.resx">
       <DependentUpon>frmTipoDeVehiculo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\frmChoferInforme.resx">
+      <DependentUpon>frmChoferInforme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\frmDetalleProveedorInforme.resx">
+      <DependentUpon>frmDetalleProveedorInforme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\frmProveedoresInforme.resx">
+      <DependentUpon>frmProveedoresInforme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\frmVehiculoInforme.resx">
+      <DependentUpon>frmVehiculoInforme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\frmVijaeInforme.resx">
+      <DependentUpon>frmVijaeInforme.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\DataSources\CapaDatos.Modelo.usp_BucarViaje_Result.datasource" />
+    <None Include="Properties\DataSources\CapaDatos.Modelo.usp_MostrarChofer_Result.datasource" />
+    <None Include="Properties\DataSources\CapaDatos.Modelo.usp_Proveedor_Result.datasource" />
+    <None Include="Properties\DataSources\CapaDatos.Modelo.usp_Vehiculo_Result.datasource" />
+    <None Include="Properties\DataSources\CapaDatos.Modelo.Viaje.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -434,6 +502,17 @@
     <None Include="RecorridosDataSet8.xss">
       <DependentUpon>RecorridosDataSet8.xsd</DependentUpon>
     </None>
+    <None Include="RecorridosDataSet9.xsc">
+      <DependentUpon>RecorridosDataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="RecorridosDataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RecorridosDataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RecorridosDataSet9.xss">
+      <DependentUpon>RecorridosDataSet9.xsd</DependentUpon>
+    </None>
     <None Include="Resources\Logo.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -464,6 +543,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

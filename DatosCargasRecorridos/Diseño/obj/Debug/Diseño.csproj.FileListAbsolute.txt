@@ -201,3 +201,9 @@ E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\bin\Debu
 E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\RdlCompile.cache
 E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\RdlCompile.compiled
+E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.Reporte.frmVijaeInforme.resources
+E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.frmReport.resources
+E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.Reporte.frmVehiculoInforme.resources
+E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.Reporte.frmProveedoresInforme.resources
+E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.Reporte.frmChoferInforme.resources
+E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.Reporte.frmDetalleProveedorInforme.resources

@@ -314,6 +314,9 @@
         <Function Name="usp_Vehiculo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="placa" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="usp_ViajeProveedor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cod" Type="varchar" Mode="In" />
+        </Function>
         <EntityContainer Name="Model1StoreContainer">
           <EntitySet Name="Choferes" EntityType="Self.Choferes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MarcaVehiculos" EntityType="Self.MarcaVehiculos" Schema="dbo" store:Type="Tables" />
@@ -466,19 +469,22 @@
           <Parameter Name="idProveedor" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="MarcaVehiculo" ReturnType="Collection(Model1.MarcaVehiculo_Result)">
-            <Parameter Name="codigo" Mode="In" Type="String" />
+          <Parameter Name="codigo" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_Pais" ReturnType="Collection(Model1.usp_Pais_Result)">
-            <Parameter Name="codigo" Mode="In" Type="String" />
+          <Parameter Name="codigo" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sup_Modelo" ReturnType="Collection(Model1.sup_Modelo_Result)">
-            <Parameter Name="codigo" Mode="In" Type="String" />
+          <Parameter Name="codigo" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_TipoVehiculo" ReturnType="Collection(Model1.usp_TipoVehiculo_Result)">
-            <Parameter Name="codigo" Mode="In" Type="String" />
+          <Parameter Name="codigo" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_TipoViaje" ReturnType="Collection(Model1.usp_TipoViaje_Result)">
-            <Parameter Name="codigo" Mode="In" Type="String" />
+          <Parameter Name="codigo" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ViajeProveedor" ReturnType="Collection(Model1.usp_ViajeProveedor_Result)">
+            <Parameter Name="cod" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="Vehiculo">
@@ -867,6 +873,18 @@
         <ComplexType Name="usp_TipoViaje_Result">
           <Property Type="String" Name="Tipo" Nullable="false" />
         </ComplexType>
+        <ComplexType Name="usp_ViajeProveedor_Result">
+          <Property Type="String" Name="Codigo" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="Cedula" Nullable="false" MaxLength="16" />
+          <Property Type="String" Name="Placa" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="Viaje" Nullable="false" />
+          <Property Type="String" Name="Vehiculo" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="Origen" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Destino" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="Salida" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="Llegada" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Proveedor" Nullable="false" MaxLength="20" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1129,6 +1147,22 @@
             <ResultMapping>
               <ComplexTypeMapping TypeName="Model1.usp_TipoViaje_Result">
                 <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_ViajeProveedor" FunctionName="Model1.Store.usp_ViajeProveedor">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model1.usp_ViajeProveedor_Result">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Placa" ColumnName="Placa" />
+                <ScalarProperty Name="Viaje" ColumnName="Viaje" />
+                <ScalarProperty Name="Vehiculo" ColumnName="Vehiculo" />
+                <ScalarProperty Name="Origen" ColumnName="Origen" />
+                <ScalarProperty Name="Destino" ColumnName="Destino" />
+                <ScalarProperty Name="Salida" ColumnName="Salida" />
+                <ScalarProperty Name="Llegada" ColumnName="Llegada" />
+                <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

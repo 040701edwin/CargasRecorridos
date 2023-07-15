@@ -42,5 +42,9 @@ namespace CapaLogica
         {
             return db.usp_BucarViaje(codv).ToList();
         }
+        public  List<usp_ViajeProveedor_Result> proDetalleProveedor(string cod)
+        {
+            return db.usp_ViajeProveedor(cod).ToList();
+        }
     }
 }

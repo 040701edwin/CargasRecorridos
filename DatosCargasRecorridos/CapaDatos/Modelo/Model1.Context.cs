@@ -138,5 +138,14 @@ namespace CapaDatos.Modelo
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_TipoViaje_Result>("usp_TipoViaje", codigoParameter);
         }
+    
+        public virtual ObjectResult<usp_ViajeProveedor_Result> usp_ViajeProveedor(string cod)
+        {
+            var codParameter = cod != null ?
+                new ObjectParameter("cod", cod) :
+                new ObjectParameter("cod", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ViajeProveedor_Result>("usp_ViajeProveedor", codParameter);
+        }
     }
 }
