@@ -44,6 +44,8 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,6 +58,30 @@
     <Compile Include="Extensiones\Enumeraciones.cs" />
     <Compile Include="Extensiones\ListaViaje.cs" />
     <Compile Include="Extensiones\Proveedor_Extension.cs" />
+    <Compile Include="GestionUsuario\FuncionAsignada.cs">
+      <DependentUpon>Gestion1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GestionUsuario\FuncionDeAcceso.cs">
+      <DependentUpon>Gestion1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GestionUsuario\Gestion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Gestion.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionUsuario\Gestion1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Gestion1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GestionUsuario\Gestion1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Gestion1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GestionUsuario\Usuario.cs">
+      <DependentUpon>Gestion1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Chofer.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -148,6 +174,13 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <EntityDeploy Include="GestionUsuario\Gestion.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Gestion.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="GestionUsuario\Gestion.edmx.diagram">
+      <DependentUpon>Gestion.edmx</DependentUpon>
+    </None>
     <None Include="Modelo\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
@@ -156,10 +189,19 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Seguridad\" />
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="GestionUsuario\Gestion.edmx.sql" />
+    <Content Include="GestionUsuario\Gestion1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Gestion1.Context.cs</LastGenOutput>
+      <DependentUpon>Gestion.edmx</DependentUpon>
+    </Content>
+    <Content Include="GestionUsuario\Gestion1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Gestion1.cs</LastGenOutput>
+      <DependentUpon>Gestion.edmx</DependentUpon>
+    </Content>
     <Content Include="Modelo\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>

@@ -302,6 +302,24 @@
       <DependentUpon>frmVijaeInforme.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Usuario\frmFunciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuario\frmFunciones.Designer.cs">
+      <DependentUpon>frmFunciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\frmPermisosUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuario\frmPermisosUsuarios.Designer.cs">
+      <DependentUpon>frmPermisosUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario\frmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuario\frmUsuarios.Designer.cs">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmAgregarChofer.resx">
@@ -387,6 +405,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte\frmVijaeInforme.resx">
       <DependentUpon>frmVijaeInforme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\frmFunciones.resx">
+      <DependentUpon>frmFunciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\frmPermisosUsuarios.resx">
+      <DependentUpon>frmPermisosUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario\frmUsuarios.resx">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -207,3 +207,6 @@ E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debu
 E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.Reporte.frmProveedoresInforme.resources
 E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.Reporte.frmChoferInforme.resources
 E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.Reporte.frmDetalleProveedorInforme.resources
+E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.Usuario.frmFunciones.resources
+E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.Usuario.frmPermisosUsuarios.resources
+E:\Escritorio\MyProyecto\CargasRecorridos\DatosCargasRecorridos\Diseño\obj\Debug\Diseño.Usuario.frmUsuarios.resources
