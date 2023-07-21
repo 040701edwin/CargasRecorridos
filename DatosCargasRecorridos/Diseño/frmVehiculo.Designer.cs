@@ -31,14 +31,6 @@ namespace Diseño
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.iconBtnAgregar = new FontAwesome.Sharp.IconButton();
-            this.iconBtnBuscar = new FontAwesome.Sharp.IconButton();
-            this.recorridosDataSet2 = new Diseño.RecorridosDataSet2();
-            this.uspVehiculoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usp_VehiculoTableAdapter = new Diseño.RecorridosDataSet2TableAdapters.usp_VehiculoTableAdapter();
             this.placaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modeloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,9 +39,17 @@ namespace Diseño
             this.tonelajeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uspVehiculoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.recorridosDataSet2 = new Diseño.RecorridosDataSet2();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.iconBtnAgregar = new FontAwesome.Sharp.IconButton();
+            this.iconBtnBuscar = new FontAwesome.Sharp.IconButton();
+            this.usp_VehiculoTableAdapter = new Diseño.RecorridosDataSet2TableAdapters.usp_VehiculoTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.recorridosDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uspVehiculoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recorridosDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -74,11 +74,70 @@ namespace Diseño
             this.dataGridView1.Size = new System.Drawing.Size(560, 361);
             this.dataGridView1.TabIndex = 11;
             // 
+            // placaDataGridViewTextBoxColumn
+            // 
+            this.placaDataGridViewTextBoxColumn.DataPropertyName = "Placa";
+            this.placaDataGridViewTextBoxColumn.HeaderText = "Placa";
+            this.placaDataGridViewTextBoxColumn.Name = "placaDataGridViewTextBoxColumn";
+            // 
+            // marcaDataGridViewTextBoxColumn
+            // 
+            this.marcaDataGridViewTextBoxColumn.DataPropertyName = "Marca";
+            this.marcaDataGridViewTextBoxColumn.HeaderText = "Marca";
+            this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
+            // 
+            // modeloDataGridViewTextBoxColumn
+            // 
+            this.modeloDataGridViewTextBoxColumn.DataPropertyName = "Modelo";
+            this.modeloDataGridViewTextBoxColumn.HeaderText = "Modelo";
+            this.modeloDataGridViewTextBoxColumn.Name = "modeloDataGridViewTextBoxColumn";
+            // 
+            // tipoDataGridViewTextBoxColumn
+            // 
+            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
+            // 
+            // pasajeroDataGridViewTextBoxColumn
+            // 
+            this.pasajeroDataGridViewTextBoxColumn.DataPropertyName = "Pasajero";
+            this.pasajeroDataGridViewTextBoxColumn.HeaderText = "Pasajero";
+            this.pasajeroDataGridViewTextBoxColumn.Name = "pasajeroDataGridViewTextBoxColumn";
+            // 
+            // tonelajeDataGridViewTextBoxColumn
+            // 
+            this.tonelajeDataGridViewTextBoxColumn.DataPropertyName = "Tonelaje";
+            this.tonelajeDataGridViewTextBoxColumn.HeaderText = "Tonelaje";
+            this.tonelajeDataGridViewTextBoxColumn.Name = "tonelajeDataGridViewTextBoxColumn";
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "Estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            // 
+            // uspVehiculoBindingSource
+            // 
+            this.uspVehiculoBindingSource.DataMember = "usp_Vehiculo";
+            this.uspVehiculoBindingSource.DataSource = this.recorridosDataSet2;
+            // 
+            // recorridosDataSet2
+            // 
+            this.recorridosDataSet2.DataSetName = "RecorridosDataSet2";
+            this.recorridosDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // txtBuscar
             // 
             this.txtBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBuscar.Location = new System.Drawing.Point(57, 63);
+            this.txtBuscar.MaxLength = 10;
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(299, 20);
             this.txtBuscar.TabIndex = 8;
@@ -133,67 +192,9 @@ namespace Diseño
             this.iconBtnBuscar.UseVisualStyleBackColor = true;
             this.iconBtnBuscar.Click += new System.EventHandler(this.iconBtnBuscar_Click);
             // 
-            // recorridosDataSet2
-            // 
-            this.recorridosDataSet2.DataSetName = "RecorridosDataSet2";
-            this.recorridosDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // uspVehiculoBindingSource
-            // 
-            this.uspVehiculoBindingSource.DataMember = "usp_Vehiculo";
-            this.uspVehiculoBindingSource.DataSource = this.recorridosDataSet2;
-            // 
             // usp_VehiculoTableAdapter
             // 
             this.usp_VehiculoTableAdapter.ClearBeforeFill = true;
-            // 
-            // placaDataGridViewTextBoxColumn
-            // 
-            this.placaDataGridViewTextBoxColumn.DataPropertyName = "Placa";
-            this.placaDataGridViewTextBoxColumn.HeaderText = "Placa";
-            this.placaDataGridViewTextBoxColumn.Name = "placaDataGridViewTextBoxColumn";
-            // 
-            // marcaDataGridViewTextBoxColumn
-            // 
-            this.marcaDataGridViewTextBoxColumn.DataPropertyName = "Marca";
-            this.marcaDataGridViewTextBoxColumn.HeaderText = "Marca";
-            this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
-            // 
-            // modeloDataGridViewTextBoxColumn
-            // 
-            this.modeloDataGridViewTextBoxColumn.DataPropertyName = "Modelo";
-            this.modeloDataGridViewTextBoxColumn.HeaderText = "Modelo";
-            this.modeloDataGridViewTextBoxColumn.Name = "modeloDataGridViewTextBoxColumn";
-            // 
-            // tipoDataGridViewTextBoxColumn
-            // 
-            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
-            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
-            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
-            // 
-            // pasajeroDataGridViewTextBoxColumn
-            // 
-            this.pasajeroDataGridViewTextBoxColumn.DataPropertyName = "Pasajero";
-            this.pasajeroDataGridViewTextBoxColumn.HeaderText = "Pasajero";
-            this.pasajeroDataGridViewTextBoxColumn.Name = "pasajeroDataGridViewTextBoxColumn";
-            // 
-            // tonelajeDataGridViewTextBoxColumn
-            // 
-            this.tonelajeDataGridViewTextBoxColumn.DataPropertyName = "Tonelaje";
-            this.tonelajeDataGridViewTextBoxColumn.HeaderText = "Tonelaje";
-            this.tonelajeDataGridViewTextBoxColumn.Name = "tonelajeDataGridViewTextBoxColumn";
-            // 
-            // estadoDataGridViewTextBoxColumn
-            // 
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "Estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripcion";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
             // 
             // frmVehiculo
             // 
@@ -209,8 +210,8 @@ namespace Diseño
             this.Name = "frmVehiculo";
             this.Text = "Vehiculo";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.recorridosDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uspVehiculoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recorridosDataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

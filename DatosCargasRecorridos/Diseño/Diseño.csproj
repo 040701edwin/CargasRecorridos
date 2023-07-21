@@ -320,6 +320,7 @@
     <Compile Include="Usuario\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Validaciones\Validar.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmAgregarChofer.resx">

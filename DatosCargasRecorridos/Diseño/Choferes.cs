@@ -29,6 +29,17 @@ namespace Diseño
         private void iconBtnBuscar_Click(object sender, EventArgs e)
         {
             uspMostrarChoferBindingSource.DataSource = oChoferDAO.proChofer(txtBuscar.Text.Trim());
+            error.Clear();
+        }
+
+        ErrorProvider error = new ErrorProvider();
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            bool valida = Validaciones.Validar.ValidarCedula(txtBuscar.Text);
+            if (!valida)
+                error.SetError(txtBuscar, "Formato 000-000000-0000X");
+            else
+                error.Clear();
         }
     }
 }

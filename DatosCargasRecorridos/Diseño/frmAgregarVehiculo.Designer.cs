@@ -58,6 +58,7 @@ namespace Diseño
             this.cmbMarca.Name = "cmbMarca";
             this.cmbMarca.Size = new System.Drawing.Size(100, 21);
             this.cmbMarca.TabIndex = 44;
+            this.cmbMarca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbMarca_KeyPress);
             // 
             // txtDescripcion
             // 
@@ -73,6 +74,7 @@ namespace Diseño
             this.txtTonelaje.Name = "txtTonelaje";
             this.txtTonelaje.Size = new System.Drawing.Size(100, 20);
             this.txtTonelaje.TabIndex = 38;
+            this.txtTonelaje.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTonelaje_KeyPress);
             // 
             // txtPasajeros
             // 
@@ -80,6 +82,7 @@ namespace Diseño
             this.txtPasajeros.Name = "txtPasajeros";
             this.txtPasajeros.Size = new System.Drawing.Size(100, 20);
             this.txtPasajeros.TabIndex = 37;
+            this.txtPasajeros.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPasajeros_KeyPress);
             // 
             // label9
             // 
@@ -147,7 +150,7 @@ namespace Diseño
             // txtPlaca
             // 
             this.txtPlaca.Location = new System.Drawing.Point(126, 86);
-            this.txtPlaca.MaxLength = 15;
+            this.txtPlaca.MaxLength = 10;
             this.txtPlaca.Name = "txtPlaca";
             this.txtPlaca.Size = new System.Drawing.Size(100, 20);
             this.txtPlaca.TabIndex = 25;
@@ -226,6 +229,7 @@ namespace Diseño
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(100, 21);
             this.cmbTipo.TabIndex = 46;
+            this.cmbTipo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbTipo_KeyPress);
             // 
             // cmbEstado
             // 
@@ -235,6 +239,7 @@ namespace Diseño
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(100, 21);
             this.cmbEstado.TabIndex = 47;
+            this.cmbEstado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbEstado_KeyPress);
             // 
             // frmAgregarVehiculo
             // 

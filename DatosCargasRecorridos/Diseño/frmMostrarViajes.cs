@@ -32,16 +32,20 @@ namespace Diseño
             uspBucarViajeBindingSource.DataSource = oViajeDAO.proBuscarViaje(txtBuscar.Text.Trim());
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridView1.Columns[e.ColumnIndex].Name == "Eliminar")
             {
                 Viaje oViaje = new Viaje();
                 oViaje = oViajeDAO.Buscar(dataGridView1.CurrentRow.Cells["codigoDataGridViewTextBoxColumn"].Value.ToString());
-                if(oViajeDAO.Eliminar(oViaje) == false)
+                if (oViajeDAO.Eliminar(oViaje) == false)
                     MessageBox.Show("Registro No Eliminado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 else
                     MessageBox.Show("Registro Eliminado con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                return;
             }
         }
     }

@@ -19,6 +19,7 @@ namespace Diseño
         private ChoferDAO ochofDAO = new ChoferDAO();
         private PaisDAO Opais = new PaisDAO();
         private bool NuevoRegistro = true;
+
         public frmAgregarChofer()
         {
             InitializeComponent();
@@ -47,56 +48,71 @@ namespace Diseño
             this.Close();
         }
 
+        ErrorProvider error = new ErrorProvider();
         private void iconBtnAgregar_Click(object sender, EventArgs e)
         {
-            if(NuevoRegistro == true)
-            {
-                Chofer ochof = new Chofer();
-                ochof.CedulaChofer = txtCedula.Text.Trim();
-                ochof.Nombre1Chofer = txtNombre1.Text.Trim();
-                ochof.Nombre2Chofer = txtNombre2.Text.Trim();
-                ochof.Apellido1Chofer = txtApellido1.Text.Trim();
-                ochof.Apellido2Chofer = txtApellido2.Text.Trim();
-                ochof.CelularChofer = txtCelular.Text.Trim();
-                ochof.INSSChofer = txtINSS.Text.Trim();
-                ochof.DireccionChofer = txtDireccion.Text.Trim();
-                ochof.PaisId = (int)comboBox1.SelectedValue;
-                if (ochofDAO.Agregar(ochof) == false)
-                {
-                    MessageBox.Show("El nuevo registro no pudo ser grabado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //return;
-                }
-                else
-                {
-                    MessageBox.Show("El nuevo registro fue grabado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //return;
-                }
-            }
+            if (txtCedula.Text == string.Empty || txtNombre1.Text == string.Empty || txtApellido1.Text == string.Empty || txtCelular.Text == string.Empty || txtINSS.Text == string.Empty || txtDireccion.Text == string.Empty || comboBox1.Text == string.Empty || comboBox1.Text == "Select")
+                error.SetError(iconBtnAgregar, "Datos Incompletos");
             else
             {
-                Chofer oChofer = ochofDAO.Buscar(txtCedula.Text.Trim());
-                oChofer.Nombre1Chofer = txtNombre1.Text.Trim();
-                oChofer.Nombre2Chofer = txtNombre2.Text.Trim();
-                oChofer.Apellido1Chofer = txtApellido1.Text.Trim();
-                oChofer.Apellido2Chofer = txtApellido2.Text.Trim();
-                oChofer.CelularChofer = txtCelular.Text.Trim();
-                oChofer.INSSChofer = txtINSS.Text.Trim();
-                oChofer.DireccionChofer = txtDireccion.Text.Trim();
-                oChofer.PaisId = (int)comboBox1.SelectedValue;
-                if (ochofDAO.Modificar(oChofer) == false)
+                error.Clear();
+                bool valida = Validaciones.Validar.ValidarCedula(txtCedula.Text);
+                if (!valida)
                 {
-                    MessageBox.Show("El registro no fue modificado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //return;
+                    error.SetError(iconBtnAgregar, "Valide Cedula");
+                    return;
+                }
+                if (NuevoRegistro == true)
+                {
+                    error.Clear();
+                    Chofer ochof = new Chofer();
+                    ochof.CedulaChofer = txtCedula.Text.Trim();
+                    ochof.Nombre1Chofer = txtNombre1.Text.Trim();
+                    ochof.Nombre2Chofer = txtNombre2.Text.Trim();
+                    ochof.Apellido1Chofer = txtApellido1.Text.Trim();
+                    ochof.Apellido2Chofer = txtApellido2.Text.Trim();
+                    ochof.CelularChofer = txtCelular.Text.Trim();
+                    ochof.INSSChofer = txtINSS.Text.Trim();
+                    ochof.DireccionChofer = txtDireccion.Text.Trim();
+                    ochof.PaisId = (int)comboBox1.SelectedValue;
+                    if (ochofDAO.Agregar(ochof) == false)
+                    {
+                        MessageBox.Show("El nuevo registro no pudo ser grabado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("El nuevo registro fue grabado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //return;
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Registro Modificado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //return;
+                    Chofer oChofer = ochofDAO.Buscar(txtCedula.Text.Trim());
+                    oChofer.Nombre1Chofer = txtNombre1.Text.Trim();
+                    oChofer.Nombre2Chofer = txtNombre2.Text.Trim();
+                    oChofer.Apellido1Chofer = txtApellido1.Text.Trim();
+                    oChofer.Apellido2Chofer = txtApellido2.Text.Trim();
+                    oChofer.CelularChofer = txtCelular.Text.Trim();
+                    oChofer.INSSChofer = txtINSS.Text.Trim();
+                    oChofer.DireccionChofer = txtDireccion.Text.Trim();
+                    oChofer.PaisId = (int)comboBox1.SelectedValue;
+                    if (ochofDAO.Modificar(oChofer) == false)
+                    {
+                        MessageBox.Show("El registro no fue modificado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Registro Modificado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //return;
+                    }
+                    iconBtnAgregar.Text = "Guardar";
                 }
-                iconBtnAgregar.Text = "Guardar";
+                Limpiar();
             }
-            Limpiar();
         }
+
         //Listar los datos de pais en el combobox1
         private void frmAgregarChofer_Load(object sender, EventArgs e)
         {
@@ -132,6 +148,83 @@ namespace Diseño
             else
                 NuevoRegistro = true;
         }
+
+        //Validaciones------------------------------------------------------------------------------------
+        private void txtCedula_TextChanged(object sender, EventArgs e)
+        {
+            bool valida = Validaciones.Validar.ValidarCedula(txtCedula.Text);
+            if (!valida)
+                error.SetError(txtCedula, "Formato 000-000000-0000X");
+            else
+                error.Clear();
+        }
+
+        private void txtNombre1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool valida = Validaciones.Validar.SoloLetras(e);
+            if (!valida)
+                error.SetError(txtNombre1, "Solo letras");
+            else
+                error.Clear();
+        }
+
+        private void txtNombre2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool valida = Validaciones.Validar.SoloLetras(e);
+            if (!valida)
+                error.SetError(txtNombre2, "Solo letras");
+            else
+                error.Clear();
+        }
+
+        private void txtApellido1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool valida = Validaciones.Validar.SoloLetras(e);
+            if (!valida)
+                error.SetError(txtApellido1, "Solo letras");
+            else
+                error.Clear();
+        }
+
+        private void txtApellido2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool valida = Validaciones.Validar.SoloLetras(e);
+            if (!valida)
+                error.SetError(txtApellido2, "Solo letras");
+            else
+                error.Clear();
+        }
+
+        private void txtCelular_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool valida = Validaciones.Validar.SoloNumeros(e);
+            if (!valida)
+                error.SetError(txtCelular, "Solo Numeros");
+            else
+                error.Clear();
+        }
+
+        private void txtINSS_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool valida = Validaciones.Validar.SoloNumeros(e);
+            if (!valida)
+                error.SetError(txtINSS, "Solo Numeros");
+            else
+                error.Clear();
+        }
+
+        private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool valida = Validaciones.Validar.SoloLetras(e);
+            if (!valida)
+                error.SetError(comboBox1, "Selecciones un Pais");
+            else
+                error.Clear();
+        }
+
+
+        //Fin Validaciones--------------------------------------------------------------------------------
+
         //private void frmAgregarChofer_Load(object sender, EventArgs e)
         //{
         //    //Cargar ComboBox

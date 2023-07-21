@@ -31,51 +31,58 @@ namespace Diseño
             Close();
         }
 
+        ErrorProvider error = new ErrorProvider();
         private void iconBtnAgregar_Click(object sender, EventArgs e)
         {
-            if(NuevoRegistro != false)
-            {
-                Viaje oViaje = new Viaje();
-                oViaje.CodigoViaje = txtCodigo.Text.Trim();
-                oViaje.ChoferId = (int)cmbChofer.SelectedValue;
-                oViaje.TipoDeViajeId = (int)cmbTipo.SelectedValue;
-                oViaje.CantidadPasajeros = int.Parse(txtPasajeros.Text.Trim());
-                oViaje.Tonelage = decimal.Parse(txtTonelaje.Text.Trim());
-                oViaje.PaisId = (int)cmbPaisOrigen.SelectedValue;
-                oViaje.PaisId1 = (int)cmbPaisDestino.SelectedValue;
-                oViaje.CostoViaje = int.Parse(txtCosto.Text.Trim());
-                oViaje.PagoChoferViaje = int.Parse(txtPago.Text.Trim());
-                oViaje.ProveedorId = (int)cmbProveedor.SelectedValue;
-                oViaje.DescripcionViaje = txtDescripcion.Text.Trim();
-                if(oViajeDAO.Agregar(oViaje) == false)
-                {
-                    MessageBox.Show("El nuevo registro no pudo ser grabado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //return;
-                }
-                else
-                {
-                    MessageBox.Show("El nuevo registro fue grabado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //return;
-                }
-            }
+            if(txtCodigo.Text == string.Empty || cmbChofer.Text == string.Empty || cmbTipo.Text == string.Empty || txtPasajeros.Text == string.Empty || txtTonelaje.Text == string.Empty || cmbPaisDestino.Text == string.Empty || txtCosto.Text == string.Empty || txtPago.Text == string.Empty || cmbProveedor.Text == string.Empty || txtDescripcion.Text == string.Empty || cmbTipo.Text == "Select" || cmbPaisOrigen.Text == "Select" || cmbPaisDestino.Text == "Select")
+                error.SetError(iconBtnAgregar, "Datos Incompletos");
             else
             {
-                Viaje oViaje = oViajeDAO.Buscar(txtCodigo.Text.Trim());
-                oViaje.ChoferId = (int)cmbChofer.SelectedValue;
-                oViaje.TipoDeViajeId = (int)cmbTipo.SelectedValue;
-                oViaje.CantidadPasajeros = int.Parse(txtPasajeros.Text.Trim());
-                oViaje.Tonelage = decimal.Parse(txtTonelaje.Text.Trim());
-                oViaje.PaisId = (int)cmbPaisOrigen.SelectedValue;
-                oViaje.PaisId1 = (int)cmbPaisDestino.SelectedValue;
-                oViaje.CostoViaje = int.Parse(txtCosto.Text.Trim());
-                oViaje.PagoChoferViaje = int.Parse(txtPago.Text.Trim());
-                oViaje.ProveedorId = (int)cmbProveedor.SelectedValue;
-                oViaje.DescripcionViaje = txtDescripcion.Text.Trim();
-                if (oViajeDAO.Modificar(oViaje) == false)
-                    MessageBox.Show("El registro no fue modificado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                error.Clear();
+                if (NuevoRegistro != false)
+                {
+                    Viaje oViaje = new Viaje();
+                    oViaje.CodigoViaje = txtCodigo.Text.Trim();
+                    oViaje.ChoferId = (int)cmbChofer.SelectedValue;
+                    oViaje.TipoDeViajeId = (int)cmbTipo.SelectedValue;
+                    oViaje.CantidadPasajeros = int.Parse(txtPasajeros.Text.Trim());
+                    oViaje.Tonelage = decimal.Parse(txtTonelaje.Text.Trim());
+                    oViaje.PaisId = (int)cmbPaisOrigen.SelectedValue;
+                    oViaje.PaisId1 = (int)cmbPaisDestino.SelectedValue;
+                    oViaje.CostoViaje = int.Parse(txtCosto.Text.Trim());
+                    oViaje.PagoChoferViaje = int.Parse(txtPago.Text.Trim());
+                    oViaje.ProveedorId = (int)cmbProveedor.SelectedValue;
+                    oViaje.DescripcionViaje = txtDescripcion.Text.Trim();
+                    if (oViajeDAO.Agregar(oViaje) == false)
+                    {
+                        MessageBox.Show("El nuevo registro no pudo ser grabado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("El nuevo registro fue grabado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //return;
+                    }
+                }
                 else
-                    MessageBox.Show("Registro Modificado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Limpiar();
+                {
+                    Viaje oViaje = oViajeDAO.Buscar(txtCodigo.Text.Trim());
+                    oViaje.ChoferId = (int)cmbChofer.SelectedValue;
+                    oViaje.TipoDeViajeId = (int)cmbTipo.SelectedValue;
+                    oViaje.CantidadPasajeros = int.Parse(txtPasajeros.Text.Trim());
+                    oViaje.Tonelage = decimal.Parse(txtTonelaje.Text.Trim());
+                    oViaje.PaisId = (int)cmbPaisOrigen.SelectedValue;
+                    oViaje.PaisId1 = (int)cmbPaisDestino.SelectedValue;
+                    oViaje.CostoViaje = int.Parse(txtCosto.Text.Trim());
+                    oViaje.PagoChoferViaje = int.Parse(txtPago.Text.Trim());
+                    oViaje.ProveedorId = (int)cmbProveedor.SelectedValue;
+                    oViaje.DescripcionViaje = txtDescripcion.Text.Trim();
+                    if (oViajeDAO.Modificar(oViaje) == false)
+                        MessageBox.Show("El registro no fue modificado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                        MessageBox.Show("Registro Modificado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+                }
             }
         }
 
@@ -147,5 +154,88 @@ namespace Diseño
             cmbProveedor.SelectedIndex = -1;
             txtDescripcion.Text = string.Empty;
         }
+
+        //Validaciones------------------------------------------------------------------------
+        private void cmbChofer_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool valida = Validaciones.Validar.SoloLetras(e);
+            if (!valida)
+                error.SetError(cmbChofer, "Solo Letras");
+            else
+                error.Clear();
+        }
+
+        private void cmbTipo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool valida = Validaciones.Validar.SoloLetras(e);
+            if (!valida)
+                error.SetError(cmbTipo, "Solo letras");
+            else
+                error.Clear();
+        }
+
+        private void txtPasajeros_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool valida = Validaciones.Validar.SoloNumeros(e);
+            if (!valida)
+                error.SetError(txtPasajeros, "Solo Numeros");
+            else
+                error.Clear();
+        }
+
+        private void txtTonelaje_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool valida = Validaciones.Validar.SoloNumeros(e);
+            if (!valida)
+                error.SetError(txtTonelaje, "Solo Numeros");
+            else
+                error.Clear();
+        }
+
+        private void cmbPaisOrigen_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool valida = Validaciones.Validar.SoloLetras(e);
+            if (!valida)
+                error.SetError(cmbPaisOrigen, "Solo letras");
+            else
+                error.Clear();
+        }
+
+        private void cmbPaisDestino_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool valida = Validaciones.Validar.SoloLetras(e);
+            if (!valida)
+                error.SetError(cmbPaisDestino, "Solo letras");
+            else
+                error.Clear();
+        }
+
+        private void txtCosto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool valida = Validaciones.Validar.SoloNumeros(e);
+            if (!valida)
+                error.SetError(txtCosto, "Solo Numeros");
+            else
+                error.Clear();
+        }
+
+        private void txtPago_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool valida = Validaciones.Validar.SoloNumeros(e);
+            if (!valida)
+                error.SetError(txtPago, "Solo Numeros");
+            else
+                error.Clear();
+        }
+
+        private void cmbProveedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool valida = Validaciones.Validar.SoloLetras(e);
+            if (!valida)
+                error.SetError(txtPago, "Solo letras");
+            else
+                error.Clear();
+        }
+        //Fin de la validacion
     }
 }

@@ -36,9 +36,6 @@ namespace Diseño
             this.iconBtnBuscar = new FontAwesome.Sharp.IconButton();
             this.iconBtnAgregar = new FontAwesome.Sharp.IconButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.recorridosDataSet1 = new Diseño.RecorridosDataSet1();
-            this.uspMostrarChoferBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usp_MostrarChoferTableAdapter = new Diseño.RecorridosDataSet1TableAdapters.usp_MostrarChoferTableAdapter();
             this.cedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.segundoNombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,9 +45,12 @@ namespace Diseño
             this.iNSSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.paisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uspMostrarChoferBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.recorridosDataSet1 = new Diseño.RecorridosDataSet1();
+            this.usp_MostrarChoferTableAdapter = new Diseño.RecorridosDataSet1TableAdapters.usp_MostrarChoferTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.recorridosDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uspMostrarChoferBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recorridosDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -80,9 +80,11 @@ namespace Diseño
             this.txtBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBuscar.Location = new System.Drawing.Point(58, 76);
+            this.txtBuscar.MaxLength = 16;
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(299, 20);
             this.txtBuscar.TabIndex = 2;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // iconBtnBuscar
             // 
@@ -134,20 +136,6 @@ namespace Diseño
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(560, 361);
             this.dataGridView1.TabIndex = 5;
-            // 
-            // recorridosDataSet1
-            // 
-            this.recorridosDataSet1.DataSetName = "RecorridosDataSet1";
-            this.recorridosDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // uspMostrarChoferBindingSource
-            // 
-            this.uspMostrarChoferBindingSource.DataMember = "usp_MostrarChofer";
-            this.uspMostrarChoferBindingSource.DataSource = this.recorridosDataSet1;
-            // 
-            // usp_MostrarChoferTableAdapter
-            // 
-            this.usp_MostrarChoferTableAdapter.ClearBeforeFill = true;
             // 
             // cedulaDataGridViewTextBoxColumn
             // 
@@ -203,6 +191,20 @@ namespace Diseño
             this.direccionDataGridViewTextBoxColumn.HeaderText = "Direccion";
             this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
             // 
+            // uspMostrarChoferBindingSource
+            // 
+            this.uspMostrarChoferBindingSource.DataMember = "usp_MostrarChofer";
+            this.uspMostrarChoferBindingSource.DataSource = this.recorridosDataSet1;
+            // 
+            // recorridosDataSet1
+            // 
+            this.recorridosDataSet1.DataSetName = "RecorridosDataSet1";
+            this.recorridosDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usp_MostrarChoferTableAdapter
+            // 
+            this.usp_MostrarChoferTableAdapter.ClearBeforeFill = true;
+            // 
             // Choferes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -219,8 +221,8 @@ namespace Diseño
             this.Name = "Choferes";
             this.Text = "Choferes";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.recorridosDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uspMostrarChoferBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recorridosDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

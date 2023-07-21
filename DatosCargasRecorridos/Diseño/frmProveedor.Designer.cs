@@ -52,12 +52,6 @@ namespace Diseño
             this.label11 = new System.Windows.Forms.Label();
             this.txtComentario = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iconBtnCerrar = new FontAwesome.Sharp.IconButton();
-            this.iconBtnCancelar = new FontAwesome.Sharp.IconButton();
-            this.iconBtnAgregar = new FontAwesome.Sharp.IconButton();
-            this.recorridosDataSet3 = new Diseño.RecorridosDataSet3();
-            this.uspProveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usp_ProveedorTableAdapter = new Diseño.RecorridosDataSet3TableAdapters.usp_ProveedorTableAdapter();
             this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.empresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,21 +62,28 @@ namespace Diseño
             this.celuarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccionEmpresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comentarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uspProveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.recorridosDataSet3 = new Diseño.RecorridosDataSet3();
+            this.iconBtnCerrar = new FontAwesome.Sharp.IconButton();
+            this.iconBtnCancelar = new FontAwesome.Sharp.IconButton();
+            this.iconBtnAgregar = new FontAwesome.Sharp.IconButton();
+            this.usp_ProveedorTableAdapter = new Diseño.RecorridosDataSet3TableAdapters.usp_ProveedorTableAdapter();
             this.label12 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.iconBtnBuscar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.recorridosDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uspProveedorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recorridosDataSet3)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCelular
             // 
             this.txtCelular.Location = new System.Drawing.Point(77, 112);
-            this.txtCelular.MaxLength = 12;
+            this.txtCelular.MaxLength = 11;
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(100, 20);
             this.txtCelular.TabIndex = 40;
+            this.txtCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCelular_KeyPress);
             // 
             // txtDireccion
             // 
@@ -99,6 +100,7 @@ namespace Diseño
             this.txtCargo.Name = "txtCargo";
             this.txtCargo.Size = new System.Drawing.Size(100, 20);
             this.txtCargo.TabIndex = 38;
+            this.txtCargo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCargo_KeyPress);
             // 
             // txtApellido2
             // 
@@ -107,6 +109,7 @@ namespace Diseño
             this.txtApellido2.Name = "txtApellido2";
             this.txtApellido2.Size = new System.Drawing.Size(100, 20);
             this.txtApellido2.TabIndex = 37;
+            this.txtApellido2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido2_KeyPress);
             // 
             // txtNombre2
             // 
@@ -115,6 +118,7 @@ namespace Diseño
             this.txtNombre2.Name = "txtNombre2";
             this.txtNombre2.Size = new System.Drawing.Size(100, 20);
             this.txtNombre2.TabIndex = 36;
+            this.txtNombre2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre2_KeyPress);
             // 
             // txtNombre1
             // 
@@ -123,6 +127,7 @@ namespace Diseño
             this.txtNombre1.Name = "txtNombre1";
             this.txtNombre1.Size = new System.Drawing.Size(100, 20);
             this.txtNombre1.TabIndex = 35;
+            this.txtNombre1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre1_KeyPress);
             // 
             // label10
             // 
@@ -211,6 +216,7 @@ namespace Diseño
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigo.TabIndex = 25;
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             this.txtCodigo.Validating += new System.ComponentModel.CancelEventHandler(this.txtCodigo_Validating);
             // 
             // label2
@@ -239,6 +245,7 @@ namespace Diseño
             this.txtApellido1.Name = "txtApellido1";
             this.txtApellido1.Size = new System.Drawing.Size(100, 20);
             this.txtApellido1.TabIndex = 46;
+            this.txtApellido1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido1_KeyPress);
             // 
             // label11
             // 
@@ -280,59 +287,6 @@ namespace Diseño
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(715, 201);
             this.dataGridView1.TabIndex = 48;
-            // 
-            // iconBtnCerrar
-            // 
-            this.iconBtnCerrar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconBtnCerrar.IconColor = System.Drawing.Color.Black;
-            this.iconBtnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconBtnCerrar.Location = new System.Drawing.Point(550, 131);
-            this.iconBtnCerrar.Name = "iconBtnCerrar";
-            this.iconBtnCerrar.Size = new System.Drawing.Size(75, 23);
-            this.iconBtnCerrar.TabIndex = 43;
-            this.iconBtnCerrar.Text = "Cerrar";
-            this.iconBtnCerrar.UseVisualStyleBackColor = true;
-            this.iconBtnCerrar.Click += new System.EventHandler(this.iconBtnCerrar_Click);
-            // 
-            // iconBtnCancelar
-            // 
-            this.iconBtnCancelar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconBtnCancelar.IconColor = System.Drawing.Color.Black;
-            this.iconBtnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconBtnCancelar.Location = new System.Drawing.Point(469, 131);
-            this.iconBtnCancelar.Name = "iconBtnCancelar";
-            this.iconBtnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.iconBtnCancelar.TabIndex = 42;
-            this.iconBtnCancelar.Text = "Cancelar";
-            this.iconBtnCancelar.UseVisualStyleBackColor = true;
-            this.iconBtnCancelar.Click += new System.EventHandler(this.iconBtnCancelar_Click);
-            // 
-            // iconBtnAgregar
-            // 
-            this.iconBtnAgregar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconBtnAgregar.IconColor = System.Drawing.Color.Black;
-            this.iconBtnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconBtnAgregar.Location = new System.Drawing.Point(388, 131);
-            this.iconBtnAgregar.Name = "iconBtnAgregar";
-            this.iconBtnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.iconBtnAgregar.TabIndex = 41;
-            this.iconBtnAgregar.Text = "Guardar";
-            this.iconBtnAgregar.UseVisualStyleBackColor = true;
-            this.iconBtnAgregar.Click += new System.EventHandler(this.iconBtnAgregar_Click);
-            // 
-            // recorridosDataSet3
-            // 
-            this.recorridosDataSet3.DataSetName = "RecorridosDataSet3";
-            this.recorridosDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // uspProveedorBindingSource
-            // 
-            this.uspProveedorBindingSource.DataMember = "usp_Proveedor";
-            this.uspProveedorBindingSource.DataSource = this.recorridosDataSet3;
-            // 
-            // usp_ProveedorTableAdapter
-            // 
-            this.usp_ProveedorTableAdapter.ClearBeforeFill = true;
             // 
             // codigoDataGridViewTextBoxColumn
             // 
@@ -394,6 +348,59 @@ namespace Diseño
             this.comentarioDataGridViewTextBoxColumn.HeaderText = "Comentario";
             this.comentarioDataGridViewTextBoxColumn.Name = "comentarioDataGridViewTextBoxColumn";
             // 
+            // uspProveedorBindingSource
+            // 
+            this.uspProveedorBindingSource.DataMember = "usp_Proveedor";
+            this.uspProveedorBindingSource.DataSource = this.recorridosDataSet3;
+            // 
+            // recorridosDataSet3
+            // 
+            this.recorridosDataSet3.DataSetName = "RecorridosDataSet3";
+            this.recorridosDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // iconBtnCerrar
+            // 
+            this.iconBtnCerrar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconBtnCerrar.IconColor = System.Drawing.Color.Black;
+            this.iconBtnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconBtnCerrar.Location = new System.Drawing.Point(550, 131);
+            this.iconBtnCerrar.Name = "iconBtnCerrar";
+            this.iconBtnCerrar.Size = new System.Drawing.Size(75, 23);
+            this.iconBtnCerrar.TabIndex = 43;
+            this.iconBtnCerrar.Text = "Cerrar";
+            this.iconBtnCerrar.UseVisualStyleBackColor = true;
+            this.iconBtnCerrar.Click += new System.EventHandler(this.iconBtnCerrar_Click);
+            // 
+            // iconBtnCancelar
+            // 
+            this.iconBtnCancelar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconBtnCancelar.IconColor = System.Drawing.Color.Black;
+            this.iconBtnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconBtnCancelar.Location = new System.Drawing.Point(469, 131);
+            this.iconBtnCancelar.Name = "iconBtnCancelar";
+            this.iconBtnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.iconBtnCancelar.TabIndex = 42;
+            this.iconBtnCancelar.Text = "Cancelar";
+            this.iconBtnCancelar.UseVisualStyleBackColor = true;
+            this.iconBtnCancelar.Click += new System.EventHandler(this.iconBtnCancelar_Click);
+            // 
+            // iconBtnAgregar
+            // 
+            this.iconBtnAgregar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconBtnAgregar.IconColor = System.Drawing.Color.Black;
+            this.iconBtnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconBtnAgregar.Location = new System.Drawing.Point(388, 131);
+            this.iconBtnAgregar.Name = "iconBtnAgregar";
+            this.iconBtnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.iconBtnAgregar.TabIndex = 41;
+            this.iconBtnAgregar.Text = "Guardar";
+            this.iconBtnAgregar.UseVisualStyleBackColor = true;
+            this.iconBtnAgregar.Click += new System.EventHandler(this.iconBtnAgregar_Click);
+            // 
+            // usp_ProveedorTableAdapter
+            // 
+            this.usp_ProveedorTableAdapter.ClearBeforeFill = true;
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -410,6 +417,7 @@ namespace Diseño
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(160, 20);
             this.txtBuscar.TabIndex = 50;
+            this.txtBuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscar_KeyPress);
             // 
             // iconBtnBuscar
             // 
@@ -460,8 +468,8 @@ namespace Diseño
             this.Name = "frmProveedor";
             this.Text = "Proveedor";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.recorridosDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uspProveedorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recorridosDataSet3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
