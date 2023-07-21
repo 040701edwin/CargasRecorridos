@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaDatos;
+using CapaLogica;
 
 namespace Diseño
 {
     public partial class frmVehiculo : Form
     {
+        VehiculoDAO oVehiculoDAO = new VehiculoDAO();
         public frmVehiculo()
         {
             InitializeComponent();
@@ -21,6 +24,11 @@ namespace Diseño
         {
             frmAgregarVehiculo frm = new frmAgregarVehiculo();
             frm.ShowDialog();
+        }
+
+        private void iconBtnBuscar_Click(object sender, EventArgs e)
+        {
+            uspVehiculoBindingSource.DataSource = oVehiculoDAO.proBuscarVehiculo(txtBuscar.Text.Trim());
         }
     }
 }

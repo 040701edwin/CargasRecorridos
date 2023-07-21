@@ -40,6 +40,9 @@ namespace CapaLogica
         {
             return (db.TipoDeViajes.ToList());
         }
-
+        public List<usp_TipoViaje_Result> proTipoViaje(string cod)
+        {
+            return db.usp_TipoViaje(cod).ToList();
+        }
     }
 }

@@ -75,17 +75,21 @@ namespace Diseño
             // txtCedula
             // 
             this.txtCedula.Location = new System.Drawing.Point(119, 79);
+            this.txtCedula.MaxLength = 16;
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(100, 20);
             this.txtCedula.TabIndex = 2;
+            this.txtCedula.TextChanged += new System.EventHandler(this.txtCedula_TextChanged);
             this.txtCedula.Validating += new System.ComponentModel.CancelEventHandler(this.txtCedula_Validating);
             // 
             // txtNombre1
             // 
             this.txtNombre1.Location = new System.Drawing.Point(119, 105);
+            this.txtNombre1.MaxLength = 15;
             this.txtNombre1.Name = "txtNombre1";
             this.txtNombre1.Size = new System.Drawing.Size(100, 20);
             this.txtNombre1.TabIndex = 4;
+            this.txtNombre1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre1_KeyPress);
             // 
             // label3
             // 
@@ -162,41 +166,52 @@ namespace Diseño
             // txtNombre2
             // 
             this.txtNombre2.Location = new System.Drawing.Point(119, 131);
+            this.txtNombre2.MaxLength = 15;
             this.txtNombre2.Name = "txtNombre2";
             this.txtNombre2.Size = new System.Drawing.Size(100, 20);
             this.txtNombre2.TabIndex = 12;
+            this.txtNombre2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre2_KeyPress);
             // 
             // txtApellido1
             // 
             this.txtApellido1.Location = new System.Drawing.Point(119, 157);
+            this.txtApellido1.MaxLength = 15;
             this.txtApellido1.Name = "txtApellido1";
             this.txtApellido1.Size = new System.Drawing.Size(100, 20);
             this.txtApellido1.TabIndex = 13;
+            this.txtApellido1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido1_KeyPress);
             // 
             // txtApellido2
             // 
             this.txtApellido2.Location = new System.Drawing.Point(119, 183);
+            this.txtApellido2.MaxLength = 15;
             this.txtApellido2.Name = "txtApellido2";
             this.txtApellido2.Size = new System.Drawing.Size(100, 20);
             this.txtApellido2.TabIndex = 14;
+            this.txtApellido2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido2_KeyPress);
             // 
             // txtCelular
             // 
             this.txtCelular.Location = new System.Drawing.Point(119, 209);
+            this.txtCelular.MaxLength = 11;
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(100, 20);
             this.txtCelular.TabIndex = 15;
+            this.txtCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCelular_KeyPress);
             // 
             // txtINSS
             // 
             this.txtINSS.Location = new System.Drawing.Point(119, 235);
+            this.txtINSS.MaxLength = 9;
             this.txtINSS.Name = "txtINSS";
             this.txtINSS.Size = new System.Drawing.Size(100, 20);
             this.txtINSS.TabIndex = 16;
+            this.txtINSS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtINSS_KeyPress);
             // 
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(119, 261);
+            this.txtDireccion.MaxLength = 50;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(100, 20);
             this.txtDireccion.TabIndex = 17;
@@ -208,6 +223,7 @@ namespace Diseño
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(102, 21);
             this.comboBox1.TabIndex = 22;
+            this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
             // 
             // iconBtnCerrar
             // 

@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Gestion.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="GestionStoreContainer">
+    <EntitySet Name="FuncionesDeAcceso" EntityType="Gestion.Store.FuncionesDeAcceso" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FuncionesAsignadas" EntityType="Gestion.Store.FuncionesAsignadas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuarios" EntityType="Gestion.Store.Usuarios" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FuncionDeAccesoFuncionAsignada" Association="Gestion.Store.FuncionDeAccesoFuncionAsignada">
+      <End Role="FuncionDeAcceso" EntitySet="FuncionesDeAcceso" />
+      <End Role="FuncionAsignada" EntitySet="FuncionesAsignadas" />
+    </AssociationSet>
+    <AssociationSet Name="UsuarioFuncionAsignada" Association="Gestion.Store.UsuarioFuncionAsignada">
+      <End Role="Usuario" EntitySet="Usuarios" />
+      <End Role="FuncionAsignada" EntitySet="FuncionesAsignadas" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="FuncionesDeAcceso">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Codigo" Type="varchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="FuncionesAsignadas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaDeVencimiento" Type="datetime" Nullable="false" />
+    <Property Name="FuncionDeAccesoId" Type="int" Nullable="false" />
+    <Property Name="UsuarioId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreDeUsuario" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="ClaveDeUsuario" Type="varchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <Association Name="FuncionDeAccesoFuncionAsignada">
+    <End Role="FuncionDeAcceso" Type="Gestion.Store.FuncionesDeAcceso" Multiplicity="1" />
+    <End Role="FuncionAsignada" Type="Gestion.Store.FuncionesAsignadas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FuncionDeAcceso">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FuncionAsignada">
+        <PropertyRef Name="FuncionDeAccesoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UsuarioFuncionAsignada">
+    <End Role="Usuario" Type="Gestion.Store.Usuarios" Multiplicity="1" />
+    <End Role="FuncionAsignada" Type="Gestion.Store.FuncionesAsignadas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FuncionAsignada">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

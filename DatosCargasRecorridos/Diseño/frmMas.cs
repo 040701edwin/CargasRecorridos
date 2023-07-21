@@ -16,5 +16,35 @@ namespace Diseño
         {
             InitializeComponent();
         }
+
+        private void iconBtnMarcasVehiculos_Click(object sender, EventArgs e)
+        {
+            frmMarcaDelVehiculo frm = new frmMarcaDelVehiculo();
+            frm.ShowDialog();
+        }
+
+        private void iconBtnModelosVehiculo_Click(object sender, EventArgs e)
+        {
+            frmModelo frm = new frmModelo();
+            frm.ShowDialog();
+        }
+
+        private void iconBtnPais_Click(object sender, EventArgs e)
+        {
+            frmPais frm = new frmPais();
+            frm.ShowDialog();
+        }
+
+        private void iconBtnTipoVehiculo_Click(object sender, EventArgs e)
+        {
+            frmTipoDeVehiculo frm = new frmTipoDeVehiculo();
+            frm.ShowDialog();
+        }
+
+        private void iconBtnTipoViaje_Click(object sender, EventArgs e)
+        {
+            frmTipoDeViaje frm = new frmTipoDeViaje();
+            frm.ShowDialog();
+        }
     }
 }

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Gestion" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="GestionContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="FuncionesDeAcceso" EntityType="Gestion.FuncionDeAcceso" />
+    <EntitySet Name="FuncionesAsignadas" EntityType="Gestion.FuncionAsignada" />
+    <EntitySet Name="Usuarios" EntityType="Gestion.Usuario" />
+    <AssociationSet Name="FuncionDeAccesoFuncionAsignada" Association="Gestion.FuncionDeAccesoFuncionAsignada">
+      <End Role="FuncionDeAcceso" EntitySet="FuncionesDeAcceso" />
+      <End Role="FuncionAsignada" EntitySet="FuncionesAsignadas" />
+    </AssociationSet>
+    <AssociationSet Name="UsuarioFuncionAsignada" Association="Gestion.UsuarioFuncionAsignada">
+      <End Role="Usuario" EntitySet="Usuarios" />
+      <End Role="FuncionAsignada" EntitySet="FuncionesAsignadas" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="FuncionDeAcceso">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" Nullable="false" FixedLength="false" Unicode="false" MaxLength="100" />
+    <Property Name="Codigo" Type="String" Nullable="false" FixedLength="false" Unicode="false" MaxLength="20" />
+    <NavigationProperty Name="FuncionAsignada" Relationship="Gestion.FuncionDeAccesoFuncionAsignada" FromRole="FuncionDeAcceso" ToRole="FuncionAsignada" />
+  </EntityType>
+  <EntityType Name="FuncionAsignada">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FechaDeVencimiento" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="FuncionDeAcceso" Relationship="Gestion.FuncionDeAccesoFuncionAsignada" FromRole="FuncionAsignada" ToRole="FuncionDeAcceso" />
+    <Property Name="FuncionDeAccesoId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Usuario" Relationship="Gestion.UsuarioFuncionAsignada" FromRole="FuncionAsignada" ToRole="Usuario" />
+    <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreDeUsuario" Type="String" Nullable="false" FixedLength="false" Unicode="false" MaxLength="20" />
+    <Property Name="ClaveDeUsuario" Type="String" Nullable="false" FixedLength="false" Unicode="false" MaxLength="20" />
+    <NavigationProperty Name="FuncionAsignada" Relationship="Gestion.UsuarioFuncionAsignada" FromRole="Usuario" ToRole="FuncionAsignada" />
+  </EntityType>
+  <Association Name="FuncionDeAccesoFuncionAsignada">
+    <End Type="Gestion.FuncionDeAcceso" Role="FuncionDeAcceso" Multiplicity="1" />
+    <End Type="Gestion.FuncionAsignada" Role="FuncionAsignada" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FuncionDeAcceso">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FuncionAsignada">
+        <PropertyRef Name="FuncionDeAccesoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UsuarioFuncionAsignada">
+    <End Type="Gestion.Usuario" Role="Usuario" Multiplicity="1" />
+    <End Type="Gestion.FuncionAsignada" Role="FuncionAsignada" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FuncionAsignada">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

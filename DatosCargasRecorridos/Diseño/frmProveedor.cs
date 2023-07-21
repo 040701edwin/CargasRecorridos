@@ -22,58 +22,65 @@ namespace Diseño
             InitializeComponent();
         }
 
+        ErrorProvider error = new ErrorProvider();
         private void iconBtnAgregar_Click(object sender, EventArgs e)
         {
-            if (NuevoRegistro == true)
-            {
-                Proveedor oProveedor = new Proveedor();
-                oProveedor.CodigoProveedor = txtCodigo.Text.Trim();
-                oProveedor.NombreEmpresaProveedor = txtNomEmpresa.Text.Trim();
-                oProveedor.CelularProveedor = txtCelular.Text.Trim();
-                oProveedor.DireccionEmpresa = txtDireccion.Text.Trim();
-                oProveedor.Nombre1Encargado = txtNombre1.Text.Trim();
-                oProveedor.Nombre2Encargado = txtNombre2.Text.Trim();
-                oProveedor.Apellido1Encargado = txtApellido1.Text.Trim();
-                oProveedor.Apellido2Encargado = txtApellido2.Text.Trim();
-                oProveedor.Cargo = txtCargo.Text.Trim();
-                oProveedor.Comentario = txtComentario.Text.Trim();
-                if (oProveedorDAO.Agregar(oProveedor) == false)
-                {
-                    MessageBox.Show("El nuevo registro no pudo ser grabado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //return;
-                }
-                else
-                {
-                    MessageBox.Show("El nuevo registro fue grabado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //return;
-                }
-            }
+            if (txtCodigo.Text == string.Empty || txtNomEmpresa.Text == string.Empty || txtCelular.Text == string.Empty || txtDireccion.Text == string.Empty || txtNombre1.Text == string.Empty || txtApellido1.Text == string.Empty || txtCargo.Text == string.Empty || txtCargo.Text == string.Empty)
+                error.SetError(iconBtnAgregar, "Datos Incompletos");
             else
             {
-                Proveedor oProveedor = oProveedorDAO.Buscar(txtCodigo.Text.Trim());
-                oProveedor.CodigoProveedor = txtCodigo.Text.Trim();
-                oProveedor.NombreEmpresaProveedor = txtNomEmpresa.Text.Trim();
-                oProveedor.CelularProveedor = txtCelular.Text.Trim();
-                oProveedor.DireccionEmpresa = txtDireccion.Text.Trim();
-                oProveedor.Nombre1Encargado = txtNombre1.Text.Trim();
-                oProveedor.Nombre2Encargado = txtNombre2.Text.Trim();
-                oProveedor.Apellido1Encargado = txtApellido1.Text.Trim();
-                oProveedor.Apellido2Encargado = txtApellido2.Text.Trim();
-                oProveedor.Cargo = txtCargo.Text.Trim();
-                oProveedor.Comentario = txtComentario.Text.Trim();
-                if (oProveedorDAO.Modificar(oProveedor) == false)
+                error.Clear();
+                if (NuevoRegistro == true)
                 {
-                    MessageBox.Show("El registro no fue modificado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //return;
+                    Proveedor oProveedor = new Proveedor();
+                    oProveedor.CodigoProveedor = txtCodigo.Text.Trim();
+                    oProveedor.NombreEmpresaProveedor = txtNomEmpresa.Text.Trim();
+                    oProveedor.CelularProveedor = txtCelular.Text.Trim();
+                    oProveedor.DireccionEmpresa = txtDireccion.Text.Trim();
+                    oProveedor.Nombre1Encargado = txtNombre1.Text.Trim();
+                    oProveedor.Nombre2Encargado = txtNombre2.Text.Trim();
+                    oProveedor.Apellido1Encargado = txtApellido1.Text.Trim();
+                    oProveedor.Apellido2Encargado = txtApellido2.Text.Trim();
+                    oProveedor.Cargo = txtCargo.Text.Trim();
+                    oProveedor.Comentario = txtComentario.Text.Trim();
+                    if (oProveedorDAO.Agregar(oProveedor) == false)
+                    {
+                        MessageBox.Show("El nuevo registro no pudo ser grabado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("El nuevo registro fue grabado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //return;
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Registro Modificado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //return;
+                    Proveedor oProveedor = oProveedorDAO.Buscar(txtCodigo.Text.Trim());
+                    oProveedor.CodigoProveedor = txtCodigo.Text.Trim();
+                    oProveedor.NombreEmpresaProveedor = txtNomEmpresa.Text.Trim();
+                    oProveedor.CelularProveedor = txtCelular.Text.Trim();
+                    oProveedor.DireccionEmpresa = txtDireccion.Text.Trim();
+                    oProveedor.Nombre1Encargado = txtNombre1.Text.Trim();
+                    oProveedor.Nombre2Encargado = txtNombre2.Text.Trim();
+                    oProveedor.Apellido1Encargado = txtApellido1.Text.Trim();
+                    oProveedor.Apellido2Encargado = txtApellido2.Text.Trim();
+                    oProveedor.Cargo = txtCargo.Text.Trim();
+                    oProveedor.Comentario = txtComentario.Text.Trim();
+                    if (oProveedorDAO.Modificar(oProveedor) == false)
+                    {
+                        MessageBox.Show("El registro no fue modificado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Registro Modificado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //return;
+                    }
+                    iconBtnAgregar.Text = "Guardar";
                 }
-                iconBtnAgregar.Text = "Guardar";
+                Limpiar();
             }
-            Limpiar();
         }
 
         private void iconBtnCancelar_Click(object sender, EventArgs e)
@@ -122,6 +129,83 @@ namespace Diseño
                 NuevoRegistro = true;
         }
 
-       
+        private void iconBtnBuscar_Click(object sender, EventArgs e)
+        {
+            uspProveedorBindingSource.DataSource = oProveedorDAO.proBuscarProveedor(txtBuscar.Text.Trim());
+        }
+
+        //Validaciones---------------------------------------------------------------------------
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool valida = Validaciones.Validar.SoloLetras(e);
+            if (!valida)
+                error.SetError(txtCodigo, "Solo letras");
+            else
+                error.Clear();
+        }
+
+        private void txtCelular_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool valida = Validaciones.Validar.SoloNumeros(e);
+            if (!valida)
+                error.SetError(txtCelular, "Solo Numeros");
+            else
+                error.Clear();
+        }
+
+        private void txtNombre1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool valida = Validaciones.Validar.SoloLetras(e);
+            if (!valida)
+                error.SetError(txtNombre1, "Solo Letras");
+            else
+                error.Clear();
+        }
+
+        private void txtNombre2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool valida = Validaciones.Validar.SoloLetras(e);
+            if (!valida)
+                error.SetError(txtNombre2, "Solo Letras");
+            else
+                error.Clear();
+        }
+
+        private void txtApellido1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool valida = Validaciones.Validar.SoloLetras(e);
+            if (!valida)
+                error.SetError(txtApellido1, "Solo Letras");
+            else
+                error.Clear();
+        }
+
+        private void txtApellido2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool valida = Validaciones.Validar.SoloLetras(e);
+            if (!valida)
+                error.SetError(txtApellido2, "Solo Letras");
+            else
+                error.Clear();
+        }
+
+        private void txtCargo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool valida = Validaciones.Validar.SoloLetras(e);
+            if (!valida)
+                error.SetError(txtCargo, "Solo Letras");
+            else
+                error.Clear();
+        }
+
+        private void txtBuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool valida = Validaciones.Validar.SoloLetras(e);
+            if (!valida)
+                error.SetError(txtBuscar, "Solo Letras");
+            else
+                error.Clear();
+        }
+        //Fin Validacion-----------------------------------------------------------------------------------
     }
 }

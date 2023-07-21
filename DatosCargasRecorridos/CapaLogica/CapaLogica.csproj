@@ -53,11 +53,16 @@
   <ItemGroup>
     <Compile Include="Chofer.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="GestionUsuario\AsignarPermisosDAO.cs" />
+    <Compile Include="GestionUsuario\FuncionesDAO.cs" />
+    <Compile Include="GestionUsuario\ListaUsuarioDAO.cs" />
+    <Compile Include="GestionUsuario\UsuarioDAO.cs" />
     <Compile Include="MarcaDeVehiculoDAO.cs" />
     <Compile Include="ModeloDAO.cs" />
     <Compile Include="PaisDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProveedorDAO.cs" />
+    <Compile Include="ProViajeDAO.cs" />
     <Compile Include="TipoDeVehiculoDAO.cs" />
     <Compile Include="TipoDeViajeDAO.cs" />
     <Compile Include="VehiculoDAO.cs" />

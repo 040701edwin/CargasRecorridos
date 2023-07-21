@@ -64,6 +64,7 @@ namespace Diseño
             this.cmbPaisOrigen.Name = "cmbPaisOrigen";
             this.cmbPaisOrigen.Size = new System.Drawing.Size(100, 21);
             this.cmbPaisOrigen.TabIndex = 44;
+            this.cmbPaisOrigen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbPaisOrigen_KeyPress);
             // 
             // iconBtnCerrar
             // 
@@ -110,10 +111,12 @@ namespace Diseño
             this.txtCosto.Name = "txtCosto";
             this.txtCosto.Size = new System.Drawing.Size(100, 20);
             this.txtCosto.TabIndex = 40;
+            this.txtCosto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCosto_KeyPress);
             // 
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(124, 342);
+            this.txtDescripcion.MaxLength = 50;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(100, 20);
             this.txtDescripcion.TabIndex = 39;
@@ -124,6 +127,7 @@ namespace Diseño
             this.txtPago.Name = "txtPago";
             this.txtPago.Size = new System.Drawing.Size(100, 20);
             this.txtPago.TabIndex = 38;
+            this.txtPago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPago_KeyPress);
             // 
             // txtTonelaje
             // 
@@ -131,6 +135,7 @@ namespace Diseño
             this.txtTonelaje.Name = "txtTonelaje";
             this.txtTonelaje.Size = new System.Drawing.Size(100, 20);
             this.txtTonelaje.TabIndex = 37;
+            this.txtTonelaje.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTonelaje_KeyPress);
             // 
             // txtPasajeros
             // 
@@ -138,6 +143,7 @@ namespace Diseño
             this.txtPasajeros.Name = "txtPasajeros";
             this.txtPasajeros.Size = new System.Drawing.Size(100, 20);
             this.txtPasajeros.TabIndex = 36;
+            this.txtPasajeros.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPasajeros_KeyPress);
             // 
             // label10
             // 
@@ -214,6 +220,7 @@ namespace Diseño
             // txtCodigo
             // 
             this.txtCodigo.Location = new System.Drawing.Point(124, 79);
+            this.txtCodigo.MaxLength = 5;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
             this.txtCodigo.TabIndex = 25;
@@ -245,6 +252,7 @@ namespace Diseño
             this.cmbPaisDestino.Name = "cmbPaisDestino";
             this.cmbPaisDestino.Size = new System.Drawing.Size(100, 21);
             this.cmbPaisDestino.TabIndex = 45;
+            this.cmbPaisDestino.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbPaisDestino_KeyPress);
             // 
             // label11
             // 
@@ -271,6 +279,7 @@ namespace Diseño
             this.cmbChofer.Name = "cmbChofer";
             this.cmbChofer.Size = new System.Drawing.Size(100, 21);
             this.cmbChofer.TabIndex = 49;
+            this.cmbChofer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbChofer_KeyPress);
             // 
             // cmbTipo
             // 
@@ -280,6 +289,7 @@ namespace Diseño
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(100, 21);
             this.cmbTipo.TabIndex = 50;
+            this.cmbTipo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbTipo_KeyPress);
             // 
             // cmbProveedor
             // 
@@ -288,6 +298,7 @@ namespace Diseño
             this.cmbProveedor.Name = "cmbProveedor";
             this.cmbProveedor.Size = new System.Drawing.Size(100, 21);
             this.cmbProveedor.TabIndex = 51;
+            this.cmbProveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbProveedor_KeyPress);
             // 
             // frmViaje
             // 

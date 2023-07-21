@@ -163,5 +163,118 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_MostrarChofer" FunctionName="Model1.Store.usp_MostrarChofer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model1.usp_MostrarChofer_Result">
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Segundo_Nombre" ColumnName="Segundo_Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Segundo_Apellido" ColumnName="Segundo_Apellido" />
+          <ScalarProperty Name="celular" ColumnName="celular" />
+          <ScalarProperty Name="INSS" ColumnName="INSS" />
+          <ScalarProperty Name="Pais" ColumnName="Pais" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_Proveedor" FunctionName="Model1.Store.usp_Proveedor">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model1.usp_Proveedor_Result">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Segundo_Nombre" ColumnName="Segundo_Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Segundo_Apellido" ColumnName="Segundo_Apellido" />
+          <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+          <ScalarProperty Name="Celuar" ColumnName="Celuar" />
+          <ScalarProperty Name="Direccion_Empresa" ColumnName="Direccion_Empresa" />
+          <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_Vehiculo" FunctionName="Model1.Store.usp_Vehiculo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model1.usp_Vehiculo_Result">
+          <ScalarProperty Name="Placa" ColumnName="Placa" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Pasajero" ColumnName="Pasajero" />
+          <ScalarProperty Name="Tonelaje" ColumnName="Tonelaje" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_ObtenerViaje" FunctionName="Model1.Store.usp_ObtenerViaje">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model1.usp_ObtenerViaje_Result">
+          <ScalarProperty Name="idViaje" ColumnName="idViaje" />
+          <ScalarProperty Name="idChofer" ColumnName="idChofer" />
+          <ScalarProperty Name="idVehiculo" ColumnName="idVehiculo" />
+          <ScalarProperty Name="idTipoViaje" ColumnName="idTipoViaje" />
+          <ScalarProperty Name="idTipoVehiculo" ColumnName="idTipoVehiculo" />
+          <ScalarProperty Name="idOrigen" ColumnName="idOrigen" />
+          <ScalarProperty Name="idDestino" ColumnName="idDestino" />
+          <ScalarProperty Name="Salida" ColumnName="Salida" />
+          <ScalarProperty Name="Llegada" ColumnName="Llegada" />
+          <ScalarProperty Name="Retorno" ColumnName="Retorno" />
+          <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="MarcaVehiculo" FunctionName="Model1.Store.usp_MarcaVehiculo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model1.MarcaVehiculo_Result">
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_Pais" FunctionName="Model1.Store.usp_Pais">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model1.usp_Pais_Result">
+          <ScalarProperty Name="Pais" ColumnName="Pais" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sup_Modelo" FunctionName="Model1.Store.usp_Modelo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model1.sup_Modelo_Result">
+          <ScalarProperty Name="Modelos" ColumnName="Modelos" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_TipoVehiculo" FunctionName="Model1.Store.usp_TipoVehiculo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model1.usp_TipoVehiculo_Result">
+          <ScalarProperty Name="CodigoTipoVehiculo" ColumnName="CodigoTipoVehiculo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_TipoViaje" FunctionName="Model1.Store.usp_TipoViaje">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model1.usp_TipoViaje_Result">
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_ViajeProveedor" FunctionName="Model1.Store.usp_ViajeProveedor">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model1.usp_ViajeProveedor_Result">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Placa" ColumnName="Placa" />
+          <ScalarProperty Name="Viaje" ColumnName="Viaje" />
+          <ScalarProperty Name="Vehiculo" ColumnName="Vehiculo" />
+          <ScalarProperty Name="Origen" ColumnName="Origen" />
+          <ScalarProperty Name="Destino" ColumnName="Destino" />
+          <ScalarProperty Name="Salida" ColumnName="Salida" />
+          <ScalarProperty Name="Llegada" ColumnName="Llegada" />
+          <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices; //Drag and Drop
+using CapaLogica.GestionUsuario;
 
 namespace Diseño
 {
     public partial class frmLogin : Form
     {
+        public int idUsuario = 0;
+        private UsuarioDAO opeUsuario = new UsuarioDAO();
         public frmLogin()
         {
             InitializeComponent();
@@ -80,6 +83,7 @@ namespace Diseño
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             this.Hide();
             Dashboard ds = new Dashboard();
             ds.ShowDialog();

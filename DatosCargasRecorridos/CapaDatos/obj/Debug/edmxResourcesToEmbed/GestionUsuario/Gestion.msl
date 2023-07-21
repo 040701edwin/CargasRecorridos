@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="GestionStoreContainer" CdmEntityContainer="GestionContainer">
+    <EntitySetMapping Name="FuncionesDeAcceso">
+      <EntityTypeMapping TypeName="IsTypeOf(Gestion.FuncionDeAcceso)">
+        <MappingFragment StoreEntitySet="FuncionesDeAcceso">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FuncionesAsignadas">
+      <EntityTypeMapping TypeName="IsTypeOf(Gestion.FuncionAsignada)">
+        <MappingFragment StoreEntitySet="FuncionesAsignadas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FechaDeVencimiento" ColumnName="FechaDeVencimiento" />
+          <ScalarProperty Name="FuncionDeAccesoId" ColumnName="FuncionDeAccesoId" />
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="IsTypeOf(Gestion.Usuario)">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NombreDeUsuario" ColumnName="NombreDeUsuario" />
+          <ScalarProperty Name="ClaveDeUsuario" ColumnName="ClaveDeUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

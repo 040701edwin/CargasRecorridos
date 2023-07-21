@@ -37,5 +37,9 @@ namespace CapaLogica
         {
             return (db.ModeloDeLosVehiculos.ToList());
         }
+        public List<sup_Modelo_Result> proModelo(string cod)
+        {
+            return db.sup_Modelo(cod).ToList();
+        }
     }
 }

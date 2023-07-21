@@ -27,5 +27,20 @@ namespace CapaLogica
         {
             return (db.Paises.ToList());
         }
+        public bool Eliminar(Pais oPais)
+        {
+            db.Paises.Remove(oPais);
+            return (db.SaveChanges() > 0 ? true : false);
+        }
+        public Pais Buscar(string pCodigo)
+        {
+            Pais oPais;
+            oPais = db.Paises.DefaultIfEmpty(null).FirstOrDefault(pa => pa.CodigoPais.Trim() == pCodigo.Trim()); //pa significa Pais
+            return oPais;
+        }
+        public List<usp_Pais_Result> proPais(string cod)
+        {
+            return db.usp_Pais(cod).ToList();
+        }
     }
 }

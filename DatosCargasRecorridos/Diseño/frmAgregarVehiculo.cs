@@ -49,40 +49,47 @@ namespace Diseño
             cmbEstado.SelectedIndex = 0;
         }
 
+        ErrorProvider error = new ErrorProvider();
         private void iconBtnAgregar_Click(object sender, EventArgs e)
         {
-            if(NuevoRegistro == true)
-            {
-                Vehiculo oVehiculo = new Vehiculo();
-                oVehiculo.PlacaVehiculo = txtPlaca.Text.Trim();
-                oVehiculo.MarcaVehiculoId = (int)cmbMarca.SelectedValue;
-                oVehiculo.ModeloDelVehiculoId = (int)cmbModelo.SelectedValue;
-                oVehiculo.TipoDeVehiculoId = (int)cmbTipo.SelectedValue;
-                oVehiculo.CantidadPasajeros = int.Parse(txtPasajeros.Text.Trim());
-                oVehiculo.Tonelage = decimal.Parse(txtTonelaje.Text.Trim());
-                oVehiculo.EstadoVehiculo = cmbEstado.Text.Trim();
-                oVehiculo.DescripcionVehiculo = txtDescripcion.Text.Trim();
-                if(oVehiculoDAO.Agregar(oVehiculo) == false)
-                    MessageBox.Show("El nuevo registro no pudo ser grabado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else
-                    MessageBox.Show("El nuevo registro fue grabado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            if(txtPlaca.Text == string.Empty || cmbMarca.Text == string.Empty || cmbModelo.Text == string.Empty || cmbTipo.Text == string.Empty || txtPasajeros.Text == string.Empty || txtTonelaje.Text == string.Empty || txtTonelaje.Text == string.Empty || txtDescripcion.Text == string.Empty || cmbMarca.Text == "Select" || cmbModelo.Text == "Select" || cmbTipo.Text == "Selec" || cmbEstado.Text == "Select")
+                error.SetError(iconBtnAgregar, "Datos Incompletos");
             else
             {
-                Vehiculo oVehiculo = oVehiculoDAO.Buscar(txtPlaca.Text.Trim());
-                oVehiculo.MarcaVehiculoId = (int)cmbMarca.SelectedValue;
-                oVehiculo.ModeloDelVehiculoId = (int)cmbModelo.SelectedValue;
-                oVehiculo.TipoDeVehiculoId = (int)cmbTipo.SelectedValue;
-                oVehiculo.CantidadPasajeros = int.Parse(txtPasajeros.Text.Trim());
-                oVehiculo.Tonelage = decimal.Parse(txtTonelaje.Text.Trim());
-                oVehiculo.EstadoVehiculo = cmbEstado.Text.Trim();
-                oVehiculo.DescripcionVehiculo = txtDescripcion.Text.Trim();
-                if(oVehiculoDAO.Modificar(oVehiculo) == false)
-                    MessageBox.Show("El registro no fue modificado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                error.Clear();
+                if (NuevoRegistro == true)
+                {
+                    Vehiculo oVehiculo = new Vehiculo();
+                    oVehiculo.PlacaVehiculo = txtPlaca.Text.Trim();
+                    oVehiculo.MarcaVehiculoId = (int)cmbMarca.SelectedValue;
+                    oVehiculo.ModeloDelVehiculoId = (int)cmbModelo.SelectedValue;
+                    oVehiculo.TipoDeVehiculoId = (int)cmbTipo.SelectedValue;
+                    oVehiculo.CantidadPasajeros = int.Parse(txtPasajeros.Text.Trim());
+                    oVehiculo.Tonelage = decimal.Parse(txtTonelaje.Text.Trim());
+                    oVehiculo.EstadoVehiculo = cmbEstado.Text.Trim();
+                    oVehiculo.DescripcionVehiculo = txtDescripcion.Text.Trim();
+                    if (oVehiculoDAO.Agregar(oVehiculo) == false)
+                        MessageBox.Show("El nuevo registro no pudo ser grabado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                        MessageBox.Show("El nuevo registro fue grabado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 else
-                    MessageBox.Show("Registro Modificado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                {
+                    Vehiculo oVehiculo = oVehiculoDAO.Buscar(txtPlaca.Text.Trim());
+                    oVehiculo.MarcaVehiculoId = (int)cmbMarca.SelectedValue;
+                    oVehiculo.ModeloDelVehiculoId = (int)cmbModelo.SelectedValue;
+                    oVehiculo.TipoDeVehiculoId = (int)cmbTipo.SelectedValue;
+                    oVehiculo.CantidadPasajeros = int.Parse(txtPasajeros.Text.Trim());
+                    oVehiculo.Tonelage = decimal.Parse(txtTonelaje.Text.Trim());
+                    oVehiculo.EstadoVehiculo = cmbEstado.Text.Trim();
+                    oVehiculo.DescripcionVehiculo = txtDescripcion.Text.Trim();
+                    if (oVehiculoDAO.Modificar(oVehiculo) == false)
+                        MessageBox.Show("El registro no fue modificado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                        MessageBox.Show("Registro Modificado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                Limpiar();
             }
-            Limpiar();
         }
 
         private void frmAgregarVehiculo_Load(object sender, EventArgs e)
@@ -131,5 +138,52 @@ namespace Diseño
                 iconBtnAgregar.Text = "Guardar";
             }
         }
+
+        //Validaciones--------------------------------------------------------------------------
+        private void cmbMarca_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool valida = Validaciones.Validar.SoloLetras(e);
+            if (!valida)
+                error.SetError(cmbMarca, "Solo letras");
+            else
+                error.Clear();
+        }
+
+        private void cmbTipo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool valida = Validaciones.Validar.SoloLetras(e);
+            if (!valida)
+                error.SetError(cmbTipo, "Solo letras");
+            else
+                error.Clear();
+        }
+
+        private void txtPasajeros_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool valida = Validaciones.Validar.SoloNumeros(e);
+            if (!valida)
+                error.SetError(txtPasajeros, "Solo Numeros");
+            else
+                error.Clear();
+        }
+
+        private void txtTonelaje_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool valida = Validaciones.Validar.SoloNumeros(e);
+            if (!valida)
+                error.SetError(txtTonelaje, "Solo Numeros");
+            else
+                error.Clear();
+        }
+
+        private void cmbEstado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool valida = Validaciones.Validar.SoloLetras(e);
+            if (!valida)
+                error.SetError(cmbEstado, "Solo letras");
+            else
+                error.Clear();
+        }
+        //Fin Validaciones--------------------------------------------------------------------------
     }
 }

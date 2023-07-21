@@ -61,6 +61,7 @@
             this.iconBtnTipoViaje.TabIndex = 14;
             this.iconBtnTipoViaje.Text = "Tipo de Viajes";
             this.iconBtnTipoViaje.UseVisualStyleBackColor = true;
+            this.iconBtnTipoViaje.Click += new System.EventHandler(this.iconBtnTipoViaje_Click);
             // 
             // iconBtnTipoVehiculo
             // 
@@ -74,6 +75,7 @@
             this.iconBtnTipoVehiculo.TabIndex = 13;
             this.iconBtnTipoVehiculo.Text = "Tipo de Vehiculos";
             this.iconBtnTipoVehiculo.UseVisualStyleBackColor = true;
+            this.iconBtnTipoVehiculo.Click += new System.EventHandler(this.iconBtnTipoVehiculo_Click);
             // 
             // iconBtnPais
             // 
@@ -87,6 +89,7 @@
             this.iconBtnPais.TabIndex = 12;
             this.iconBtnPais.Text = "Paises";
             this.iconBtnPais.UseVisualStyleBackColor = true;
+            this.iconBtnPais.Click += new System.EventHandler(this.iconBtnPais_Click);
             // 
             // iconBtnModelosVehiculo
             // 
@@ -100,6 +103,7 @@
             this.iconBtnModelosVehiculo.TabIndex = 11;
             this.iconBtnModelosVehiculo.Text = "Modelos de Vehiculos";
             this.iconBtnModelosVehiculo.UseVisualStyleBackColor = true;
+            this.iconBtnModelosVehiculo.Click += new System.EventHandler(this.iconBtnModelosVehiculo_Click);
             // 
             // iconBtnMarcasVehiculos
             // 
@@ -113,6 +117,7 @@
             this.iconBtnMarcasVehiculos.TabIndex = 10;
             this.iconBtnMarcasVehiculos.Text = "Marcas de Vehiculos";
             this.iconBtnMarcasVehiculos.UseVisualStyleBackColor = true;
+            this.iconBtnMarcasVehiculos.Click += new System.EventHandler(this.iconBtnMarcasVehiculos_Click);
             // 
             // frmMas
             // 

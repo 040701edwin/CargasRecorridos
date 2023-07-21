@@ -37,5 +37,10 @@ namespace CapaLogica
         {
             return (db.Proveedores.ToList());
         }
+        public List<usp_Proveedor_Result> proBuscarProveedor(string codv)
+        {
+            return db.usp_Proveedor(codv).ToList();
+        }
+        
     }
 }

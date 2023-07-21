@@ -16,7 +16,6 @@ namespace Diseño
     public partial class frmTipoDeVehiculo : Form
     {
         private TipoDeVehiculoDAO oTipVehiculoDAO = new TipoDeVehiculoDAO();
-        private TipoDeVehiculo oTipoDeVehicullo = new TipoDeVehiculo();
         private bool NuevoRegistro = false;
         public frmTipoDeVehiculo()
         {
@@ -25,15 +24,10 @@ namespace Diseño
 
         private void iconBtnGuardar_Click(object sender, EventArgs e)
         {
-            if (comboBox1.Text != "vehca" && comboBox1.Text != "vehre")
-            {
-                MessageBox.Show("Seleccione Tipo correcto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
             if (NuevoRegistro == true)
             {
                 TipoDeVehiculo oTipVehiculo = new TipoDeVehiculo();
-                oTipVehiculo.CodigoTipoVehiculo = comboBox1.Text.Trim();    //combobox1 tipos de vehiculo
+                oTipVehiculo.CodigoTipoVehiculo = txtCodigo.Text.Trim();
                 oTipVehiculo.DescripcionTipoVehiculo = txtDescripcion.Text.Trim();
                 if (oTipVehiculoDAO.Agregar(oTipVehiculo) == false)
                 {
@@ -48,7 +42,7 @@ namespace Diseño
             }
             else
             {
-                TipoDeVehiculo oTipVehiculo = oTipVehiculoDAO.Buscar(comboBox1.Text.Trim());
+                TipoDeVehiculo oTipVehiculo = oTipVehiculoDAO.Buscar(txtCodigo.Text.Trim());
                 oTipVehiculo.DescripcionTipoVehiculo = txtDescripcion.Text.Trim();
                 if(oTipVehiculoDAO.Modificar(oTipVehiculo) == false)
                 {
@@ -60,45 +54,44 @@ namespace Diseño
                     MessageBox.Show("Registro modificado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     //return;
                 }
+                iconBtnGuardar.Text = "Guardar";
             }
-            comboBox1.SelectedIndex = 0;
+            Limpiar();
+            uspTipoVehiculoBindingSource.DataSource = oTipVehiculoDAO.proTipoVehiculo(txtCodigo.Text.Trim());
+        }
+        private void Limpiar()
+        {
+            txtCodigo.Text = string.Empty;
             txtDescripcion.Text = string.Empty;
         }
-
-        private void frmTipoDeVehiculo_Load(object sender, EventArgs e)
+        private void iconBtnCancelar_Click(object sender, EventArgs e)
         {
-            comboBox1.Items.Add("Seleccione");
-            comboBox1.SelectedIndex = 0;
-            comboBox1.DataSource = oTipVehiculoDAO.Listar(); //Me lista todos los paises en el combobox
-            comboBox1.DisplayMember = "CodigoTipoVehiculo"; //El campo que queremos mostrar
-            //comboBox1.ValueMember = "Id"; //El dato que tomara para ser almacenado
-            //comboBox1.Items.Add("Seleccione");
-            //comboBox1.Items.Add("vehca");
-            //comboBox1.Items.Add("vehre");
-            //comboBox1.SelectedIndex = 0;
+            Limpiar();
         }
 
-        private void comboBox1_Validating(object sender, CancelEventArgs e)
+        private void iconBtnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtCodigo_Validating(object sender, CancelEventArgs e)
         {
             TipoDeVehiculo otipoVehiculo;
-            //if (comboBox1.Text != "vehca" && comboBox1.Text != "vehre")
-            //{
-            //    MessageBox.Show("Seleccione Tipo correcto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
-            otipoVehiculo = oTipVehiculoDAO.Buscar(comboBox1.Text.Trim());
-            if(otipoVehiculo != null)
+            otipoVehiculo = oTipVehiculoDAO.Buscar(txtCodigo.Text.Trim());
+            if (otipoVehiculo != null)
             {
+                MessageBox.Show("Este registro ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                iconBtnGuardar.Text = "Modificar";
                 NuevoRegistro = false;
                 txtDescripcion.Text = otipoVehiculo.DescripcionTipoVehiculo.Trim();
             }
             else
-            {
                 NuevoRegistro = true;
-                txtDescripcion.Text = "";
-            }
         }
 
-        
+        private void frmTipoDeVehiculo_Load(object sender, EventArgs e)
+        {
+            uspTipoVehiculoBindingSource.DataSource = oTipVehiculoDAO.proTipoVehiculo(txtCodigo.Text.Trim());
+        }
     }
 }

@@ -39,5 +39,9 @@ namespace CapaLogica
         {
             return (db.Choferes.ToList());
         }
+        public List<usp_MostrarChofer_Result> proChofer(string cedula)
+        {
+            return db.usp_MostrarChofer(cedula).ToList();
+        }
     }
 }
